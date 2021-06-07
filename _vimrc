@@ -17,8 +17,8 @@ let mapleader=" "
 " Turn on syntax highlighting.
 syntax on
 syntax enable
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 " Disable the default Vim startup message.
 set shortmess+=I
 :highlight LineNr guifg=#DFFF00
@@ -180,3 +180,4 @@ nnoremap H ^
 nnoremap L $
 set guifont=Consolas:h20
 map <Leader> <Plug>(easymotion-prefix)
+imap jj <Esc>
