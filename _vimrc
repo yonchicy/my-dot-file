@@ -1,5 +1,6 @@
 " Comments in Vimscript start with a `"`.
 
+
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
@@ -11,17 +12,21 @@
 " `vim -u foo`).
 set nocompatible
 let mapleader=" "
+" {
+"     }
 
-
+set shortmess+=I
 
 " Turn on syntax highlighting.
 syntax on
 syntax enable
-"set background=dark
-"colorscheme solarized
+colorscheme molokai
+let g:molokai_original=1
+    
+" :highlight LineNr guifg=#DFFF00
+" :highlight Visual guibg=#333333
+" :highlight VisualNOS guibg=#333333
 " Disable the default Vim startup message.
-set shortmess+=I
-:highlight LineNr guifg=#DFFF00
 " Show line numbers.
 set number
 
@@ -110,8 +115,6 @@ set expandtab
 " Turn on syntax highlighting.
 syntax on
 syntax enable
-set background=dark
-colorscheme solarized
 " Disable the default Vim startup message.
 set shortmess+=I
 :highlight LineNr guifg=#DFFF00
@@ -180,4 +183,17 @@ nnoremap H ^
 nnoremap L $
 set guifont=Consolas:h20
 map <Leader> <Plug>(easymotion-prefix)
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 imap jj <Esc>
+
+" 定义跳出括号函数，用于跳出括号
+func SkipPair()
+    if getline('.')[col('.') - 1] == ')' || getline('.')[col('.') - 1] == ']' || getline('.')[col('.') - 1] == '"' || getline('.')[col('.') - 1] == "'" || getline('.')[col('.') - 1] == '}'
+        return "\<ESC>la"
+    else
+        return "\t"
+    endif
+endfunc
+" 将tab键绑定为跳出括号
+inoremap <Leader>f <c-r>=SkipPair()<CR>
