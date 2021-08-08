@@ -26,7 +26,7 @@ colorscheme molokai
 " set background=dark
 let g:gruvbox_termcolors=16
 let g:molokai_original=1
-    
+
 set clipboard=unnamed
 " :highlight LineNr guifg=#DFFF00
 " :highlight Visual guibg=#333333
@@ -189,7 +189,7 @@ set guifont=Consolas:h16
 map <Leader> <Plug>(easymotion-prefix)
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-" imap jj <Esc>
+imap jj <Esc>
 
 " 定义跳出括号函数，用于跳出括号
 func SkipPair()
