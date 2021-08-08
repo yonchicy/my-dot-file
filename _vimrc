@@ -18,11 +18,16 @@ let mapleader=" "
 set shortmess+=I
 
 " Turn on syntax highlighting.
+let g:gruvbox_italic=1
 syntax on
 syntax enable
 colorscheme molokai
+" colorscheme gruvbox
+" set background=dark
+let g:gruvbox_termcolors=16
 let g:molokai_original=1
     
+set clipboard=unnamed
 " :highlight LineNr guifg=#DFFF00
 " :highlight Visual guibg=#333333
 " :highlight VisualNOS guibg=#333333
@@ -90,7 +95,7 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 nnoremap H ^
 nnoremap L $
-set guifont=Consolas:h20" Comments in Vimscript start with a `"`.
+set guifont=Consolas:h16" Comments in Vimscript start with a `"`.
 
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
@@ -150,7 +155,6 @@ set hidden
 " it contains any capital letters. This makes searching more convenient.
 set ignorecase
 set smartcase
-
 " Enable searching as you type, rather than waiting till you press enter.
 set incsearch
 
@@ -179,13 +183,13 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
-nnoremap H ^
-nnoremap L $
-set guifont=Consolas:h20
+"nnoremap H ^
+"nnoremap L $
+set guifont=Consolas:h16
 map <Leader> <Plug>(easymotion-prefix)
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-imap jj <Esc>
+" imap jj <Esc>
 
 " 定义跳出括号函数，用于跳出括号
 func SkipPair()
@@ -196,5 +200,6 @@ func SkipPair()
     endif
 endfunc
 " 将tab键绑定为跳出括号
-inoremap <Leader>f <c-r>=SkipPair()<CR>
-
+inoremap <tab> <c-r>=SkipPair()<CR>
+nnoremap <f5> :!ctags -R<CR>
+nnoremap gd g<c-]>
