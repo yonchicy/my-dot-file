@@ -18,14 +18,12 @@ let mapleader=" "
 set shortmess+=I
 
 " Turn on syntax highlighting.
-let g:gruvbox_italic=1
+colorscheme molokai
+"colorscheme gruvbox
+" set background=dark
+let g:molokai_original=1
 syntax on
 syntax enable
-colorscheme molokai
-" colorscheme gruvbox
-" set background=dark
-let g:gruvbox_termcolors=16
-let g:molokai_original=1
 
 set clipboard=unnamed
 " :highlight LineNr guifg=#DFFF00
@@ -96,6 +94,8 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 nnoremap H ^
 nnoremap L $
 set guifont=Consolas:h16" Comments in Vimscript start with a `"`.
+set cursorline
+set cursorcolumn
 
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
@@ -107,7 +107,6 @@ set guifont=Consolas:h16" Comments in Vimscript start with a `"`.
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
 set nocompatible
-let mapleader=" "
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -115,7 +114,7 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-
+    
 
 " Turn on syntax highlighting.
 syntax on
@@ -187,9 +186,8 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 "nnoremap L $
 set guifont=Consolas:h16
 map <Leader> <Plug>(easymotion-prefix)
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-imap jj <Esc>
+"map / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
 
 " 定义跳出括号函数，用于跳出括号
 func SkipPair()
@@ -203,3 +201,45 @@ endfunc
 inoremap <tab> <c-r>=SkipPair()<CR>
 nnoremap <f5> :!ctags -R<CR>
 nnoremap gd g<c-]>
+nnoremap ;g :vsp<CR>
+
+
+
+" plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/tomasr/molokai.git'
+Plug 'Yggdroot/LeaderF'
+Plug 'vim-airline/vim-airline'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ap/vim-buftabline'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'frazrepo/vim-rainbow'
+Plug 'unblevable/quick-scope'
+Plug 'rhysd/clever-f.vim'
+Plug 'skywind3000/vim-auto-popmenu'
+call plug#end() 
+
+
+let g:apc_enable_ft = {'*':1}
+set cpt=.,k,w,b
+set completeopt=menu,menuone,noselect
+set shortmess+=c
+set hidden
+imap <c-f> <c-o>a
+nnoremap <c-j> :bprev<CR>
+nnoremap <c-k> :bnext<CR>
+noremap <leader>bd :bdelete<CR>
+nnoremap <space>1 <c-w>h
+nnoremap <space>2 <c-w>l
+vmap <leader>cl gc
+nmap <leader>cl Vgc
+let g:airline_powerline_fonts = 1
+let g:Lf_ShortcutF = '<c-p>'
+
+
+let g:clever_f_across_no_line=1
+let g:rainbow_active=1
