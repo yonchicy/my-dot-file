@@ -32,7 +32,6 @@ set clipboard=unnamed
 " Disable the default Vim startup message.
 " Show line numbers.
 set number
-
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while
 " all other lines (above and below) are numbered relative to the current line.
@@ -221,6 +220,9 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
 Plug 'skywind3000/vim-auto-popmenu'
+Plug 'mhinz/vim-startify'
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim',{'branch':'release','do':'yarn install --frozen-lockfile'}
 call plug#end() 
 
 
@@ -243,3 +245,11 @@ let g:Lf_ShortcutF = '<c-p>'
 
 let g:clever_f_across_no_line=1
 let g:rainbow_active=1
+set termguicolors
+
+let g:ale_linters = {
+            \    'c++':['clang'],
+            \    'c':['clang'],
+            \}
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = '!'
