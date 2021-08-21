@@ -20,7 +20,7 @@ set shortmess+=I
 " Turn on syntax highlighting.
 colorscheme molokai
 "colorscheme gruvbox
-" set background=dark
+set background=dark
 let g:molokai_original=1
 syntax on
 syntax enable
@@ -222,6 +222,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'skywind3000/vim-auto-popmenu'
 Plug 'mhinz/vim-startify'
 Plug 'dense-analysis/ale'
+Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim',{'branch':'release','do':'yarn install --frozen-lockfile'}
 call plug#end() 
 
@@ -250,6 +251,11 @@ set termguicolors
 let g:ale_linters = {
             \    'c++':['clang'],
             \    'c':['clang'],
+            \    'python':['pylint',' flake8 '],
             \}
 let g:ale_sign_error = 'x'
 let g:ale_sign_warning = '!'
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_SI = "\<Esc>]50;CursorShape=0\x7"
+nnoremap <F3> :NERDTree<CR>
