@@ -24,6 +24,9 @@ alias ls='lsd'
 alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
+<<<<<<< HEAD
+=======
+>>>>>>> b884fd464fca89ee824cedcc160892a54cfaa055
 alias vi=vim
 
 export PATH="$PATH:/root/.cargo/bin/"
