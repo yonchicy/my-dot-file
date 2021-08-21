@@ -19,6 +19,7 @@ set shortmess+=I
 
 " Turn on syntax highlighting.
 colorscheme molokai
+" colorscheme solarized
 "colorscheme gruvbox
 " set background=dark
 let g:molokai_original=1
@@ -154,7 +155,7 @@ set hidden
 " it contains any capital letters. This makes searching more convenient.
 set ignorecase
 set smartcase
-" Enable searching as you type, rather than waiting till you press enter.
+" Enable searching as yu type, rather than waiting till you press enter.
 set incsearch
 
 " Unbind some useless/annoying default key bindings.
@@ -221,6 +222,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
 Plug 'skywind3000/vim-auto-popmenu'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end() 
 
 
@@ -229,6 +231,7 @@ set cpt=.,k,w,b
 set completeopt=menu,menuone,noselect
 set shortmess+=c
 set hidden
+set termguicolors
 imap <c-f> <c-o>a
 nnoremap <c-j> :bprev<CR>
 nnoremap <c-k> :bnext<CR>
