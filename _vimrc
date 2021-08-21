@@ -21,7 +21,7 @@ set shortmess+=I
 colorscheme molokai
 " colorscheme solarized
 "colorscheme gruvbox
-" set background=dark
+set background=dark
 let g:molokai_original=1
 syntax on
 syntax enable
@@ -33,7 +33,6 @@ set clipboard=unnamed
 " Disable the default Vim startup message.
 " Show line numbers.
 set number
-
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while
 " all other lines (above and below) are numbered relative to the current line.
@@ -222,7 +221,14 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
 Plug 'skywind3000/vim-auto-popmenu'
+<<<<<<< HEAD
 Plug 'terryma/vim-multiple-cursors'
+=======
+Plug 'mhinz/vim-startify'
+Plug 'dense-analysis/ale'
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim',{'branch':'release','do':'yarn install --frozen-lockfile'}
+>>>>>>> b0ff4e3f693676632be4d8a2469332d9306418ef
 call plug#end() 
 
 
@@ -246,3 +252,16 @@ let g:Lf_ShortcutF = '<c-p>'
 
 let g:clever_f_across_no_line=1
 let g:rainbow_active=1
+set termguicolors
+
+let g:ale_linters = {
+            \    'c++':['clang'],
+            \    'c':['clang'],
+            \    'python':['pylint',' flake8 '],
+            \}
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = '!'
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_SI = "\<Esc>]50;CursorShape=0\x7"
+nnoremap <F3> :NERDTree<CR>

@@ -20,9 +20,10 @@ autoload -U compinit && compinit -u
 
 
 # alias
+alias ls='lsd'
 alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
-alias vim=nvim
-alias vi=nvim
+alias vim=vim
+alias vi=vim
 
