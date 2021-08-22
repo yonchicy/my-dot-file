@@ -221,14 +221,11 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
 Plug 'skywind3000/vim-auto-popmenu'
-<<<<<<< HEAD
 Plug 'terryma/vim-multiple-cursors'
-=======
 Plug 'mhinz/vim-startify'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim',{'branch':'release','do':'yarn install --frozen-lockfile'}
->>>>>>> b0ff4e3f693676632be4d8a2469332d9306418ef
 call plug#end() 
 
 
