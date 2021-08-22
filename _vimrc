@@ -307,4 +307,3 @@ nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
 let g:airline_focuslost_inactive=1
 nnoremap <Leader>s :Leaderf rg 
-nnoremap <Leader>l :Leaderf 
