@@ -25,7 +25,7 @@ alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
 alias vi=vim
-
+alias tmux="TERM=screen-256color-bce tmux"
 export PATH="$PATH:/root/.cargo/bin/"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
