@@ -114,7 +114,7 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-    
+
 
 " Turn on syntax highlighting.
 syntax on
@@ -202,6 +202,7 @@ inoremap <tab> <c-r>=SkipPair()<CR>
 nnoremap <f5> :!ctags -R<CR>
 nnoremap gd g<c-]>
 nnoremap ;g :vsp<CR>
+nnoremap ;vg :sp<CR>
 
 
 
@@ -212,7 +213,7 @@ Plug 'https://github.com/tomasr/molokai.git'
 Plug 'Yggdroot/LeaderF'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ap/vim-buftabline'
+Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
@@ -221,15 +222,12 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
 Plug 'skywind3000/vim-auto-popmenu'
-<<<<<<< HEAD
-Plug 'terryma/vim-multiple-cursors'
-=======
 Plug 'mhinz/vim-startify'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
+Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim',{'branch':'release','do':'yarn install --frozen-lockfile'}
->>>>>>> b0ff4e3f693676632be4d8a2469332d9306418ef
-call plug#end() 
+call plug#end()
 
 
 let g:apc_enable_ft = {'*':1}
@@ -242,8 +240,6 @@ imap <c-f> <c-o>a
 nnoremap <c-j> :bprev<CR>
 nnoremap <c-k> :bnext<CR>
 noremap <leader>bd :bdelete<CR>
-nnoremap <space>1 <c-w>h
-nnoremap <space>2 <c-w>l
 vmap <leader>cl gc
 nmap <leader>cl Vgc
 let g:airline_powerline_fonts = 1
@@ -265,3 +261,50 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_SI = "\<Esc>]50;CursorShape=0\x7"
 nnoremap <F3> :NERDTree<CR>
+:autocmd InsertEnter * set nocursorline
+:autocmd InsertLeave * set cursorline
+:autocmd InsertEnter * set nocursorcolumn
+:autocmd InsertLeave * set cursorcolumn
+" ack.vim --- {{{
+
+" Use ripgrep for searching ⚡️
+" Options include:
+" --vimgrep -> Needed to parse the rg response properly for ack.vim
+" --type-not sql -> Avoid huge sql file dumps as it slows down the search
+" --smart-case -> Search case insensitive if all lowercase pattern, Search case sensitively otherwise
+let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
+
+" Auto close the Quickfix list after pressing '<enter>' on a list item
+let g:ack_autoclose = 1
+
+" Any empty ack search will search for the work the cursor is on
+let g:ack_use_cword_for_empty_search = 1
+
+" Don't jump to first match
+cnoreabbrev Ack Ack!
+
+" Maps <leader>/ so we're ready to type the search keyword
+nnoremap gd :Ack!<Space>
+" }}}
+
+" Navigate quickfix list with ease
+nnoremap <silent> [q :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
+let g:airline_section_a = '%{winnr()}'
+let g:airline_section_b = ''
+let g:airline_section_c = ''
+let g:airline_section_y = '%{strftime("%H:%M")}'
+let g:airline#extensions#tabline#enabled = 1
+
+nnoremap <Leader>1 1<c-w>w
+nnoremap <Leader>2 2<c-w>w
+nnoremap <Leader>3 3<c-w>w
+nnoremap <Leader>4 4<c-w>w
+nnoremap <Leader>5 5<c-w>w
+nnoremap <Leader>6 6<c-w>w
+nnoremap <Leader>7 7<c-w>w
+nnoremap <Leader>8 8<c-w>w
+nnoremap <Leader>9 9<c-w>w
+let g:airline_focuslost_inactive=1
+nnoremap <Leader>s :Leaderf rg 
+nnoremap <Leader>l :Leaderf 
