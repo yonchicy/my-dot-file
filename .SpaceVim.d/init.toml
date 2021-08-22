@@ -13,18 +13,18 @@
     # layer
     colorscheme = "molokai"
     colorscheme_bg = "dark"
-    
+
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
     # Disable statusline separator, if you want to use other value, please
-    # install nerd fonts
+# install nerd fonts
     guifont="Fira_Code"
     statusline_separator = 'arrow'
     statusline_iseparator = 'arrow'
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
-    enable_statusline_mode = false
+    enable_statusline_mode = true
     filetree_direction="left"
     # my settings
     default_indent=4
@@ -39,9 +39,11 @@
         'fileformat',
     ]
     statusline_right_sections=[ 
-        'time'
+        'date','time','cursorpos'
     ]
 
+    [[custom_plugins]]
+repo = "tomasr/molokai"
 
 # Enable autocomplete layer
 [[layers]]
@@ -57,19 +59,16 @@ default_height = 30
 [[layers]]
 name="leaderf"
 
-[[layers]]
-name="ui"
+# [[layers]]
+# name="tmux"
 
 [[layers]]
 name="default"
 
-[[layers]]
-name="core#statusline"
+# [[layers]]
+# name="tools"
 
 # language servers
 [[layers]]
 name="lang#c"
-
-[[layers]]
-name="markdown"
 
