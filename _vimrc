@@ -2,15 +2,6 @@
 
 
 
-let g:startify_custom_header=[
-            \'                 　∧＿∧　',
-            \'                 （｡･ω･｡)つ━☆・*。',
-            \'                 ⊂　　 ノ 　　　・゜+.',
-            \'                 　しーＪ　　　°。+ *´¨)',
-            \'                 　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)',
-            \'                 　　　　　　　　　　(¸.·´ (¸.·* ☆  ',
-            \'',
-            \]
 
 
 " If you open this file in Vim, it'll be syntax highlighted for you.
@@ -231,30 +222,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
-Plug 'frazrepo/vim-rainbow'
 Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
-Plug 'skywind3000/vim-auto-popmenu'
-Plug 'mhinz/vim-startify'
-Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
-Plug 'mileszs/ack.vim'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 
-let g:apc_enable_ft = {'*':1}
-set cpt=.,k,w,b
-set completeopt=menu,menuone,noselect
-set shortmess+=c
 set hidden
 imap <c-f> <c-o>a
 nnoremap <c-j> :bprev<CR>
