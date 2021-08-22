@@ -1,6 +1,18 @@
 " Comments in Vimscript start with a `"`.
 
 
+
+let g:startify_custom_header=[
+            \'                 　∧＿∧　',
+            \'                 （｡･ω･｡)つ━☆・*。',
+            \'                 ⊂　　 ノ 　　　・゜+.',
+            \'                 　しーＪ　　　°。+ *´¨)',
+            \'                 　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)',
+            \'                 　　　　　　　　　　(¸.·´ (¸.·* ☆  ',
+            \'',
+            \]
+
+
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
@@ -18,13 +30,14 @@ let mapleader=" "
 set shortmess+=I
 
 " Turn on syntax highlighting.
-colorscheme molokai
+" colorscheme molokai
 " colorscheme solarized
-"colorscheme gruvbox
+colorscheme gruvbox
 set background=dark
 let g:molokai_original=1
 syntax on
 syntax enable
+set termguicolors
 
 set clipboard=unnamed
 " :highlight LineNr guifg=#DFFF00
@@ -93,7 +106,6 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 nnoremap H ^
 nnoremap L $
-set guifont=Consolas:h16" Comments in Vimscript start with a `"`.
 set cursorline
 set cursorcolumn
 
@@ -184,10 +196,10 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 "nnoremap H ^
 "nnoremap L $
-set guifont=Consolas:h16
+set guifont=Source\ Code\ Pro\ semibold\ 16
 map <Leader> <Plug>(easymotion-prefix)
-"map / <Plug>(easymotion-sn)
-"omap / <Plug>(easymotion-tn)
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 
 " 定义跳出括号函数，用于跳出括号
 func SkipPair()
@@ -200,7 +212,6 @@ endfunc
 " 将tab键绑定为跳出括号
 inoremap <tab> <c-r>=SkipPair()<CR>
 nnoremap <f5> :!ctags -R<CR>
-nnoremap gd g<c-]>
 nnoremap ;g :vsp<CR>
 nnoremap ;vg :sp<CR>
 
@@ -211,7 +222,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/tomasr/molokai.git'
 Plug 'Yggdroot/LeaderF'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'altercation/vim-colors-solarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-surround'
@@ -226,16 +239,23 @@ Plug 'mhinz/vim-startify'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'mileszs/ack.vim'
-Plug 'neoclide/coc.nvim',{'branch':'release','do':'yarn install --frozen-lockfile'}
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
 
 let g:apc_enable_ft = {'*':1}
 set cpt=.,k,w,b
 set completeopt=menu,menuone,noselect
 set shortmess+=c
 set hidden
-set termguicolors
 imap <c-f> <c-o>a
 nnoremap <c-j> :bprev<CR>
 nnoremap <c-k> :bnext<CR>
@@ -248,54 +268,17 @@ let g:Lf_ShortcutF = '<c-p>'
 
 let g:clever_f_across_no_line=1
 let g:rainbow_active=1
-set termguicolors
 
-let g:ale_linters = {
-            \    'c++':['clang'],
-            \    'c':['clang'],
-            \    'python':['pylint',' flake8 '],
-            \}
-let g:ale_sign_error = 'x'
-let g:ale_sign_warning = '!'
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_SI = "\<Esc>]50;CursorShape=0\x7"
 nnoremap <F3> :NERDTree<CR>
 :autocmd InsertEnter * set nocursorline
 :autocmd InsertLeave * set cursorline
 :autocmd InsertEnter * set nocursorcolumn
 :autocmd InsertLeave * set cursorcolumn
-" ack.vim --- {{{
-
-" Use ripgrep for searching ⚡️
-" Options include:
-" --vimgrep -> Needed to parse the rg response properly for ack.vim
-" --type-not sql -> Avoid huge sql file dumps as it slows down the search
-" --smart-case -> Search case insensitive if all lowercase pattern, Search case sensitively otherwise
-let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
-
-" Auto close the Quickfix list after pressing '<enter>' on a list item
-let g:ack_autoclose = 1
-
-" Any empty ack search will search for the work the cursor is on
-let g:ack_use_cword_for_empty_search = 1
-
-" Don't jump to first match
-cnoreabbrev Ack Ack!
-
-" Maps <leader>/ so we're ready to type the search keyword
-nnoremap gd :Ack!<Space>
-" }}}
-
-" Navigate quickfix list with ease
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
 let g:airline_section_a = '%{winnr()}'
 let g:airline_section_b = ''
 let g:airline_section_c = ''
 let g:airline_section_y = '%{strftime("%H:%M")}'
 let g:airline#extensions#tabline#enabled = 1
-
 nnoremap <Leader>1 1<c-w>w
 nnoremap <Leader>2 2<c-w>w
 nnoremap <Leader>3 3<c-w>w
@@ -305,5 +288,5 @@ nnoremap <Leader>6 6<c-w>w
 nnoremap <Leader>7 7<c-w>w
 nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
-let g:airline_focuslost_inactive=1
 nnoremap <Leader>s :Leaderf rg 
+nnoremap gd :Leaderf rg
