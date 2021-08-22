@@ -1,5 +1,25 @@
 " Comments in Vimscript start with a `"`.
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/tomasr/molokai.git'
+Plug 'Yggdroot/LeaderF'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'jiangmiao/auto-pairs'
+Plug 'bling/vim-bufferline'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'unblevable/quick-scope'
+Plug 'rhysd/clever-f.vim'
+Plug 'preservim/nerdtree'
+Plug 'skywind3000/vim-auto-popmenu'
+
+call plug#end()
+
 
 
 
@@ -209,25 +229,6 @@ nnoremap ;vg :sp<CR>
 
 
 " plugins
-call plug#begin('~/.vim/plugged')
-
-Plug 'https://github.com/tomasr/molokai.git'
-Plug 'Yggdroot/LeaderF'
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'altercation/vim-colors-solarized'
-Plug 'jiangmiao/auto-pairs'
-Plug 'bling/vim-bufferline'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
-Plug 'unblevable/quick-scope'
-Plug 'rhysd/clever-f.vim'
-Plug 'preservim/nerdtree'
-
-call plug#end()
-
 let g:deoplete#enable_at_startup = 1
 
 set hidden
@@ -265,3 +266,8 @@ nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
 nnoremap <Leader>s :Leaderf rg 
 nnoremap gd :Leaderf rg
+
+let g:apc_enable_ft = {'*':1}
+set cpt=.,k,w,b
+set completeopt=menu,menuone,noselect
+set shortmess+=c
