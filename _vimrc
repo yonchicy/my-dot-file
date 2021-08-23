@@ -267,16 +267,17 @@ nnoremap <Leader>6 6<c-w>w
 nnoremap <Leader>7 7<c-w>w
 nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
-nnoremap <Leader>s :Leaderf rg 
+nnoremap <Leader>s :Leaderf rg <cword>
 nnoremap <Leader>c :nohls<CR>
-nnoremap gd :Leaderf rg
+nnoremap gd yiw:Leaderf rg <c-r><c-w><cr>
 
 let g:apc_enable_ft = {'*':1}
 set cpt=.,k,w,b
 set completeopt=menu,menuone,noselect
 set shortmess+=c
-set scrolloff=5
+" set scrolloff=5
 
 xmap ga <Plug>(EasyAlign)
 vmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+autocmd! CursorMoved * normal zz
