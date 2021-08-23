@@ -42,7 +42,7 @@ let mapleader=" "
 "     }
 
 set shortmess+=I
-
+set hlsearch
 " Turn on syntax highlighting.
 " colorscheme molokai
 " colorscheme solarized
@@ -212,8 +212,8 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 "nnoremap L $
 set guifont=Source\ Code\ Pro\ semibold\ 16
 map <Leader> <Plug>(easymotion-prefix)
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+" map / <Plug>(easymotion-sn)
+" omap / <Plug>(easymotion-tn)
 
 " 定义跳出括号函数，用于跳出括号
 func SkipPair()
@@ -268,6 +268,7 @@ nnoremap <Leader>7 7<c-w>w
 nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
 nnoremap <Leader>s :Leaderf rg 
+nnoremap <Leader>c :nohls<CR>
 nnoremap gd :Leaderf rg
 
 let g:apc_enable_ft = {'*':1}
