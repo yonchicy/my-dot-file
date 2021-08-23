@@ -16,6 +16,9 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'unblevable/quick-scope'
 Plug 'rhysd/clever-f.vim'
 Plug 'preservim/nerdtree'
+Plug 'psliwka/vim-smoothie'
+Plug 'junegunn/vim-easy-align'
+Plug 'frazrepo/vim-rainbow'
 Plug 'skywind3000/vim-auto-popmenu'
 
 call plug#end()
@@ -271,3 +274,8 @@ let g:apc_enable_ft = {'*':1}
 set cpt=.,k,w,b
 set completeopt=menu,menuone,noselect
 set shortmess+=c
+set scrolloff=5
+
+xmap ga <Plug>(EasyAlign)
+vmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
