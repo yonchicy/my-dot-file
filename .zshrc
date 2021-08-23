@@ -4,7 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
+source ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 bindkey ',' autosuggest-accept
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -27,5 +27,5 @@ alias vs=code
 alias vi=vim
 alias tmux="TERM=screen-256color-bce tmux"
 export PATH="$PATH:/root/.cargo/bin/"
-
+export EDITOR="vim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
