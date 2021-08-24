@@ -2,7 +2,7 @@ let mapleader=" "
 set easymotion
 
 imap jk <esc>
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+nmap <Leader>f <Plug>(easymotion-f)
 
 nmap H ^
 nmap L $
