@@ -53,6 +53,7 @@ syntax on
 syntax enable
 set termguicolors
 
+
 set clipboard=unnamed
 " :highlight LineNr guifg=#DFFF00
 " :highlight Visual guibg=#333333
@@ -229,6 +230,7 @@ nnoremap <f5> :!ctags -R<CR>
 nnoremap ;g :vsp<CR>
 nnoremap ;vg :sp<CR>
 imap jk <esc>
+nnoremap wq :wa<CR>:q<CR>
 
 
 " plugins

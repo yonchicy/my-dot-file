@@ -16,7 +16,7 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 autoload -U compinit && compinit -u
 
-
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 
 # alias
