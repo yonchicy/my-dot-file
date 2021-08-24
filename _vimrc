@@ -271,7 +271,7 @@ nnoremap <Leader>6 6<c-w>w
 nnoremap <Leader>7 7<c-w>w
 nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
-nnoremap <Leader>s :Leaderf rg <cword>
+nnoremap <Leader>s :Leaderf rg 
 nnoremap <Leader>c :nohls<CR>
 nnoremap gd yiw:Leaderf rg <c-r><c-w><cr>
 
