@@ -1,0 +1,12 @@
+let mapleader=" "
+set easymotion
+
+imap jk <esc>
+nmap <Leader>f <Plug>(easymotion-f)
+
+nmap H ^
+nmap L $
+nmap j jzz
+nmap k kzz
+nmap n nzz
+nmap N Nzz
