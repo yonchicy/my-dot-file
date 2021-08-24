@@ -20,6 +20,8 @@ Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-easy-align'
 Plug 'frazrepo/vim-rainbow'
 Plug 'skywind3000/vim-auto-popmenu'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim',{'branch':'release'}
 
 call plug#end()
 
