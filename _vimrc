@@ -228,7 +228,7 @@ inoremap <tab> <c-r>=SkipPair()<CR>
 nnoremap <f5> :!ctags -R<CR>
 nnoremap ;g :vsp<CR>
 nnoremap ;vg :sp<CR>
-
+imap jk <esc>
 
 
 " plugins
