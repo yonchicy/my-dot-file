@@ -1,0 +1,16 @@
+{
+    "rust-analyzer.server.path":"~/.cargo/bin/rust-analyzer",
+    "languageserver":{
+        "rust":{
+            "command":"rust-analyzer",
+            "filetypes":["rust"],
+            "rootPatterns":["Cargo.toml"]
+        }
+        "clangd":{
+            "command":"clangd",
+            "filetypes":["c","cc","cpp","c++","objc","objcpp"],
+            "rootPatterns":["compile_flags.txt","compile_commands.json"]
+            
+        }
+    }
+}
