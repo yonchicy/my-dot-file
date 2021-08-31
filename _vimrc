@@ -2,7 +2,7 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/tomasr/molokai.git'
+Plug 'tomasr/molokai'
 Plug 'Yggdroot/LeaderF'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
