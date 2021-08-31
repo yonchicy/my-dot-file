@@ -12,7 +12,7 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[[ -s /home/yang/.autojump/etc/profile.d/autojump.sh ]] && source /home/yang/.autojump/etc/profile.d/autojump.sh
+[[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
 
@@ -25,7 +25,13 @@ alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
 alias vi=vim
+alias fd=fdfind
 alias tmux="TERM=screen-256color-bce tmux"
 export PATH="$PATH:/root/.cargo/bin/"
 export EDITOR="vim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
+# export FZF_DEFAULT_COMMAND='rg --files --hidden'
+# export FZF_CTRL_T_COMMAND="fd -t d . $HOME"
+# export FZF_COMPLETION_TRIGGER='\'

@@ -47,9 +47,9 @@ let mapleader=" "
 set shortmess+=I
 set hlsearch
 " Turn on syntax highlighting.
-" colorscheme molokai
+colorscheme molokai
 " colorscheme solarized
-colorscheme gruvbox
+" colorscheme gruvbox
 set background=dark
 let g:molokai_original=1
 syntax on
@@ -298,3 +298,4 @@ function! s:check_back_space()abort
 endfunction
 let g:coc_snippet_next='<tab>'
 imap <c-l> <Plug>(coc-snippets-expand)
+autocmd CursorHold * silent call CocActionAsync('highlight')
