@@ -298,3 +298,4 @@ function! s:check_back_space()abort
 endfunction
 let g:coc_snippet_next='<tab>'
 imap <c-l> <Plug>(coc-snippets-expand)
+autocmd CursorHold * silent call CocActionAsync('highlight')
