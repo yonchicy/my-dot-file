@@ -19,13 +19,18 @@ autoload -U compinit && compinit -u
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 
-# alias
+alias
 alias ls='lsd'
 alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
 alias vi=vim
+alias fd=fdfind
 alias tmux="TERM=screen-256color-bce tmux"
-export PATH="$PATH:/root/.cargo/bin/"
+export PATH="$PATH:/root/.cargo/bin/:/home/yang/tool/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin"
 export EDITOR="vim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPTATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
+

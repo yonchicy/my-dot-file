@@ -47,9 +47,9 @@ let mapleader=" "
 set shortmess+=I
 set hlsearch
 " Turn on syntax highlighting.
-" colorscheme molokai
+colorscheme molokai
 " colorscheme solarized
-colorscheme gruvbox
+" colorscheme gruvbox
 set background=dark
 let g:molokai_original=1
 syntax on
@@ -273,7 +273,7 @@ nnoremap <Leader>7 7<c-w>w
 nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
 nnoremap <Leader>s :Leaderf rg 
-nnoremap <Leader>c :nohls<CR>
+nnoremap <Leader>hl :nohls<CR>
 nnoremap gd yiw:Leaderf rg <c-r><c-w><cr>
 
 " menupop select
