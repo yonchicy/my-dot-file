@@ -49,9 +49,9 @@ set hlsearch
 " Turn on syntax highlighting.
 colorscheme molokai
 " colorscheme solarized
-" colorscheme gruvbox
+colorscheme gruvbox
 set background=dark
-let g:molokai_original=1
+" let g:molokai_original=1
 syntax on
 syntax enable
 set termguicolors
@@ -240,7 +240,7 @@ nnoremap wq :wa<CR>:q<CR>
 let g:deoplete#enable_at_startup = 1
 
 set hidden
-imap <c-f> <c-o>a
+imap df <c-o>a
 nnoremap <c-j> :bprev<CR>
 nnoremap <c-k> :bnext<CR>
 noremap <leader>bd :bdelete<CR>
