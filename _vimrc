@@ -21,6 +21,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'frazrepo/vim-rainbow'
 Plug 'skywind3000/vim-auto-popmenu'
 Plug 'rust-lang/rust.vim'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim',{'branch':'release'}
 
@@ -258,11 +259,22 @@ nnoremap <F3> :NERDTree<CR>
 :autocmd InsertLeave * set cursorline
 :autocmd InsertEnter * set nocursorcolumn
 :autocmd InsertLeave * set cursorcolumn
-let g:airline_section_a = '%{winnr()}'
-let g:airline_section_b = ''
+" let g:airline_section_a = '%{winnr()}'
+" let g:airline_section_b = '%{winnr()}'
 let g:airline_section_c = ''
 let g:airline_section_y = '%{strftime("%H:%M")}'
 let g:airline#extensions#tabline#enabled = 1
+function! WindowNumber(...)
+    let builder = a:1
+    let context = a:2
+    call builder.add_section('airline_b','%{winnr()}')
+    return 0
+endfunction
+
+call airline#add_statusline_func('WindowNumber')
+call airline#add_inactive_statusline_func('WindowNumber')
+
+
 nnoremap <Leader>1 1<c-w>w
 nnoremap <Leader>2 2<c-w>w
 nnoremap <Leader>3 3<c-w>w
