@@ -125,6 +125,8 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 nnoremap H ^
 nnoremap L $
+vnoremap H ^
+vnoremap L $
 set cursorline
 set cursorcolumn
 
