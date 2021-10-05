@@ -44,6 +44,7 @@ set nocompatible
 let mapleader=" "
 " {
 "     }
+"
 
 set shortmess+=I
 set hlsearch
