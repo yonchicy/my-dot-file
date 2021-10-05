@@ -25,6 +25,7 @@ alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
 alias vi=vim
+alias v=vim
 alias fd=fdfind
 alias tmux="TERM=screen-256color-bce tmux"
 export PATH="$PATH:/root/.cargo/bin/:/home/yang/tool/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin"
