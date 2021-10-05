@@ -23,6 +23,7 @@ Plug 'skywind3000/vim-auto-popmenu'
 Plug 'rust-lang/rust.vim'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-syntastic/syntastic'
+Plug 'vim-scripts/argtextobj.vim'
 Plug 'neoclide/coc.nvim',{'branch':'release'}
 
 call plug#end()
