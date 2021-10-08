@@ -27,10 +27,28 @@ alias vs=code
 alias vi=vim
 alias fd=fdfind
 alias tmux="TERM=screen-256color-bce tmux"
-export PATH="$PATH:/root/.cargo/bin/:/home/yang/tool/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin"
+# export PATH="$PATH:/root/.cargo/bin/:/home/yang/tool/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin"
 export EDITOR="vim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPTATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yang/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yang/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yang/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yang/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PYTHONPATH=$PYTHONPATH:/home/yang/nao/naoqi-sdk-2.1.4.13-linux32
+export PYTHONPATH=$PYTHONPATH:/home/yang/nao/pynaoqi-python2.7-2.1.4.13-linux32
