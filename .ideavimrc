@@ -6,7 +6,6 @@ nmap <Leader>f <Plug>(easymotion-f)
 
 nmap H ^
 nmap L $
-nmap j jzz
-nmap k kzz
-nmap n nzz
-nmap N Nzz
+set scrolloff=5
+nnoremap <c-j> :bpre<cr>
+nnoremap <c-k> :bnext<cr>
