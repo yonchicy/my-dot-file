@@ -4,11 +4,14 @@ set easymotion
 set surround
 set ideajoin
 
-map <leader>f <Plug>(easymotion-f)
+map <Leader> <Plug>(easymotion-prefix)
 
+set argtextobj
 set visualbell
 set noerrorbells
 nmap H ^
+set scrolloff=5
 nmap L $
 imap jk <esc>
+imap <c-f> <c-o>a
 imap df <c-o>a
