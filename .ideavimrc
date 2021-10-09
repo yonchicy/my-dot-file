@@ -1,12 +1,14 @@
 let mapleader=" "
+
 set easymotion
+set surround
+set ideajoin
 
-imap jk <esc>
-nmap <Leader>f <Plug>(easymotion-f)
+map <leader>f <Plug>(easymotion-f)
 
+set visualbell
+set noerrorbells
 nmap H ^
 nmap L $
-nmap j jzz
-nmap k kzz
-nmap n nzz
-nmap N Nzz
+imap jk <esc>
+imap df <c-o>a
