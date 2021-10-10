@@ -1,3 +1,4 @@
+imap df <c-o>l
 let mapleader=" "
 
 set easymotion
