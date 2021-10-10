@@ -1,12 +1,16 @@
 let mapleader=" "
+
 set easymotion
+set surround
+set ideajoin
+map <Leader> <Plug>(easymotion-prefix)
 
-imap jk <esc>
-imap df <c-o>l
-nmap <Leader>f <Plug>(easymotion-f)
-
+set argtextobj
+set visualbell
+set noerrorbells
 nmap H ^
-nmap L $
 set scrolloff=5
-nnoremap <c-j> :bpre<cr>
-nnoremap <c-k> :bnext<cr>
+nmap L $
+imap jk <esc>
+imap <c-f> <c-o>a
+imap df <c-o>a
