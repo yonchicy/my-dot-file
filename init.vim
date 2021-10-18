@@ -17,6 +17,8 @@ Plug 'rhysd/clever-f.vim'
 Plug 'preservim/nerdtree'
 Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf',{'do': {-> fzf#install()}}
 Plug 'frazrepo/vim-rainbow'
 Plug 'skywind3000/vim-auto-popmenu'
 Plug 'rust-lang/rust.vim'
@@ -105,7 +107,9 @@ set noerrorbells visualbell t_vb=
 " Enable mouse support. You should avoid relying on this too much, but it can
 " sometimes be convenient.
 set mouse+=a
-
+nmap <c-p> :Files<CR>
+nmap <leader>s :Rg<CR>
+nmap gd :Rg <c-r><c-w><CR>
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
 " for movement, rather than using more efficient movement commands, is also a
@@ -313,3 +317,7 @@ endfunction
 let g:coc_snippet_next='<tab>'
 imap <c-l> <Plug>(coc-snippets-expand)
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+
+let g:fzf_preview_window = ['right:50%','ctrl-/']
+let g:fzf_layout = {'down':'50%'}
