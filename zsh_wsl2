@@ -12,23 +12,30 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+ [[ -s /home/yang/.autojump/etc/profile.d/autojump.sh ]] && source /home/yang/.autojump/etc/profile.d/autojump.sh
+
+        autoload -U compinit && compinit -u
 
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+FZF_COMPLETION_TRIGGER=';'
 
-
-alias
 alias ls='lsd'
 alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
 alias vi=vim
+alias v=vim
 alias fd=fdfind
+alias ccat='pygmentize -g -O style=colorful,linenos-1'
+alias cat='pygmentize -g '
 alias tmux="TERM=screen-256color-bce tmux"
-# export PATH="$PATH:/root/.cargo/bin/:/home/yang/tool/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin"
-export EDITOR="vim"
+export PATH="$PATH:/root/.cargo/bin/:/home/yang/tool/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin"
+export EDITOR="nvim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPTATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="$PATH:/home/yang/tool/nvim-linux64/bin"

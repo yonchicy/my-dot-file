@@ -1,9 +1,9 @@
+imap df <c-o>l
 let mapleader=" "
 
 set easymotion
 set surround
 set ideajoin
-
 map <Leader> <Plug>(easymotion-prefix)
 
 set argtextobj
