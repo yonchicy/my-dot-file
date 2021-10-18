@@ -1,12 +1,17 @@
+imap df <c-o>l
 let mapleader=" "
+
 set easymotion
+set surround
+set ideajoin
+map <Leader> <Plug>(easymotion-prefix)
 
-imap jk <esc>
-nmap <Leader>f <Plug>(easymotion-f)
-
+set argtextobj
+set visualbell
+set noerrorbells
 nmap H ^
+set scrolloff=5
 nmap L $
-nmap j jzz
-nmap k kzz
-nmap n nzz
-nmap N Nzz
+imap jk <esc>
+imap <c-f> <c-o>a
+imap df <c-o>a
