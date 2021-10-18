@@ -29,9 +29,6 @@ Plug 'neoclide/coc.nvim',{'branch':'release'}
 call plug#end()
 
 
-
-
-
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
@@ -238,6 +235,9 @@ nnoremap <f5> :!ctags -R<CR>
 nnoremap ;g :vsp<CR>
 nnoremap ;vg :sp<CR>
 imap jk <esc>
+imap <c-b> <c-o>h
+imap <c-n> <c-o>j
+imap <c-p> <c-o>k
 nnoremap wq :wa<CR>:q<CR>
 
 
