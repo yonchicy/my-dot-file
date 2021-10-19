@@ -237,7 +237,7 @@ inoremap <tab> <c-r>=SkipPair()<CR>
 nnoremap <f5> :!ctags -R<CR>
 nnoremap ;g :vsp<CR>
 nnoremap ;vg :sp<CR>
-imap jk <esc>
+imap jk <esc>:w<cr>
 imap <c-b> <c-o>h
 imap <c-n> <c-o>j
 imap <c-p> <c-o>k
