@@ -40,6 +40,7 @@ call plug#end()
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
 set nocompatible
+set nowrap
 let mapleader=" "
 " {
 "     }
