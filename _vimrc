@@ -7,8 +7,6 @@ Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ayu-theme/ayu-vim'
-
-" theme
 Plug 'Yggdroot/LeaderF'
 Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
@@ -157,7 +155,7 @@ syntax on
 syntax enable
 " Disable the default Vim startup message.
 set shortmess+=I
-:highlight LineNr guifg=#DFFF00
+" :highlight LineNr guifg=#DFFF00
 " Show line mbers.
 
 
