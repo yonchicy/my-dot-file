@@ -61,3 +61,5 @@ export PYTHONPATH=$PYTHONPATH:/home/yang/nao/pynaoqi-python2.7-2.1.4.13-linux32
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$PATH:/root/tool/nvim-linux64/bin"
+
+alias luamake=/root/.config/lua-language-server/3rd/luamake/luamake

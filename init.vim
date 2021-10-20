@@ -322,3 +322,5 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 let g:fzf_preview_window = ['right:50%','ctrl-/']
 let g:fzf_layout = {'down':'50%'}
+
+" command! Sratch lua require'tools'.makeScratch()
