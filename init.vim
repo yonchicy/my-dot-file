@@ -41,6 +41,7 @@ call plug#end()
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
 set nocompatible
+set nowrap
 let mapleader=" "
 " {
 "     }
@@ -238,7 +239,7 @@ inoremap <tab> <c-r>=SkipPair()<CR>
 nnoremap <f5> :!ctags -R<CR>
 nnoremap ;g :vsp<CR>
 nnoremap ;vg :sp<CR>
-imap jk <esc>
+imap jk <esc>:w<cr>
 imap <c-b> <c-o>h
 imap <c-n> <c-o>j
 imap <c-p> <c-o>k
@@ -322,3 +323,5 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 let g:fzf_preview_window = ['right:50%','ctrl-/']
 let g:fzf_layout = {'down':'50%'}
+
+" command! Sratch lua require'tools'.makeScratch()
