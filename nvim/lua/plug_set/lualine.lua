@@ -51,3 +51,16 @@ local config = {
   },
   extensions = { "nerdtree" },
 }
+
+local M = {}
+
+function M.load()
+  local name = vim.g.colors_name or ""
+  local ok, _ = pcall(require, "lualine.themes." .. name)
+  if ok then
+    config.options.theme = name
+  end
+  require("lualine").setup(config)
+end
+
+M.load()
