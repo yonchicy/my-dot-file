@@ -6,7 +6,6 @@ vim.cmd('set completeopt=menu,menuone,noselect')
 vim.cmd('set mouse+=a')
 vim.cmd('set clipboard=unnamed')
 vim.cmd('set backspace=indent,eol,start')
-vim.cmd('hi LineNr guifg=#DFFF00')
 vim.o.number=true
 vim.o.relativenumber=true
 vim.o.cursorline=true
@@ -25,10 +24,8 @@ vo.hlsearch=true
 vo.incsearch=true
 vo.ignorecase=true
 vo.smartcase=true
-vo.termguicolors=true
 
 
 vim.cmd('hi HopNextKey guibg=#fabd2f guifg=#000000')
 vim.cmd('hi HopNextKey1 guibg=#fabd2f guifg=#000000')
 vim.cmd('hi HopUnmatched guifg=#928374' )
-vim.cmd('hi Search guibg=#000000 guifg=#fabd2f' )

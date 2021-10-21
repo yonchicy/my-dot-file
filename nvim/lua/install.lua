@@ -21,10 +21,11 @@ packer.startup(
 	function(use)
 		use 'wbthomason/packer.nvim'
 		use 'morhetz/gruvbox'
+		use 'sainnhe/gruvbox-material'
 		use 'folke/tokyonight.nvim'
 		use 'marko-cerovac/material.nvim'
-		use 'tversteeg/registers.nvim'
 		use 'glepnir/dashboard-nvim'
+		use 'akinsho/toggleterm.nvim'
 		use{
 			'phaazon/hop.nvim',
 			as = 'hop',
