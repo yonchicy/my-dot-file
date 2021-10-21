@@ -38,3 +38,5 @@ export RUSTUP_UPTATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$PATH:/home/yang/tool/nvim-linux64/bin"
+
+alias luamake=/home/yang/tool/lua-language-server/3rd/luamake/luamake
