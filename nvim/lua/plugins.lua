@@ -23,6 +23,7 @@ packer.startup(
 		use 'morhetz/gruvbox'
 		use 'folke/tokyonight.nvim'
 		use 'marko-cerovac/material.nvim'
+		use 'tversteeg/registers.nvim'
 		use 'glepnir/dashboard-nvim'
 		use{
 			'phaazon/hop.nvim',
