@@ -19,7 +19,7 @@ vim.api.nvim_set_keymap('n','ga','<Plug>(EasyAlign)',{})
 vim.api.nvim_set_keymap('n','<leader>cl','Vgc',{})
 vim.api.nvim_set_keymap('n','<c-p>',':Telescope find_files<cr>',{})
 vim.api.nvim_set_keymap('n','<leader>s',':Telescope live_grep<cr>',{})
-vim.api.nvim_set_keymap('n','<leader>b',':Telescope buffers<cr>',{})
+-- vim.api.nvim_set_keymap('n','<leader>b',':Telescope buffers<cr>',{})
 vim.api.nvim_set_keymap('n','Q','<Nop>',{})
 vim.api.nvim_set_keymap('n',';g',':vsp<cr>',{})
 vim.api.nvim_set_keymap('n',';vg',':sp<cr>',{})
@@ -47,3 +47,7 @@ vim.api.nvim_set_keymap('','<leader>l',':HopLineStart<cr>',{})
 vim.api.nvim_set_keymap('','<leader>j',':HopLineStart<cr>',{})
 vim.api.nvim_set_keymap('','<leader>k',':HopLineStart<cr>',{})
 
+
+
+-- bufferline
+-- vim.api.nvim_set_keymap('n','<leader>b',':BufferLinePick<cr>',{})

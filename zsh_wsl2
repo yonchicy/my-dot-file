@@ -23,7 +23,9 @@ alias ls='lsd'
 alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
-alias vi=vim
+alias vi=nvim
+alias v=nvim
+alias vim=nvim
 alias fd=fdfind
 alias ccat='pygmentize -g -O style=colorful,linenos-1'
 alias cat='pygmentize -g '
