@@ -43,19 +43,15 @@ packer.startup(
 		use 'psliwka/vim-smoothie'
 		use 'junegunn/vim-easy-align'
 		use 'hoob3rt/lualine.nvim'
+		use 'p00f/nvim-ts-rainbow'
 		
-		-- use 'vim-airline/vim-airline'
 		use 'junegunn/fzf.vim'
 		use {
 			'junegunn/fzf' ,
-			-- function()
-			-- vim.fn['fzf#install']()
-		-- end
 		}
 		use {
 			'akinsho/bufferline.nvim',requires = 'kyazdani42/nvim-web-devicons'
 		}
-		use 'frazrepo/vim-rainbow'
 		use 'vim-scripts/argtextobj.vim'
 		use 'neovim/nvim-lspconfig'
 		use 'williamboman/nvim-lsp-installer'
