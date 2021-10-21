@@ -2,7 +2,8 @@ local function clock()
 	return "🎈"..os.date("%H:%M")
 end
 local function winnr()
-	return vim.fn.winnr()
+	local hello= tostring(vim.fn.winnr())
+	return hello
 end
 local function lsp_pregress()
 	local messages=vim.lsp.util.get_progress_messages()
@@ -37,7 +38,7 @@ local config = {
     lualine_a = { winnr},
     lualine_b = { "mode" },
     lualine_c = { "branch" },
-    lualine_x = { "filetype", lsp_progress },
+    lualine_x = { "filetype", lsp_pregress },
     lualine_y = { { "diagnostics", sources = { "nvim_lsp" } }, "filename" },
     lualine_z = { clock },
   },

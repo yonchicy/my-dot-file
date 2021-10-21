@@ -5,3 +5,4 @@ require('lsp')
 require('lua_complete')
 require('plugin_settings')
 
+require('tools').make()

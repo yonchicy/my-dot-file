@@ -38,9 +38,8 @@ packer.startup(
 		use 'preservim/nerdtree'
 		use 'psliwka/vim-smoothie'
 		use 'junegunn/vim-easy-align'
-		use {
-			'hoob3rt/lualine.nvim',
-		}
+		use 'hoob3rt/lualine.nvim'
+		
 		-- use 'vim-airline/vim-airline'
 		use 'junegunn/fzf.vim'
 		use {
