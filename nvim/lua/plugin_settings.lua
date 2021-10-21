@@ -12,3 +12,4 @@ vim.cmd("let g:dashboard_custom_footer=[ 'look at the top' ]")
 
 require('plug_set.lualine')
 require('plug_set.colorscheme')
+require('plug_set.treesitter')
