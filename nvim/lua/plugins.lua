@@ -15,12 +15,13 @@ if fn.empty(fn.glob(packer_install_dir)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-packer=require('packer')
+local packer=require('packer')
 packer.startup(
 {
 	function(use)
 		use 'wbthomason/packer.nvim'
 		use 'morhetz/gruvbox'
+		use 'glepnir/dashboard-nvim'
 		use{
 			'phaazon/hop.nvim',
 			as = 'hop',
@@ -37,10 +38,10 @@ packer.startup(
 		use 'preservim/nerdtree'
 		use 'psliwka/vim-smoothie'
 		use 'junegunn/vim-easy-align'
-		-- use {
-		-- 	'hoob3rt/lualine.nvim',
-		-- }
-		use 'vim-airline/vim-airline'
+		use {
+			'hoob3rt/lualine.nvim',
+		}
+		-- use 'vim-airline/vim-airline'
 		use 'junegunn/fzf.vim'
 		use {
 			'junegunn/fzf' ,
@@ -67,12 +68,12 @@ packer.startup(
 			}
 
 		}
-		use { 
-			'nvim-treesitter/nvim-treesitter', 
+		use {
+			'nvim-treesitter/nvim-treesitter',
 			run=':TSUpdate'
 		}
-		use { 
-			'nvim-telescope/telescope.nvim', 
+		use {
+			'nvim-telescope/telescope.nvim',
 			requires={{'nvim-lua/plenary.nvim'}}
 		}
 

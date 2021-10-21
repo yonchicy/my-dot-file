@@ -49,7 +49,7 @@
       -- For ultisnips user.
       -- { name = 'ultisnips' },
 
-      { name = 'buffer' },
+      -- { name = 'buffer' },
     }
   })
 
