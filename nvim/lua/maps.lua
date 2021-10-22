@@ -41,10 +41,10 @@ vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{})
 
 
 --  easymotion
-vim.api.nvim_set_keymap('','<leader>f',':HopChar1<cr>',{})
-vim.api.nvim_set_keymap('','<leader>l',':HopLineStart<cr>',{})
-vim.api.nvim_set_keymap('','<leader>j',':HopLineStart<cr>',{})
-vim.api.nvim_set_keymap('','<leader>k',':HopLineStart<cr>',{})
+vim.api.nvim_set_keymap('','<leader>f','<cmd>HopChar1<cr>',{})
+vim.api.nvim_set_keymap('','<leader>l','<cmd>HopLineStart<cr>',{})
+vim.api.nvim_set_keymap('','<leader>j','<cmd>HopLineStart<cr>',{})
+vim.api.nvim_set_keymap('','<leader>k','<cmd>HopLineStart<cr>',{})
 
 
 

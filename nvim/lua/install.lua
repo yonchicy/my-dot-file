@@ -40,11 +40,6 @@ packer.startup(
 		use 'jiangmiao/auto-pairs'
 		use 'rhysd/clever-f.vim'
 		use 'unblevable/quick-scope'
-		use { 
-				'ms-jpq/chadtree' ,
-				branch="chad",
-				run=':CHADdeps',
-			}
 		use 'psliwka/vim-smoothie'
 		use 'junegunn/vim-easy-align'
 		use 'hoob3rt/lualine.nvim'
