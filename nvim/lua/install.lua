@@ -25,6 +25,7 @@ packer.startup(
 		use 'folke/tokyonight.nvim'
 		use 'marko-cerovac/material.nvim'
 		use 'glepnir/dashboard-nvim'
+		use 'vim-scripts/argtextobj.vim'
 		use 'akinsho/toggleterm.nvim'
 		use{
 			'phaazon/hop.nvim',
@@ -39,12 +40,15 @@ packer.startup(
 		use 'jiangmiao/auto-pairs'
 		use 'rhysd/clever-f.vim'
 		use 'unblevable/quick-scope'
-		use 'preservim/nerdtree'
+		use { 
+				'ms-jpq/chadtree' ,
+				branch="chad",
+				run=':CHADdeps',
+			}
 		use 'psliwka/vim-smoothie'
 		use 'junegunn/vim-easy-align'
 		use 'hoob3rt/lualine.nvim'
 		use 'p00f/nvim-ts-rainbow'
-		
 		use 'junegunn/fzf.vim'
 		use {
 			'junegunn/fzf' ,
@@ -52,7 +56,6 @@ packer.startup(
 		use {
 			'akinsho/bufferline.nvim',requires = 'kyazdani42/nvim-web-devicons'
 		}
-		use 'vim-scripts/argtextobj.vim'
 		use 'neovim/nvim-lspconfig'
 		use 'williamboman/nvim-lsp-installer'
 		use 'hrsh7th/cmp-nvim-lsp'
@@ -67,9 +70,14 @@ packer.startup(
 			}
 
 		}
+		
 		use {
 			'nvim-treesitter/nvim-treesitter',
 			run=':TSUpdate'
+		}
+
+		use {
+			'nvim-treesitter/nvim-treesitter-textobjects',
 		}
 		use {
 			'nvim-telescope/telescope.nvim',
