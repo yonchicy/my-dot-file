@@ -20,6 +20,7 @@ packer.startup(
 {
 	function(use)
 		use 'wbthomason/packer.nvim'
+		use 'chentau/marks.nvim'
 		use 'morhetz/gruvbox'
 		use{
 				'kristijanhusak/orgmode.nvim' ,
@@ -29,6 +30,7 @@ packer.startup(
 			}
 		use 'kevinhwang91/rnvimr'
 		use 'sainnhe/gruvbox-material'
+		use { 'TimUntersberger/neogit' }
 		use 'folke/tokyonight.nvim'
 		use 'marko-cerovac/material.nvim'
 		use 'glepnir/dashboard-nvim'

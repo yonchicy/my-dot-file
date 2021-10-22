@@ -15,9 +15,7 @@ vim.api.nvim_set_keymap('n','<leader>bd',':bdelete<cr>',{})
 vim.api.nvim_set_keymap('n','L','$',{})
 vim.api.nvim_set_keymap('n','H','^',{})
 vim.api.nvim_set_keymap('n','ga','<Plug>(EasyAlign)',{})
-vim.api.nvim_set_keymap('n','<leader>cl','Vgc',{})
-vim.api.nvim_set_keymap('n','<c-p>',':Telescope find_files<cr>',{})
-vim.api.nvim_set_keymap('n','<leader>s',':Telescope live_grep<cr>',{})
+vim.api.nvim_set_keymap('n','<c-_>','Vgc',{})
 -- vim.api.nvim_set_keymap('n','<leader>b',':Telescope buffers<cr>',{})
 vim.api.nvim_set_keymap('n','Q','<Nop>',{})
 vim.api.nvim_set_keymap('n',';g',':vsp<cr>',{})
@@ -35,9 +33,13 @@ vim.api.nvim_set_keymap('n','<leader>hl',':nohl<cr>',{})
 vim.api.nvim_set_keymap('v','L','$',{})
 vim.api.nvim_set_keymap('v','H','^',{})
 vim.api.nvim_set_keymap('v','ga','<Plug>(EasyAlign)',{})
-vim.api.nvim_set_keymap('v','<leader>cl','gc',{})
+vim.api.nvim_set_keymap('v','<c-_>','gc',{})
 vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{})
-
+-- fzf finders
+vim.api.nvim_set_keymap('','<c-p>','<cmd>Telescope find_files<cr>',{})
+vim.api.nvim_set_keymap('','<leader>ht','<cmd>Telescope help_tags<cr>',{})
+vim.api.nvim_set_keymap('n','<leader>s',':Telescope live_grep<cr>',{})
+vim.api.nvim_set_keymap('n','<leader>S',':Rg <c-r><c-w><cr>',{})
 
 
 --  easymotion
@@ -50,5 +52,5 @@ vim.api.nvim_set_keymap('','<leader>k','<cmd>HopLineStart<cr>',{})
 
 -- bufferline
 -- vim.api.nvim_set_keymap('n','<leader>b',':BufferLinePick<cr>',{})
-vim.api.nvim_set_keymap('n','<leader>b',':RnvimrToggle<CR>',{})
+vim.api.nvim_set_keymap('n','<c-b>',':RnvimrToggle<CR>',{})
 
