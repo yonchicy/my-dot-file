@@ -21,6 +21,13 @@ packer.startup(
 	function(use)
 		use 'wbthomason/packer.nvim'
 		use 'morhetz/gruvbox'
+		use{
+				'kristijanhusak/orgmode.nvim' ,
+				config=function()
+					require('orgmode').setup{}
+				end
+			}
+		use 'kevinhwang91/rnvimr'
 		use 'sainnhe/gruvbox-material'
 		use 'folke/tokyonight.nvim'
 		use 'marko-cerovac/material.nvim'

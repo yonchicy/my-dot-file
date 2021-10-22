@@ -50,3 +50,5 @@ vim.api.nvim_set_keymap('','<leader>k','<cmd>HopLineStart<cr>',{})
 
 -- bufferline
 -- vim.api.nvim_set_keymap('n','<leader>b',':BufferLinePick<cr>',{})
+vim.api.nvim_set_keymap('n','<leader>b',':RnvimrToggle<CR>',{})
+

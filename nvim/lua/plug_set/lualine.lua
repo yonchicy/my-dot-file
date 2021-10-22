@@ -35,7 +35,9 @@ local config = {
     icons_enabled = true,
   },
   sections = {
-    lualine_a = { winnr},
+		lualine_a = { 
+			winnr,
+		},
     lualine_b = { "mode" },
     lualine_c = { "branch" },
     lualine_x = { "filetype", lsp_pregress },
