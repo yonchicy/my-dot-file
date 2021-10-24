@@ -15,3 +15,4 @@ nmap L $
 imap jk <esc>
 imap <c-f> <c-o>a
 imap df <c-o>a
+

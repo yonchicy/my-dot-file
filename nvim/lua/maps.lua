@@ -50,7 +50,8 @@ vim.api.nvim_set_keymap('','<leader>k','<cmd>HopLineStart<cr>',{})
 
 -- bufferline
 -- vim.api.nvim_set_keymap('n','<leader>b',':BufferLinePick<cr>',{})
-vim.api.nvim_set_keymap('n','<c-b>',':RnvimrToggle<CR>',{})
+vim.api.nvim_set_keymap('n','<leader>ra',':RnvimrToggle<CR>',{})
+vim.api.nvim_set_keymap('n','<c-b>',':NvimTreeToggle<CR>',{})
 
 
 -- move code block
