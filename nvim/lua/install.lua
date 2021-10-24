@@ -40,6 +40,7 @@ packer.startup(
 				requires = 'kyazdani42/nvim-web-devicons',
 				config=function()require'nvim-tree'.setup{}end
 			}
+		use 'lewis6991/gitsigns.nvim'
 		use 'sainnhe/gruvbox-material'
 		use { 'TimUntersberger/neogit' }
 		use 'folke/tokyonight.nvim'
@@ -90,7 +91,6 @@ packer.startup(
 			}
 
 		}
-		
 		use {
 			'nvim-treesitter/nvim-treesitter',
 			run=':TSUpdate'
