@@ -26,9 +26,6 @@ vo.ignorecase=true
 vo.smartcase=true
 
 
-vim.cmd('hi HopNextKey guibg=#fabd2f guifg=#000000')
-vim.cmd('hi HopNextKey1 guibg=#fabd2f guifg=#000000')
-vim.cmd('hi HopUnmatched guifg=#928374' )
 vim.api.nvim_exec([[
 au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 ]],false)
