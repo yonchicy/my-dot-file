@@ -21,8 +21,13 @@ packer.startup(
 	function(use)
 		use 'wbthomason/packer.nvim'
 		use 'rhysd/clever-f.vim'
+		use 'olimorris/onedarkpro.nvim'
 		use 'chentau/marks.nvim'
 		use 'morhetz/gruvbox'
+		use 'sainnhe/sonokai'
+		use 'shaunsingh/nord.nvim'
+		use 'EdenEast/nightfox.nvim'
+		use 'folke/lsp-colors.nvim'
 		use{
 				'kristijanhusak/orgmode.nvim' ,
 				config=function()
@@ -48,6 +53,10 @@ packer.startup(
 			config = function()
 				require'hop'.setup {keys='etovxqpdygfblzhckisuran'}
 			end
+		}
+		use{
+			"folke/trouble.nvim",
+			requires="kyazdani42/nvim-web-devicons",
 		}
 		use 'tpope/vim-surround'
 		use 'tpope/vim-repeat'
@@ -100,7 +109,6 @@ packer.startup(
 		git={
 			default_url_format='https://hub.fastgit.org/%s'
 		}
-
 	}
 }
 )
