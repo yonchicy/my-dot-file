@@ -1,5 +1,3 @@
-
-
 vim.g.mapleader=' '
 vim.api.nvim_set_keymap('i','jk','<esc>:wa<cr>',{})
 vim.api.nvim_set_keymap('i','df','<c-o>a',{})
@@ -54,3 +52,12 @@ vim.api.nvim_set_keymap('','<leader>k','<cmd>HopLineStart<cr>',{})
 -- vim.api.nvim_set_keymap('n','<leader>b',':BufferLinePick<cr>',{})
 vim.api.nvim_set_keymap('n','<c-b>',':RnvimrToggle<CR>',{})
 
+
+-- move code block
+--
+vim.api.nvim_set_keymap('n','<a-j>',':m .+1<cr>==',{noremap=true})
+vim.api.nvim_set_keymap('n','<a-k>',':m .-2<cr>==',{noremap=true})
+vim.api.nvim_set_keymap('v','<a-j>',":m '>+1<cr>gv=gv",{noremap=true})
+vim.api.nvim_set_keymap('v','<a-k>',":m '<-2<cr>gv=gv",{noremap=true})
+vim.api.nvim_set_keymap('v','>',">gv",{noremap=true})
+vim.api.nvim_set_keymap('v','<',"<gv",{noremap=true})

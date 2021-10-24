@@ -29,6 +29,11 @@ packer.startup(
 				end
 			}
 		use 'kevinhwang91/rnvimr'
+		-- use {
+		-- 		'kyazdani42/nvim-tree.lua' ,
+		-- 		requires = 'kyazdani42/nvim-web-devicons',
+		-- 		config=function()require'nvim-tree'.setup{}end
+		-- 	}
 		use 'sainnhe/gruvbox-material'
 		use { 'TimUntersberger/neogit' }
 		use 'folke/tokyonight.nvim'
@@ -44,10 +49,11 @@ packer.startup(
 			end
 		}
 		use 'tpope/vim-surround'
+		use 'tpope/vim-repeat'
 		use 'tpope/vim-commentary'
+		use 'ggandor/lightspeed.nvim'
 		use 'easymotion/vim-easymotion'
 		use 'jiangmiao/auto-pairs'
-		use 'rhysd/clever-f.vim'
 		use 'unblevable/quick-scope'
 		use 'psliwka/vim-smoothie'
 		use 'junegunn/vim-easy-align'
