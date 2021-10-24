@@ -2,6 +2,8 @@ vim.g.mapleader=' '
 vim.api.nvim_set_keymap('i','jk','<esc>:wa<cr>',{})
 vim.api.nvim_set_keymap('i','df','<c-o>a',{})
 vim.api.nvim_set_keymap('i','<c-b>','<c-o>h',{})
+vim.api.nvim_set_keymap('i','<c-e>','<c-o>A',{})
+vim.api.nvim_set_keymap('i','<c-a>','<c-o>I',{})
 vim.api.nvim_set_keymap('i','<c-f>','<c-o>h',{})
 vim.api.nvim_set_keymap('i','<c-n>','<c-o>j',{})
 vim.api.nvim_set_keymap('i','<c-p>','<c-o>k',{})
