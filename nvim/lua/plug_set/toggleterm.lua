@@ -27,8 +27,8 @@ require("toggleterm").setup{
     -- not natively supported but implemented in this plugin.
     -- border = 'single' | 'double' | 'shadow' | 'curved' |...,
     border = 'single' ,
-    width = 10,
-    height = 7,
+    width = math.floor(vim.o.columns * 0.9),
+    height = 25,
     winblend = 3,
     highlights = {
       border = "Normal",
@@ -44,5 +44,6 @@ autocmd TermEnter term://*toggleterm#*
 
 nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+nnoremap <silent><leader>t <Cmd>ToggleTerm direction=float<CR>
 	]],false
 )
