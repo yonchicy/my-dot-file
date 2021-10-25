@@ -4,8 +4,8 @@ require("trouble").setup({
     width = 50, -- width of the list when position is left or right
     icons = true, -- use devicons for filenames
     mode = "lsp_workspace_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
-    fold_open = "", -- icon used for open folds
-    fold_closed = "", -- icon used for closed folds
+    fold_open = "📖", -- icon used for open folds
+    fold_closed = "📔", -- icon used for closed folds
     group = true, -- group results by file
     padding = true, -- add an extra new line on top of the list
     action_keys = { -- key mappings for actions in the trouble list
@@ -37,11 +37,11 @@ require("trouble").setup({
     auto_jump = {"lsp_definitions"}, -- for the given modes, automatically jump if there is only a single result
     signs = {
         -- icons / text used for a diagnostic
-        error = "",
-        warning = "",
-        hint = "",
-        information = "",
-        other = "﫠"
+        error = "📍",
+        warning = "🔔",
+        hint = "📗",
+        information = "📘",
+        other = "🚀"
     },
     use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
