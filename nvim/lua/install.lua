@@ -44,6 +44,7 @@ packer.startup(
 		use 'sainnhe/gruvbox-material'
 		use { 'TimUntersberger/neogit' }
 		use 'folke/tokyonight.nvim'
+		use 'Pocco81/AutoSave.nvim'
 		use 'marko-cerovac/material.nvim'
 		use 'glepnir/dashboard-nvim'
 		use 'vim-scripts/argtextobj.vim'

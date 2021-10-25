@@ -65,4 +65,5 @@ vim.api.nvim_set_keymap('n','<a-k>',':m .-2<cr>==',{noremap=true})
 vim.api.nvim_set_keymap('v','<a-j>',":m '>+1<cr>gv=gv",{noremap=true})
 vim.api.nvim_set_keymap('v','<a-k>',":m '<-2<cr>gv=gv",{noremap=true})
 vim.api.nvim_set_keymap('v','>',">gv",{noremap=true})
+
 vim.api.nvim_set_keymap('v','<',"<gv",{noremap=true})
