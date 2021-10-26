@@ -28,6 +28,7 @@ packer.startup(
 		use 'shaunsingh/nord.nvim'
 		use 'EdenEast/nightfox.nvim'
 		use 'folke/lsp-colors.nvim'
+		-- use 'folke/todo-comments.nvim'
 		use{
 				'kristijanhusak/orgmode.nvim' ,
 				config=function()
