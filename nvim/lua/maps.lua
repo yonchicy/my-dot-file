@@ -49,6 +49,7 @@ vim.api.nvim_set_keymap('','<leader>f','<cmd>HopChar1<cr>',{})
 vim.api.nvim_set_keymap('','<leader>l','<cmd>HopLineStart<cr>',{})
 vim.api.nvim_set_keymap('','<leader>j','<cmd>HopLineStart<cr>',{})
 vim.api.nvim_set_keymap('','<leader>k','<cmd>HopLineStart<cr>',{})
+vim.api.nvim_set_keymap('','vn','<cmd>HopChar2<cr>',{})
 
 
 

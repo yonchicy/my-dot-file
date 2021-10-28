@@ -19,6 +19,7 @@ local packer=require('packer')
 packer.startup(
 {
 	function(use)
+		use 'tversteeg/registers.nvim'
 		use 'wbthomason/packer.nvim'
 		use 'rhysd/clever-f.vim'
 		use 'olimorris/onedarkpro.nvim'
