@@ -20,6 +20,7 @@ packer.startup(
 {
 	function(use)
 		use 'tversteeg/registers.nvim'
+		use 'projekt0n/github-nvim-theme'
 		use 'wbthomason/packer.nvim'
 		use 'rhysd/clever-f.vim'
 		use 'olimorris/onedarkpro.nvim'

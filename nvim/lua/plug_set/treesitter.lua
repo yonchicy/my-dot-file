@@ -23,12 +23,11 @@ require('nvim-treesitter.configs').setup{
 	textobjects={
 		select={
 			enable=true,
-
 			lookahead=true,
 		}
 
 	}
 }
 vim.cmd('set foldmethod=manual')
--- vim.cmd('set foldexpr=nvim_treesitter#foldexpr()')
+vim.cmd('set foldexpr=nvim_treesitter#foldexpr()')
 
