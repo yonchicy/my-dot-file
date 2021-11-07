@@ -1,13 +1,10 @@
-
+" Comments in Vimscript start with a `"`.
+" jjjj
 
 call plug#begin('~/.vim/plugged')
 
-"  theme
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'ayu-theme/ayu-vim'
-Plug 'Yggdroot/LeaderF'
 Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'jiangmiao/auto-pairs'
@@ -21,6 +18,8 @@ Plug 'rhysd/clever-f.vim'
 Plug 'preservim/nerdtree'
 Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf',{'do': {-> fzf#install()}}
 Plug 'frazrepo/vim-rainbow'
 Plug 'skywind3000/vim-auto-popmenu'
 Plug 'rust-lang/rust.vim'
@@ -42,6 +41,7 @@ call plug#end()
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
 set nocompatible
+set nowrap
 let mapleader=" "
 " {
 "     }
@@ -50,29 +50,32 @@ let mapleader=" "
 set shortmess+=I
 set hlsearch
 " Turn on syntax highlighting.
-" colorscheme molokai
+colorscheme molokai
 " colorscheme solarized
 colorscheme gruvbox
-" colorscheme PaperColor
-" colorscheme ayu
-set t_Co=256
 set background=dark
-" let ayucolor="dark"
 " let g:molokai_original=1
 syntax on
 syntax enable
 set termguicolors
-set relativenumber
+
 
 set clipboard=unnamed
-set foldmethod=manual
-" :highlight linenr guifg=#dfff00
-" :highlight visual guibg=#333333
-" :highlight visualnos guibg=#333333
-" disable the default vim startup message.
-" show line mbers.
+" :highlight LineNr guifg=#DFFF00
+" :highlight Visual guibg=#333333
+" :highlight VisualNOS guibg=#333333
+" Disable the default Vim startup message.
+" Show line numbers.
 set number
-" always show the status line at the bottom, even if you only have one window open.
+" This enables relative line numbering mode. With both number and
+" relativenumber enabled, the current line shows the true line number, while
+" all other lines (above and below) are numbered relative to the current line.
+" This is useful because you can tell, at a glance, what count is needed to
+" jump up or down to a particular line, by {count}k to go up or {count}j to go
+" down.
+set relativenumber
+
+" Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
 
 " The backspace key has slightly unintuitive behavior by default. For example,
@@ -106,7 +109,9 @@ set noerrorbells visualbell t_vb=
 " Enable mouse support. You should avoid relying on this too much, but it can
 " sometimes be convenient.
 set mouse+=a
-
+nmap <c-p> :Files<CR>
+nmap <leader>s :Rg<CR>
+nmap gd :Rg <c-r><c-w><CR>
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
 " for movement, rather than using more efficient movement commands, is also a
@@ -117,7 +122,6 @@ nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
 nnoremap <Down>  :echoe "Use j"<CR>
-
 " ...and in insert mode
 inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
@@ -129,8 +133,7 @@ vnoremap H ^
 vnoremap L $
 set cursorline
 set cursorcolumn
-nnoremap wq :wa<CR>:q<CR>
-nnoremap <f2> :%s/\v
+
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
@@ -155,9 +158,17 @@ syntax on
 syntax enable
 " Disable the default Vim startup message.
 set shortmess+=I
-" :highlight LineNr guifg=#DFFF00
-" Show line mbers.
+:highlight LineNr guifg=#DFFF00
+" Show line numbers.
+set number
 
+" This enables relative line numbering mode. With both number and
+" relativenumber enabled, the current line shows the true line number, while
+" all other lines (above and below) are numbered relative to the current line.
+" This is useful because you can tell, at a glance, what count is needed to
+" jump up or down to a particular line, by {count}k to go up or {count}j to go
+" down.
+set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
@@ -228,7 +239,7 @@ inoremap <tab> <c-r>=SkipPair()<CR>
 nnoremap <f5> :!ctags -R<CR>
 nnoremap ;g :vsp<CR>
 nnoremap ;vg :sp<CR>
-imap jk <esc>
+imap jk <esc>:w<cr>
 imap <c-b> <c-o>h
 imap <c-n> <c-o>j
 imap <c-p> <c-o>k
@@ -258,7 +269,6 @@ nnoremap <F3> :NERDTree<CR>
 :autocmd InsertLeave * set cursorline
 :autocmd InsertEnter * set nocursorcolumn
 :autocmd InsertLeave * set cursorcolumn
-:autocmd InsertLeave * set cursorcolumn
 " let g:airline_section_a = '%{winnr()}'
 " let g:airline_section_b = '%{winnr()}'
 let g:airline_section_c = ''
@@ -284,16 +294,14 @@ nnoremap <Leader>6 6<c-w>w
 nnoremap <Leader>7 7<c-w>w
 nnoremap <Leader>8 8<c-w>w
 nnoremap <Leader>9 9<c-w>w
-nnoremap <Leader>s :Leaderf rg 
 nnoremap <Leader>hl :nohls<CR>
-nnoremap gd yiw:Leaderf rg <c-r><c-w><cr>
 
 " menupop select
 " set cpt=.,k,w,b
 " set completeopt=menu,menuone,noselect
 " set shortmess+=c
 
-set scrolloff=7
+set scrolloff=5
 
 xmap ga <Plug>(EasyAlign)
 vmap ga <Plug>(EasyAlign)
@@ -311,3 +319,9 @@ endfunction
 let g:coc_snippet_next='<tab>'
 imap <c-l> <Plug>(coc-snippets-expand)
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+
+let g:fzf_preview_window = ['right:50%','ctrl-/']
+let g:fzf_layout = {'down':'50%'}
+
+" command! Sratch lua require'tools'.makeScratch()
