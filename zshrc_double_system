@@ -14,6 +14,7 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+FZF_COMPLETION_TRIGGER=';'
 
 
 alias
@@ -26,12 +27,18 @@ alias vim=nvim
 
 alias fd=fdfind
 alias tmux="TERM=screen-256color-bce tmux"
-# export PATH="$PATH:/root/.cargo/bin/:/home/yang/tool/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin"
+export PATH="$PATH:~/.cargo/bin/"
 export EDITOR="nvim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$PATH:/home/yang/tool/nvim-linux64/bin/"
+export PATH="$PATH:/home/yang/tool/clangd_13.0.0/bin"
+
+export PATH="$PATH:/home/yang/下载/Typora-linux-x64/bin/Typora-linux-x64"
+
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPTATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

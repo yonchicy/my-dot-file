@@ -27,7 +27,7 @@ vim.cmd([[autocmd User LspProgressUpdate let &ro = &ro]])
 
 local config = {
   options = {
-    theme = "material-nvim",
+    theme = "gruvbox",
     section_separators = { "", "" },
     component_separators = { "", "" },
     -- section_separators = { "", "" },
@@ -39,9 +39,9 @@ local config = {
 			winnr,
 		},
     lualine_b = { "mode" },
-    lualine_c = { "branch" },
+    lualine_c = { {"branch"},{"filename",file_status=true,path=2} },
     lualine_x = { "filetype", lsp_pregress },
-    lualine_y = { { "diagnostics", sources = { "nvim_lsp" } }, "filename" },
+    lualine_y = {  "diagnostics", sources = { "nvim_lsp" }  },
     lualine_z = { clock },
   },
   inactive_sections = {

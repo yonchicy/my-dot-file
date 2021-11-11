@@ -31,12 +31,12 @@ packer.startup(
 		use 'EdenEast/nightfox.nvim'
 		use 'folke/lsp-colors.nvim'
 		-- use 'folke/todo-comments.nvim'
-		use{
-				'kristijanhusak/orgmode.nvim' ,
-				config=function()
-					require('orgmode').setup{}
-				end
-			}
+		-- use{
+		-- 		'kristijanhusak/orgmode.nvim' ,
+		-- 		config=function()
+		-- 			require('orgmode').setup{}
+		-- 		end
+		-- 	}
 		use 'kevinhwang91/rnvimr'
 		use {
 				'kyazdani42/nvim-tree.lua' ,
