@@ -20,7 +20,9 @@ packer.startup(
 {
 	function(use)
 		use 'tversteeg/registers.nvim'
+		use 'simrat39/symbols-outline.nvim'
 		use 'projekt0n/github-nvim-theme'
+		use 'wellle/context.vim'
 		use 'wbthomason/packer.nvim'
 		use 'rhysd/clever-f.vim'
 		use 'olimorris/onedarkpro.nvim'
@@ -31,13 +33,12 @@ packer.startup(
 		use 'shaunsingh/nord.nvim'
 		use 'EdenEast/nightfox.nvim'
 		use 'folke/lsp-colors.nvim'
-		-- use 'folke/todo-comments.nvim'
-		-- use{
-		-- 		'kristijanhusak/orgmode.nvim' ,
-		-- 		config=function()
-		-- 			require('orgmode').setup{}
-		-- 		end
-		-- 	}
+		use {
+				'folke/which-key.nvim',
+				config=function()
+					require("which-key").setup{}
+				end
+			}
 		use 'kevinhwang91/rnvimr'
 		use {
 				'kyazdani42/nvim-tree.lua' ,
@@ -56,9 +57,9 @@ packer.startup(
 		use{
 			'phaazon/hop.nvim',
 			as = 'hop',
-			config = function()
-				require'hop'.setup {keys='etovxqpdygfblzhckisuran'}
-			end
+			-- config = function()
+			-- 	require'hop'.setup {keys='etovxqpdygfblzhckisuran'}
+			-- end
 		}
 		use{
 			"folke/trouble.nvim",
