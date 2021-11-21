@@ -21,6 +21,7 @@ FZF_COMPLETION_TRIGGER=';'
 
 alias r='ranger'
 alias ls='lsd'
+alias lg='~/tool/lazygit'
 alias ll='ls -alh'
 alias l='ls -alh'
 alias vs=code
