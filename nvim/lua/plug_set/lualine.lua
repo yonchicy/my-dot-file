@@ -1,3 +1,4 @@
+local gps=require("nvim-gps")
 local function clock()
 	return "🎈"..os.date("%H:%M")
 end
@@ -35,11 +36,12 @@ local config = {
     icons_enabled = true,
   },
   sections = {
-		lualine_a = { 
+		lualine_a = {
 			winnr,
-		},
+		},-- Lua
+-- {"filename",file_status=true,path=2}
     lualine_b = { "mode" },
-    lualine_c = { {"branch"},{"filename",file_status=true,path=2} },
+    lualine_c = { {"branch"}, gps.get_location, cond = gps.is_available  },
     lualine_x = { "filetype", lsp_pregress },
     lualine_y = {  "diagnostics", sources = { "nvim_lsp" }  },
     lualine_z = { clock },

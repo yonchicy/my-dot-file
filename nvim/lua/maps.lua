@@ -77,3 +77,5 @@ vim.api.nvim_set_keymap('v','<a-k>',":m '<-2<cr>gv=gv",{noremap=true})
 vim.api.nvim_set_keymap('v','>',">gv",{noremap=true})
 
 vim.api.nvim_set_keymap('v','<',"<gv",{noremap=true})
+vim.api.nvim_set_keymap('n','<f1>',"<cmd>echo @%<cr>",{noremap=true})
+-- vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap=true,silent=true})

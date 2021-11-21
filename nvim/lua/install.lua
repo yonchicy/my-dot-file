@@ -22,7 +22,7 @@ packer.startup(
 		use 'tversteeg/registers.nvim'
 		use 'simrat39/symbols-outline.nvim'
 		use 'projekt0n/github-nvim-theme'
-		use 'wellle/context.vim'
+		-- use 'wellle/context.vim'
 		use 'wbthomason/packer.nvim'
 		use 'rhysd/clever-f.vim'
 		use 'olimorris/onedarkpro.nvim'
@@ -33,6 +33,15 @@ packer.startup(
 		use 'shaunsingh/nord.nvim'
 		use 'EdenEast/nightfox.nvim'
 		use 'folke/lsp-colors.nvim'
+		use 'ray-x/lsp_signature.nvim'
+
+		use {
+			'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
+		}
+		use {
+			"SmiteshP/nvim-gps",
+		}
+
 		use 'kevinhwang91/rnvimr'
 		use {
 				'kyazdani42/nvim-tree.lua' ,
