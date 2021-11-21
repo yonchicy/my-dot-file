@@ -19,19 +19,17 @@ local packer=require('packer')
 packer.startup(
 {
 	function(use)
+		use 'wbthomason/packer.nvim'
 		use 'tversteeg/registers.nvim'
 		use 'simrat39/symbols-outline.nvim'
-		use 'projekt0n/github-nvim-theme'
+		use {'junegunn/goyo.vim',opt=true}
+		use {'junegunn/limelight.vim',opt=true}
 		-- use 'wellle/context.vim'
-		use 'wbthomason/packer.nvim'
 		use 'rhysd/clever-f.vim'
 		use 'olimorris/onedarkpro.nvim'
 		use 'chentau/marks.nvim'
 		use 'morhetz/gruvbox'
 		use 'tomasiser/vim-code-dark'
-		use 'sainnhe/sonokai'
-		use 'shaunsingh/nord.nvim'
-		use 'EdenEast/nightfox.nvim'
 		use 'folke/lsp-colors.nvim'
 		use 'ray-x/lsp_signature.nvim'
 
@@ -42,7 +40,6 @@ packer.startup(
 			"SmiteshP/nvim-gps",
 		}
 
-		use 'kevinhwang91/rnvimr'
 		use {
 				'kyazdani42/nvim-tree.lua' ,
 				requires = 'kyazdani42/nvim-web-devicons',
@@ -50,7 +47,6 @@ packer.startup(
 			}
 		use 'lewis6991/gitsigns.nvim'
 		use 'sainnhe/gruvbox-material'
-		use { 'TimUntersberger/neogit' }
 		use 'folke/tokyonight.nvim'
 		use 'Pocco81/AutoSave.nvim'
 		use 'marko-cerovac/material.nvim'
@@ -60,16 +56,12 @@ packer.startup(
 		use{
 			'phaazon/hop.nvim',
 			as = 'hop',
-			-- config = function()
-			-- 	require'hop'.setup {keys='etovxqpdygfblzhckisuran'}
-			-- end
 		}
 		use{
 			"folke/trouble.nvim",
 			requires="kyazdani42/nvim-web-devicons",
 		}
 		use 'tpope/vim-surround'
-		use 'tpope/vim-repeat'
 		use 'tpope/vim-commentary'
 		-- use 'ggandor/lightspeed.nvim'
 		use 'easymotion/vim-easymotion'
