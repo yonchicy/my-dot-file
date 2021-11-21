@@ -9,7 +9,6 @@
 
   require'lspconfig'.pyright.setup{}
 
-
 -- auto complete
 --
   local cmp=  require'cmp'

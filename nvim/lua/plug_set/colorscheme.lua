@@ -1,7 +1,7 @@
 vim.g.tokyonight_style='storm'
 vim.g.material_style="oceanic"
 vim.g.sonokai_style="maia"
-vim.g.sonokai_enable_italic=1
+-- vim.g.sonokai_enable_italic=1
 vim.g.gruvbox_material_background="hard"
 vim.g.gruvbox_material_palette="original"
 vim.o.termguicolors=true

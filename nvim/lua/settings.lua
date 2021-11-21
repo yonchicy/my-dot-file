@@ -13,8 +13,16 @@ vim.o.cursorcolumn=true
 vim.o.wrap=false
 vim.g.syntax_on=true;
 
+local log_path = vim.fn.stdpath('data')
 vo.encoding="UTF-8"
 vo.scrolloff=5
+vo.undofile=true
+vo.history=10000
+vo.undolevels=1000
+vo.undoreload=10000
+vo.undodir=log_path..'/undo/'
+vo.backupdir=log_path..'/backup/'
+vo.directory=log_path..'/backup/'
 vwo.number=true
 vo.shiftround=true
 vo.shiftwidth=4
@@ -24,6 +32,7 @@ vo.hlsearch=true
 vo.incsearch=true
 vo.ignorecase=true
 vo.smartcase=true
+
 
 
 vim.api.nvim_exec([[

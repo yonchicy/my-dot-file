@@ -26,6 +26,7 @@ packer.startup(
 		use 'olimorris/onedarkpro.nvim'
 		use 'chentau/marks.nvim'
 		use 'morhetz/gruvbox'
+		use 'tomasiser/vim-code-dark'
 		use 'sainnhe/sonokai'
 		use 'shaunsingh/nord.nvim'
 		use 'EdenEast/nightfox.nvim'
@@ -106,6 +107,9 @@ packer.startup(
 		use {
 			'nvim-telescope/telescope.nvim',
 			requires={{'nvim-lua/plenary.nvim'}}
+		}
+		use {
+			'nvim-telescope/telescope-fzf-native.nvim',run='make'
 		}
 
 	end,
