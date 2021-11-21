@@ -43,7 +43,8 @@ vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{})
 -- fzf finders
 vim.api.nvim_set_keymap('','<c-p>','<cmd>Telescope find_files<cr>',{})
 vim.api.nvim_set_keymap('','<leader>/','<cmd>Telescope find_files<cr>',{})
-vim.api.nvim_set_keymap('','<leader>ht','<cmd>Telescope help_tags<cr>',{})
+vim.api.nvim_set_keymap('','<leader>t','<cmd>Telescope tags<cr>',{})
+vim.api.nvim_set_keymap('','<leader>ct','<cmd>Telescope current_buffer_tags<cr>',{})
 vim.api.nvim_set_keymap('n','<leader>s',':Telescope live_grep<cr>',{})
 vim.api.nvim_set_keymap('n','<leader>S',':Rg <c-r><c-w><cr>',{})
 
@@ -61,6 +62,7 @@ vim.api.nvim_set_keymap('','vn','<cmd>HopChar2<cr>',{})
 -- vim.api.nvim_set_keymap('n','<leader>b',':BufferLinePick<cr>',{})
 vim.api.nvim_set_keymap('n','<leader>tra',':RnvimrToggle<CR>',{})
 vim.api.nvim_set_keymap('n','<c-b>',':NvimTreeToggle<CR>',{})
+vim.api.nvim_set_keymap('n','<f5>',':!ctags -R<CR><CR>',{})
 
 
 -- move code block
