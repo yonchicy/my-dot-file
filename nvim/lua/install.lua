@@ -20,7 +20,9 @@ packer.startup(
 {
 	function(use)
 		use 'tversteeg/registers.nvim'
+		use 'simrat39/symbols-outline.nvim'
 		use 'projekt0n/github-nvim-theme'
+		use 'wellle/context.vim'
 		use 'wbthomason/packer.nvim'
 		use 'rhysd/clever-f.vim'
 		use 'olimorris/onedarkpro.nvim'
