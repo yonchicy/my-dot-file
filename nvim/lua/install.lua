@@ -33,12 +33,6 @@ packer.startup(
 		use 'shaunsingh/nord.nvim'
 		use 'EdenEast/nightfox.nvim'
 		use 'folke/lsp-colors.nvim'
-		use {
-				'folke/which-key.nvim',
-				config=function()
-					require("which-key").setup{}
-				end
-			}
 		use 'kevinhwang91/rnvimr'
 		use {
 				'kyazdani42/nvim-tree.lua' ,

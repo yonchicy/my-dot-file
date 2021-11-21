@@ -14,7 +14,6 @@ vim.cmd("let g:rnvimr_enable_picker=1")
 vim.cmd("let g:rnvimr_draw_border=0")
 
 require'hop'.setup {keys='etovxqpdygfblzhckisuran'}
-require("which-key").setup{}
 -- require('plug_set.todo-comments')
 require('plug_set.lualine')
 require('plug_set.colorscheme')
