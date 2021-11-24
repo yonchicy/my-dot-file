@@ -5,6 +5,9 @@ require'navigator'.setup({
 		-- {key="<leader>rn",func = "rename()"},
 		-- {key="<leader>ca",func = "code_action()"},
 	-- },
+	lsp = {
+		format_on_save=false,
+	}
 })
 
 local opts = { noremap=true, silent=true }
