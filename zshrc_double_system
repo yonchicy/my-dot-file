@@ -61,11 +61,10 @@ FZF_COMPLETION_TRIGGER=';'
 alias r='ranger'
 
 alias vs=code
-#alias vi=nvim
-#alias vim=nvim
-alias vim=emacs
-alias vi=emacs
-#alias fd=fdfind
+alias vi=nvim
+alias vim=nvim
+
+alias fd=fdfind
 alias tmux="TERM=screen-256color-bce tmux"
 export PATH="$PATH:~/.cargo/bin/"
 export EDITOR="nvim"
@@ -75,6 +74,9 @@ export PATH="$PATH:/home/yang/tool/clangd_13.0.0/bin"
 
 export PATH="$PATH:/home/yang/下载/Typora-linux-x64/bin/Typora-linux-x64"
 export PATH="$PATH:/home/yang/tool/cmake-3.22.0-rc3-linux-x86_64/bin"
+export PATH="$PATH:/home/yang/tool/Goneovim-latest-linux"
+export PATH="$PATH:/home/yang/tool/riscv-gcc/bin"
+
 
 
 
@@ -85,3 +87,4 @@ export RUSTUP_UPTATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

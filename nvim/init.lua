@@ -1,5 +1,5 @@
-require('maps')
 require('install')
+require('maps')
 require('settings')
 require('lua_complete')
 require('plugin_settings')

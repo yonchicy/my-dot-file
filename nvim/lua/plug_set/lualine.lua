@@ -41,9 +41,9 @@ local config = {
 		},-- Lua
 -- {"filename",file_status=true,path=2}
     lualine_b = { "mode" },
-    lualine_c = { {"branch"}, gps.get_location, cond = gps.is_available  },
+    lualine_c = { {"branch"},},
     lualine_x = { "filetype", lsp_pregress },
-    lualine_y = {  "diagnostics", sources = { "nvim_lsp" }  },
+    lualine_y = {  "diagnostics",},
     lualine_z = { clock },
   },
   inactive_sections = {
