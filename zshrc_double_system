@@ -73,7 +73,7 @@ export PATH="$PATH:/home/yang/tool/nvim-linux64/bin/"
 export PATH="$PATH:/home/yang/tool/clangd_13.0.0/bin"
 
 export PATH="$PATH:/home/yang/下载/Typora-linux-x64/bin/Typora-linux-x64"
-export PATH="$PATH:/home/yang/tool/cmake-3.22.0-rc3-linux-x86_64/bin"
+export PATH="$PATH:/home/yang/tool/kitty/bin"
 export PATH="$PATH:/home/yang/tool/Goneovim-latest-linux"
 export PATH="$PATH:/home/yang/tool/riscv-gcc/bin"
 
