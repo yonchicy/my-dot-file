@@ -4,7 +4,7 @@ local fn = vim.fn
 local packer_install_dir = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 local plug_url_format = ''
-plug_url_format = 'https://hub.fastgit.org/%s'
+plug_url_format = 'https://github.com/%s'
 
 local packer_repo = string.format(plug_url_format, 'wbthomason/packer.nvim')
 local install_cmd = string.format('10split |term git clone --depth=1 %s %s', packer_repo, packer_install_dir)
@@ -111,7 +111,7 @@ packer.startup(
 	end,
 	config={
 		git={
-			default_url_format='https://hub.fastgit.org/%s'
+			default_url_format='https://github.com/%s'
 		}
 	}
 }
