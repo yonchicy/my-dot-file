@@ -193,53 +193,45 @@ local config = {
 local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
 end
-
+local function ins_left_a(component)
+  table.insert(config.sections.lualine_a, component)
+end
+local function ins_left_b(component)
+  table.insert(config.sections.lualine_b, component)
+end
 -- -- Inserts a component in lualine_x at right section
 local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
+local function ins_right_y(component)
+  table.insert(config.sections.lualine_y, component)
+end
 
-ins_left {
+local function ins_right_z(component)
+  table.insert(config.sections.lualine_z, component)
+end
+ins_left_a {
   function()
     local hello= tostring(vim.fn.winnr())
     return hello
   end,
-  color = { fg = colors.red}, -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
-
-ins_left {
-  -- mode component
-  function()
-    -- auto change color according to neovims mode
-    local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red,
-    }
-    vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-    return ''
-  end,
-  color = 'LualineMode',
-  padding = { right = 1 },
+ins_left_a {
+	'mode'
 }
+
+
+-- ins_left {
+--   -- mode component
+--   function()
+--     -- auto change color according to neovims mode
+--     vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
+--     return ''
+--   end,
+--   color = 'LualineMode',
+--   padding = { right = 1 },
+-- }
 
 -- ins_left {
 --   -- filesize component
@@ -247,7 +239,7 @@ ins_left {
 --   cond = conditions.buffer_not_empty,
 -- }
 
-ins_left {
+ins_left_b {
   'filename',
   cond = conditions.buffer_not_empty,
   color = { fg = colors.magenta, gui = 'bold' },
@@ -271,6 +263,7 @@ ins_left {
 --     return '%='
 --   end,
 -- }
+
 
 ins_left {
   -- Lsp server name .
@@ -312,7 +305,7 @@ ins_right {
   color = { fg = colors.green, gui = 'bold' },
 }
 
-ins_right {
+ins_right_y {
   'branch',
   icon = '',
   color = { fg = colors.violet, gui = 'bold' },
@@ -330,17 +323,10 @@ ins_right {
 --   cond = conditions.hide_in_width,
 -- }
 
-ins_right { 'location' }
+ins_right_y { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_right_y { 'location' }
 
-ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-ins_right { clock }
-ins_right {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.blue },
-  padding = { left = 1 },
-}
+ins_right_z { clock }
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
