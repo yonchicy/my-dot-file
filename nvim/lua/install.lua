@@ -107,6 +107,10 @@ packer.startup(
 		use {
 			'nvim-telescope/telescope-fzf-native.nvim',run='make'
 		}
+		-- use {
+		-- 	"jose-elias-alvarez/null-ls.nvim",
+		-- 	after = "nvim-lspconfig",
+		-- }
 
 	end,
 	config={
