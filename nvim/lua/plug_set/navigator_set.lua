@@ -6,7 +6,7 @@ require'navigator'.setup({
 		-- {key="<leader>ca",func = "code_action()"},
 	-- },
 	lsp = {
-		format_on_save=true,
+		format_on_save=false,
 	}
 })
 
