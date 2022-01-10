@@ -252,8 +252,8 @@ let g:deoplete#enable_at_startup = 1
 set hidden
 imap df <c-o>a
 imap <c-f> <c-o>a
-nnoremap <c-j> :bprev<CR>
-nnoremap <c-k> :bnext<CR>
+nnoremap <tab> :bprev<CR>
+nnoremap <s-tab> :bnext<CR>
 noremap <leader>bd :bdelete<CR>
 vmap <leader>cl gc
 nmap <leader>cl Vgc
