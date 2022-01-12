@@ -6,11 +6,23 @@ local function winnr()
 	local hello= tostring(vim.fn.winnr())
 	return hello
 end
-local function lsp_pregress()
+local function lsp_progress()
 	local messages=vim.lsp.util.get_progress_messages()
 
 	if #messages==0 then
-		return "No Active LSP"
+		local msg = 'No Active Lsp'
+		local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+		local clients = vim.lsp.get_active_clients()
+		if next(clients) == nil then
+			return msg
+	end
+	for _, client in ipairs(clients) do
+		local filetypes = client.config.filetypes
+		if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+			return client.name
+		end
+	end
+	return msg
 	end
 	local status={}
 	for _,msg in pairs(messages) do
@@ -20,93 +32,38 @@ local function lsp_pregress()
 	local ms = vim.loop.hrtime() / 1000000
 	local frame = math.floor(ms / 120) % #spinners
 	return table.concat(status, " | ") .. " " .. spinners[frame + 1]
-
 end
 
--- local colors = {
---   blue   = '#80a0ff',
---   cyan   = '#79dac8',
---   black  = '#080808',
---   white  = '#c6c6c6',
---   red    = '#ff5189',
---   violet = '#d183e8',
---   grey   = '#303030',
--- }
+local function getname()
+end
 
--- local bubbles_theme = {
---   normal = {
---     a = { fg = colors.black, bg = colors.violet },
---     b = { fg = colors.white, bg = colors.grey },
---     c = { fg = colors.black, bg = colors.black },
---   },
+local colors = {
+  blue   = '#80a0ff',
+  cyan   = '#79dac8',
+  black  = '#080808',
+  white  = '#c6c6c6',
+  red    = '#ff5189',
+  violet = '#d183e8',
+  grey   = '#303030',
+}
 
---   insert = { a = { fg = colors.black, bg = colors.blue } },
---   visual = { a = { fg = colors.black, bg = colors.cyan } },
---   replace = { a = { fg = colors.black, bg = colors.red } },
+local bubbles_theme = {
+  normal = {
+    a = { fg = colors.black, bg = colors.violet },
+    b = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.black, bg = colors.black },
+  },
 
---   inactive = {
---     a = { fg = colors.white, bg = colors.black },
---     b = { fg = colors.white, bg = colors.black },
---     c = { fg = colors.black, bg = colors.black },
---   },
--- }
+  insert = { a = { fg = colors.black, bg = colors.blue } },
+  visual = { a = { fg = colors.black, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors.red } },
 
--- vim.cmd([[autocmd User LspProgressUpdate let &ro = &ro]])
-
--- local config = {
---   options = {
---     theme =bubbles_theme,
---     section_separators = { left = '', right = '' },
---     component_separators = '|',
---     -- section_separators = { "", "" },
---     -- component_separators = { "", "" },
---     icons_enabled = true,
---   },
---   sections = {
--- 		lualine_a = {
--- 			winnr,
---       "mode"
--- 		},-- Lua
--- -- {"filename",file_status=true,path=2}
---     lualine_b = {'filename','branch' },
---     lualine_c = {
---       'diagnostics',
---     sources = { 'nvim_diagnostic' },
---     symbols = { error = ' ', warn = ' ', info = ' ' },
---     diagnostics_color = {
---       color_error = { fg = colors.red },
---       color_warn = { fg = colors.yellow },
---       color_info = { fg = colors.cyan },
---    }
---   },
---     lualine_x = { "filetype", lsp_pregress },
---     lualine_y = {  "diagnostics",},
---     lualine_z = { 'location' ,clock},
---   },
---   inactive_sections = {
---     lualine_a = {winnr},
---     lualine_b = {'filename'},
---     lualine_c = {},
---     lualine_x = {},
---     lualine_y = {},
---     lualine_z = {},
---   },
---   extensions = { "nerdtree" },
--- }
-
--- local M = {}
-
--- function M.load()
---   local name = vim.g.colors_name or ""
---   local ok, _ = pcall(require, "lualine.themes." .. name)
---   if ok then
---     config.options.theme = name
---   end
---   require("lualine").setup(config)
--- end
-
--- M.load()
-
+  inactive = {
+    a = { fg = colors.white, bg = colors.black },
+    b = { fg = colors.white, bg = colors.black },
+    c = { fg = colors.black, bg = colors.black },
+  },
+}
 
 
 
@@ -117,19 +74,19 @@ local lualine = require 'lualine'
 
 -- -- Color table for highlights
 -- -- stylua: ignore
-local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
-}
+-- local colors = {
+--   bg       = '#202328',
+--   fg       = '#bbc2cf',
+--   yellow   = '#ECBE7B',
+--   cyan     = '#008080',
+--   darkblue = '#081633',
+--   green    = '#98be65',
+--   orange   = '#FF8800',
+--   violet   = '#a9a1e1',
+--   magenta  = '#c678dd',
+--   blue     = '#51afef',
+--   red      = '#ec5f67',
+-- }
 
 local conditions = {
   buffer_not_empty = function()
@@ -147,18 +104,6 @@ local conditions = {
 
 -- -- Config
 local config = {
-  -- options = {
-  --   -- Disable sections and component separators
-  --   component_separators = '',
-  --   section_separators = '',
-  --   theme = {
-  --     -- We are going to use lualine_c an lualine_x as left and
-  --     -- right section. Both are highlighted by c theme .  So we
-  --     -- are just setting default looks o statusline
-  --     normal = { c = { fg = colors.fg, bg = colors.bg } },
-  --     inactive = { c = { fg = colors.fg, bg = colors.bg } },
-  --   },
-  -- },
     options = {
         theme =bubbles_theme,
         section_separators = { left = '', right = '' },
@@ -267,21 +212,7 @@ ins_left {
 
 ins_left {
   -- Lsp server name .
-  function()
-    local msg = 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
-    return msg
-  end,
+  lsp_progress,
   icon = ' LSP:',
   color = { fg = '#ffffff', gui = 'bold' },
 }
