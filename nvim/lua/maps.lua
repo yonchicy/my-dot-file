@@ -42,9 +42,11 @@ vim.api.nvim_set_keymap('x','ga','<Plug>(EasyAlign)',{})
 -- fzf finders
 vim.api.nvim_set_keymap('','<c-p>','<cmd>Telescope find_files<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>/','<cmd>Telescope find_files<cr>',{noremap=true})
+vim.api.nvim_set_keymap('','<leader>st',':Telescope lsp_workspace_symbols<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>ss',':Telescope lsp_workspace_symbols<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>st',':SymbolsOutline<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>sr',':Telescope lsp_references<cr>',{noremap=true})
+vim.api.nvim_set_keymap('','<leader>t',':Telescope lsp_document_symbols<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>scs',':Telescope lsp_document_symbols<cr>',{noremap=true})
 vim.api.nvim_set_keymap('n','<leader>sw',':Telescope live_grep<cr>',{noremap=true})
 vim.api.nvim_set_keymap('n','<leader>S',':Rg <c-r><c-w><cr>',{noremap=true})
@@ -61,7 +63,6 @@ vim.api.nvim_set_keymap('','vn','<cmd>HopChar2<cr>',{})
 
 -- bufferline
 -- vim.api.nvim_set_keymap('n','<leader>b',':BufferLinePick<cr>',{})
-vim.api.nvim_set_keymap('n','<leader>tra',':RnvimrToggle<CR>',{})
 vim.api.nvim_set_keymap('n','<c-b>',':NvimTreeToggle<CR>',{})
 vim.api.nvim_set_keymap('n','<f5>',':!ctags -R<CR><CR>',{})
 
