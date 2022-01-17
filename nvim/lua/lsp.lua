@@ -15,6 +15,7 @@
 
   require'lspconfig'.pyright.setup{}
 
+
 -- auto complete
 --
   local cmp=  require'cmp'
@@ -64,6 +65,7 @@
       { name = 'luasnip'  },
       { name = 'buffer'   },
       { name = 'path'     },
+      { name = 'spell'     },
       { name = 'nvim_lua' },
       { name = 'treesitter' },
     }
