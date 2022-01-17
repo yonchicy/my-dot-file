@@ -5,13 +5,16 @@ local vbo=vim.bo
 vim.cmd('set completeopt=menu,menuone,noselect')
 vim.cmd('set mouse+=a')
 vim.cmd('set clipboard=unnamed')
+vim.cmd('set list')
 vim.cmd('set backspace=indent,eol,start')
 vim.o.number=true
+vim.g.spell = true
 vim.o.relativenumber=true
 vim.o.cursorline=true
 vim.o.cursorcolumn=true
 vim.o.wrap=false
 vim.g.syntax_on=true;
+
 
 local log_path = vim.fn.stdpath('data')
 vo.encoding="UTF-8"

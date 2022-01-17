@@ -1,10 +1,10 @@
 require'navigator'.setup({
-	-- default_mapping=false,
-	-- keymaps ={
-		-- {key="gp",func = "definition_preview()"},
+	default_mapping=false,
+	keymaps ={
+		{key="gp",func = "definition_preview()"},
 		-- {key="<leader>rn",func = "rename()"},
 		-- {key="<leader>ca",func = "code_action()"},
-	-- },
+	},
 	lsp = {
 		format_on_save=false,
 	}

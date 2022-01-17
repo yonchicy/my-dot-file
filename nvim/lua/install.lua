@@ -63,6 +63,7 @@ packer.startup(
 		}
 		use 'tpope/vim-surround'
 		use 'tpope/vim-commentary'
+		use 'tpope/vim-dispatch'
 		-- use 'ggandor/lightspeed.nvim'
 		use 'easymotion/vim-easymotion'
 		use 'jiangmiao/auto-pairs'
