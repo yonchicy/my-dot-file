@@ -1,13 +1,18 @@
 require('telescope').setup{
 
 	defaults={
-		layout_strategy="flex",
+		layout_strategy="horizontal",
 		scroll_strategy = "cycle",
 		previewer = true,
 		layout_config = {
 			vertical ={
 				mirror = true,
+			},
+			horizontal ={
+				width = 0.8,
+				preview_width = 0.5
 			}
+
 		},
 		file_previewer=require'telescope.previewers'.vim_buffer_cat.new,
 		grep_previewer=require'telescope.previewers'.vim_buffer_vimgrep.new,
