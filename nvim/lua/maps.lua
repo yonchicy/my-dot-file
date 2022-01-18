@@ -48,7 +48,7 @@ vim.api.nvim_set_keymap('','<leader>sr',':Telescope lsp_references<cr>',{noremap
 vim.api.nvim_set_keymap('','<leader>t',':Telescope lsp_document_symbols<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>scs',':Telescope lsp_document_symbols<cr>',{noremap=true})
 vim.api.nvim_set_keymap('n','<leader>sw',':Telescope live_grep<cr>',{noremap=true})
-vim.api.nvim_set_keymap('n','<leader>S',':Rg <c-r><c-w><cr>',{noremap=true})
+vim.api.nvim_set_keymap('n','<leader>S',':lua require("telescope.builtin").grep_string()<cr>',{noremap=true})
 
 
 --  easymotion
