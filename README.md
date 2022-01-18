@@ -61,7 +61,7 @@ ps:可以用`alias vim=nvim`
 
 ## zsh
 
-- 复制`.zshr`
+- 复制`.zshrc`
 
 - 到`~/.zsh`目录中运行`zsh-plug.sh`脚本
 
