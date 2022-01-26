@@ -4,7 +4,7 @@ local fn = vim.fn
 local packer_install_dir = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 local plug_url_format = ''
-plug_url_format = 'https://github.com/%s'
+plug_url_format = 'https://github.com.cnpmjs.org/%s'
 
 local packer_repo = string.format(plug_url_format, 'wbthomason/packer.nvim')
 local install_cmd = string.format('10split |term git clone --depth=1 %s %s', packer_repo, packer_install_dir)
@@ -30,7 +30,6 @@ packer.startup(
 		use 'chentau/marks.nvim'
 		use 'morhetz/gruvbox'
 		use 'tomasiser/vim-code-dark'
-		use 'folke/lsp-colors.nvim'
 		use 'ray-x/lsp_signature.nvim'
 
 		use {
@@ -52,7 +51,6 @@ packer.startup(
 		use 'marko-cerovac/material.nvim'
 		use 'glepnir/dashboard-nvim'
 		use 'vim-scripts/argtextobj.vim'
-		use 'akinsho/toggleterm.nvim'
 		use{
 			'phaazon/hop.nvim',
 			as = 'hop',
@@ -65,17 +63,13 @@ packer.startup(
 		use 'tpope/vim-commentary'
 		use 'tpope/vim-dispatch'
 		-- use 'ggandor/lightspeed.nvim'
-		use 'easymotion/vim-easymotion'
 		use 'jiangmiao/auto-pairs'
 		use 'unblevable/quick-scope'
 		use 'psliwka/vim-smoothie'
 		use 'junegunn/vim-easy-align'
 		use 'hoob3rt/lualine.nvim'
 		use 'p00f/nvim-ts-rainbow'
-		use 'junegunn/fzf.vim'
-		use {
-			'junegunn/fzf' ,
-		}
+
 		use {
 			'akinsho/bufferline.nvim',requires = 'kyazdani42/nvim-web-devicons'
 		}
@@ -116,7 +110,8 @@ packer.startup(
 	end,
 	config={
 		git={
-			default_url_format='https://github.com/%s'
+			default_url_format='https://github.com.cnpmjs.org/%s',
+			clone_timeout = 10000
 		}
 	}
 }

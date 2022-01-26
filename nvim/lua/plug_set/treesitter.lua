@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup{
 	-- ensure_installed={"c","rust","lua","python"},
-	ensure_installed={"c"},
+	ensure_installed={"c","cpp","lua"},
 	highlight={
 		enable=true;
 	},
