@@ -8,7 +8,7 @@ vim.cmd('set clipboard=unnamed')
 vim.cmd('set list')
 vim.cmd('set backspace=indent,eol,start')
 vim.o.number=true
-vim.opt.spell = true
+-- vim.opt.spell = true
 vim.opt.spelllang = {'en_us'}
 vim.o.relativenumber=true
 vim.o.cursorline=true
