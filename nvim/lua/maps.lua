@@ -1,5 +1,5 @@
 vim.g.mapleader=' '
-vim.api.nvim_set_keymap('i','jk','<esc>:wa<cr>',{})
+mapsvim.api.nvim_set_keymap('i','jk','<esc>:wa<cr>',{})
 vim.api.nvim_set_keymap('i','df','<c-o>a',{})
 vim.api.nvim_set_keymap('i','<c-b>','<c-o>h',{})
 vim.api.nvim_set_keymap('i','<c-e>','<c-o>A',{})
@@ -47,6 +47,7 @@ vim.api.nvim_set_keymap('','<leader>ss',':Telescope lsp_workspace_symbols<cr>',{
 vim.api.nvim_set_keymap('','<leader>st',':SymbolsOutline<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>sr',':Telescope lsp_references<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>tt',':Telescope lsp_document_symbols<cr>',{noremap=true})
+vim.api.nvim_set_keymap('','<leader>cc',':Telescope<cr>',{noremap=true})
 vim.api.nvim_set_keymap('','<leader>scs',':Telescope lsp_document_symbols<cr>',{noremap=true})
 vim.api.nvim_set_keymap('n','<leader>sw',':Telescope live_grep<cr>',{noremap=true})
 vim.api.nvim_set_keymap('n','<leader>S',':lua require("telescope.builtin").grep_string()<cr>',{noremap=true})
