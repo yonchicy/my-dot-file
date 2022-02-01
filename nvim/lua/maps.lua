@@ -1,5 +1,5 @@
 vim.g.mapleader=' '
-mapsvim.api.nvim_set_keymap('i','jk','<esc>:wa<cr>',{})
+vim.api.nvim_set_keymap('i','jk','<esc>:wa<cr>',{})
 vim.api.nvim_set_keymap('i','df','<c-o>a',{})
 vim.api.nvim_set_keymap('i','<c-b>','<c-o>h',{})
 vim.api.nvim_set_keymap('i','<c-e>','<c-o>A',{})
