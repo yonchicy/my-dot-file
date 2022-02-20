@@ -54,14 +54,6 @@ vim.api.nvim_set_keymap('n','<leader>S',':lua require("telescope.builtin").grep_
 
 
 --  easymotion
-vim.api.nvim_set_keymap('n', '<leader>f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
-vim.api.nvim_set_keymap('n', '<leader>F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {})
-vim.api.nvim_set_keymap('o', '<leader>f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR})<cr>", {})
-vim.api.nvim_set_keymap('o', '<leader>F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR})<cr>", {})
-vim.api.nvim_set_keymap('','<leader>l','<cmd>HopLineStart<cr>',{})
-vim.api.nvim_set_keymap('','<leader>j','<cmd>HopLineStart<cr>',{})
-vim.api.nvim_set_keymap('','<leader>k','<cmd>HopLineStart<cr>',{})
-vim.api.nvim_set_keymap('','vn','<cmd>HopChar2<cr>',{})
 
 
 

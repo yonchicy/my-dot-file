@@ -13,7 +13,6 @@ vim.cmd("let g:rnvimr_enable_ex=1")
 vim.cmd("let g:rnvimr_enable_picker=1")
 vim.cmd("let g:rnvimr_draw_border=0")
 
-require'hop'.setup {keys='etovxqpdygfblzhckisuran'}
 -- require('plug_set.todo-comments')
 require('plug_set.navigator_set')
 require('plug_set.lualine')
