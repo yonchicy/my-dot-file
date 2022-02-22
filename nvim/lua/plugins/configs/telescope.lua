@@ -1,4 +1,3 @@
-
 local present, telescope = pcall(require, "telescope")
 
 if not present then
@@ -6,20 +5,7 @@ if not present then
 end
 
 local default = {
-	defaults={
-		layout_strategy="horizontal",
-		scroll_strategy = "cycle",
-		previewer = true,
-		layout_config = {
-			vertical ={
-				mirror = true,
-			},
-			horizontal ={
-				width = 0.8,
-				preview_width = 0.5
-			}
-
-		},
+   defaults = {
       vimgrep_arguments = {
          "rg",
          "--color=never",
@@ -35,6 +21,20 @@ local default = {
       initial_mode = "insert",
       selection_strategy = "reset",
       sorting_strategy = "ascending",
+      layout_strategy = "horizontal",
+      layout_config = {
+         horizontal = {
+            prompt_position = "top",
+            preview_width = 0.55,
+            results_width = 0.8,
+         },
+         vertical = {
+            mirror = false,
+         },
+         width = 0.87,
+         height = 0.80,
+         preview_cutoff = 120,
+      },
       file_sorter = require("telescope.sorters").get_fuzzy_file,
       file_ignore_patterns = { "node_modules" },
       generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
@@ -56,15 +56,15 @@ local default = {
 local M = {}
 M.setup = function()
 
-    telescope.setup(default)
+   telescope.setup(default)
 
---    local extensions = { "themes", "terms" }
+   local extensions = { "themes", "terms" }
 
---    pcall(function()
---       for _, ext in ipairs(extensions) do
---          telescope.load_extension(ext)
---       end
---    end)
+   pcall(function()
+      for _, ext in ipairs(extensions) do
+         telescope.load_extension(ext)
+      end
+   end)
 end
 
 return M

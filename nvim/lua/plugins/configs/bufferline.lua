@@ -22,6 +22,7 @@ default = {
       enforce_regular_tabs = false,
       view = "multiwindow",
       show_buffer_close_icons = true,
+      show_buffer_icons = true, -- disable filetype icons for buffers
       separator_style = "thin",
       always_show_bufferline = true,
       diagnostics = false,
@@ -138,10 +139,7 @@ default = {
 }
 
 local M = {}
-M.setup = function(override_flag)
-   if override_flag then
-      default = require("core.utils").tbl_override_req("bufferline", default)
-   end
+M.setup = function()
    bufferline.setup(default)
 end
 
