@@ -1,11 +1,16 @@
 local opt = vim.opt
 local g = vim.g
 
-vim.cmd"set nowrap"
+opt.wrap = false
+opt.scrolloff=8
+opt.sidescrolloff=8
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul=true
+opt.swapfile=false
 
+opt.colorcolumn = "99999"
+opt.guifont = "FiraCode Nerd Font:h17" -- the font used in graphical neovim applications
 
 -- Indentline
 opt.expandtab = true
@@ -20,7 +25,7 @@ opt.mouse = "a"
 
 -- Line Numbers
 opt.number = true
-opt.numberwidth = 2
+opt.numberwidth = 8
 opt.relativenumber = true
 opt.ruler =true
 

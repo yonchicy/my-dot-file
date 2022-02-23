@@ -32,7 +32,7 @@ vim.api.nvim_set_keymap('n', '<leader>4', '4<c-w>w', options)
 -- buffer
 vim.api.nvim_set_keymap('n', '<leader>bc', ':bd<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>bn', ':enew<CR>', options)
-vim.api.nvim_set_keymap('n', '<leader>q', ':wa<CR>:q<CR>', options)
+vim.api.nvim_set_keymap('n', '<leader>q', ':wa!<CR>:q<CR>', options)
 
 --terminal
 vim.api.nvim_set_keymap('t','jk',"<c-\\><c-n>",options)
