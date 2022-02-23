@@ -203,11 +203,16 @@ require( "plugins.configs.others").luasnip()
       module = "telescope",
       cmd = "Telescope",
       config = function ()
-         require( "plugins.configs.telescope").setup() 
+         require( "plugins.configs.telescope").setup()
       end,
       setup = function()
          require("core.mappings").telescope()
       end,
+   },
+   -- project managing
+   {
+    "tpope/vim-dispatch",
+    cmd = {"Make","Dispatch"}
    },
    {
     "folke/trouble.nvim",
@@ -237,7 +242,26 @@ require( "plugins.configs.others").luasnip()
       setup = function ()
           require("core.mappings").hop()
       end,
-  }
+  },
+  -- Debugging
+  {
+    "mfussenegger/nvim-dap",
+    module =  "dap" ,
+    config = function()
+        -- require( "plugins.configs.dap").setup()
+    end,
+  },
+
+  -- Debugger management
+  {
+    "Pocco81/DAPInstall.nvim",
+    cmd = "DIInstall",
+    config = function()
+        require( "dap-install").setup({
+            installation_path = vim.fn.stdpath("data").."/dapintall/",
+        })
+    end,
+  },
 
 }
 
