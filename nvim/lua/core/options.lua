@@ -8,6 +8,7 @@ opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul=true
 opt.swapfile=false
+opt.signcolumn="yes"
 
 opt.colorcolumn = "99999"
 opt.guifont = "FiraCode Nerd Font:h17" -- the font used in graphical neovim applications
@@ -25,7 +26,7 @@ opt.mouse = "a"
 
 -- Line Numbers
 opt.number = true
-opt.numberwidth = 8
+opt.numberwidth = 2
 opt.relativenumber = true
 opt.ruler =true
 
