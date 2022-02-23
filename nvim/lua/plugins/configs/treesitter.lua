@@ -9,16 +9,11 @@ local default = {
       "lua",
       "vim",
       "cpp",
-      "c",
+      "c"
    },
    highlight = {
       enable = true,
-      use_languagetree = true,
-   },
-   rainbow ={
-       enable = true,
-       extended_mode = true,
-       max_file_lines  = 500,
+      use_languagetree = true
    }
 }
 
