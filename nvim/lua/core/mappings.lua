@@ -106,10 +106,10 @@ end
 
 M.comment = function()
    vim.api.nvim_set_keymap("n", "<c-_>", ":lua require('Comment.api').toggle_current_linewise()<CR>",options)
-   vim.api.nvim_set_keymap("v", "<c-_>", ":lua require('Comment.api').toggle_current_linewise()<CR>",options)
    vim.api.nvim_set_keymap("n", "<leader>/", ":lua require('Comment.api').toggle_current_linewise()<CR>",options)
-   vim.api.nvim_set_keymap("v", "<leader>/", ":lua require('Comment.api').toggle_current_linewise()<CR>",options)
    vim.api.nvim_set_keymap("n", "<leader>cl", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",options)
+   vim.api.nvim_set_keymap("v", "<c-_>", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",options)
+   vim.api.nvim_set_keymap("v", "<leader>/", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",options)
    vim.api.nvim_set_keymap("v", "<leader>cl", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",options)
 
 end

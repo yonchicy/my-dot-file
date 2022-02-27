@@ -11,10 +11,10 @@ local default = {
       "cpp",
       "c"
    },
-   highlight = {
-      enable = true,
-      use_languagetree = true
-   }
+   -- highlight = {
+      -- enable = true,
+      -- use_languagetree = true
+   -- }
 }
 
 local M = {}
