@@ -160,12 +160,9 @@ require( "plugins.configs.others").luasnip()
       end
    },
   {
-    "karb94/neoscroll.nvim",
+    "psliwka/vim-smoothie",
     -- cmd = {"<c-d>","<c-u>"},
     event = "WinScrolled",
-    config = function ()
-      require("neoscroll").setup()
-    end
   },
    {
     "numToStr/Comment.nvim",
