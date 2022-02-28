@@ -61,7 +61,7 @@ local plugins = {
       end
    },
    {
-       "p00f/nvim-ts-rainbow",
+       "luochen1990/rainbow",
    },
    -- git stuff
    {

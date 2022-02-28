@@ -47,6 +47,8 @@ opt.list = true
 opt.listchars:append("space:⋅")
 opt.listchars:append("eol:↴")
 
+g.rainbow_active = 1
+
 
 local disabled_built_ins = {
    "2html_plugin",
