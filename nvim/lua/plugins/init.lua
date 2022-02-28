@@ -206,6 +206,11 @@ require( "plugins.configs.others").luasnip()
          require("core.mappings").telescope()
       end,
    },
+   {
+       "nvim-telescope/telescope-fzf-native.nvim",
+       run='make',
+       event = "BufRead"
+   },
    -- project managing
    {
     "tpope/vim-dispatch",

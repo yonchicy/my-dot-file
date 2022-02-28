@@ -58,7 +58,7 @@ M.setup = function()
 
    telescope.setup(default)
 
-   local extensions = { "themes", "terms" }
+   local extensions = { "themes", "terms" ,"fzf"}
 
    pcall(function()
       for _, ext in ipairs(extensions) do
