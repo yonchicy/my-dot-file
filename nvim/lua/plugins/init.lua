@@ -61,6 +61,10 @@ local plugins = {
       end
    },
    {
+       "justinmk/vim-syntax-extra",
+       event = "BufRead"
+   },
+   {
        "luochen1990/rainbow",
    },
    -- git stuff
