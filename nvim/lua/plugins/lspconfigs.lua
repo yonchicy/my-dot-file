@@ -37,7 +37,7 @@ local lua_config = function (lsp,attach,capabilities)
 end
 M.setup_lsp= function (attach,capabilities)
 
-  local servers = {"clangd","sumneko_lua"}
+  local servers = {"clangd","sumneko_lua","rust_analyzer","cmake","pyright"}
 
   for _,lsp in ipairs(servers) do
     if lsp ~= "sumneko_lua" then

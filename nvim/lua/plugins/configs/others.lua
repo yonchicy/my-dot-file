@@ -136,4 +136,23 @@ M.signature = function(override_flag)
       lspsignature.setup(default)
    end
 end
+M.lsp_installer = function ()
+    local present, lspinstaller = pcall(require, "nvim-lsp-installer")
+    if present then
+        local servers = {
+            "clangd",
+            "pyright",
+            "rust_analyzer",
+            "sumneko_lua",
+        }
+
+        for _, name in pairs(servers) do
+            local server_is_found, server = lspinstaller.get_server(name)
+            if server_is_found and not server:is_installed() then
+                print("Installing " .. name)
+                server:install()
+            end
+        end
+    end
+end
 return M

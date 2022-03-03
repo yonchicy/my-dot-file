@@ -73,6 +73,11 @@ local plugins = {
       end,
    },
   -- lsp
+  {
+      'williamboman/nvim-lsp-installer',
+      cmd = {"LspInstall","LspInstallInfo"},
+      config = require("plugins.configs.others").lsp_installer(),
+  },
    {
        "neovim/nvim-lspconfig",
        module = "lspconfig",

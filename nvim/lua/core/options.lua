@@ -11,7 +11,12 @@ opt.swapfile=false
 opt.signcolumn="yes"
 
 opt.colorcolumn = "99999"
-opt.guifont = "FiraCode Nerd Font:h17" -- the font used in graphical neovim applications
+if g.nvui then
+vim.cmd[[NvuiCmdFontFamily FiraCode\ Nerd\ Font:h17]]
+else
+vim.cmd[[set guifont=FiraCode\ Nerd\ Font:h17]]
+    -- opt.guifont = "FiraCode Nerd Font:h17" -- the font used in graphical neovim applications
+end
 
 -- Indentline
 opt.expandtab = true
