@@ -252,6 +252,9 @@ require( "plugins.configs.others").luasnip()
     "tpope/vim-surround",
     keys={"c","d","y","v"}
   },
+  {
+    "tpope/vim-repeat",
+  },
   -- motion
   {
       "phaazon/hop.nvim",
