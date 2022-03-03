@@ -186,6 +186,15 @@ require( "plugins.configs.others").luasnip()
     end,
    },
    {
+        "junegunn/vim-easy-align",
+        keys = {"ga"},
+    config = function ()
+        vim.cmd[[xmap ga <Plug>(EasyAlign)]]
+        vim.cmd[[nmap ga <Plug>(EasyAlign)]]
+
+    end,
+   },
+   {
        "folke/todo-comments.nvim",
        event = "BufRead",
        config = function ()
