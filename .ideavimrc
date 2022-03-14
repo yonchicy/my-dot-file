@@ -15,3 +15,10 @@ nmap L $
 imap jk <esc>
 imap <c-f> <c-o>a
 imap df <c-o>a
+nmap <leader>1 1<c-w>w
+nmap <leader>2 2<c-w>w
+nmap <leader>3 3<c-w>w
+
+nmap <tab> :bn<CR>
+nmap <S-tab> :bp<CR>
+nmap <leader>bc :bd<CR>
