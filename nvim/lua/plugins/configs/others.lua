@@ -155,4 +155,16 @@ M.lsp_installer = function ()
         end
     end
 end
+M.nvim_colorizer = function ()
+    local present, nvim_colorizer = pcall(require,"colorizer")
+    if present then
+        nvim_colorizer.setup({"*"},{
+            RGB=true,
+            RRGGBB=true,
+            RRGGBBAA=true,
+            rgb_fn=true,
+            hsl_fn=true
+        })
+    end
+end
 return M

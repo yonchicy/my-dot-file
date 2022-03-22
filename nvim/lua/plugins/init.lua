@@ -67,6 +67,10 @@ local plugins = {
    {
        "luochen1990/rainbow",
    },
+   {
+       "norcalli/nvim-colorizer.lua",
+       config = require("plugins.configs.others").nvim_colorizer(),
+   },
    -- git stuff
    {
       "lewis6991/gitsigns.nvim",
