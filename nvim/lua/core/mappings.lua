@@ -14,7 +14,7 @@ vim.api.nvim_set_keymap('n', 'Y', 'yg$', options)
 -- vim.api.nvim_set_keymap('n', 'x', '"_x', options)
 -- vim.api.nvim_set_keymap('v', 'x', '"_x', options)
 
--- emacs key
+-- emacs key / insert key
 vim.api.nvim_set_keymap('i', '<c-a>', '<c-o>^', options)
 vim.api.nvim_set_keymap('i', '<c-e>', '<c-o>$', options)
 vim.api.nvim_set_keymap('i', '<c-p>', '<c-o>k', options)
