@@ -30,7 +30,7 @@ vim.api.nvim_set_keymap('n', '<leader>3', '3<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>4', '4<c-w>w', options)
 
 -- buffer
-vim.api.nvim_set_keymap('n', '<leader>bc', ':bd<CR>', options)
+      vim.api.nvim_set_keymap('n', '<leader>bc', ":lua require('core.utils').close_buffer() <CR>", options)
 vim.api.nvim_set_keymap('n', '<leader>bn', ':enew<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>q', ':wa!<CR>:q<CR>', options)
 
