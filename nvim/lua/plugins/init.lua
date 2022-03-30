@@ -74,7 +74,7 @@ local plugins = {
    -- git stuff
    {
       "lewis6991/gitsigns.nvim",
-      opt = true,
+      event = "BufRead",
       config = require("plugins.configs.others").gitsigns(),
       setup = function()
          require("core.utils").packer_lazy_load "gitsigns.nvim"

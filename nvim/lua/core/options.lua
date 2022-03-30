@@ -18,7 +18,7 @@ opt.colorcolumn = "99999"
 if g.nvui then
 vim.cmd[[NvuiCmdFontFamily FiraCode\ Nerd\ Font:h17]]
 else
-vim.cmd[[set guifont=FiraCode\ Nerd\ Font:h17]]
+vim.cmd[[set guifont=JetBrainsMono\ Nerd\ Font:h10]]
     -- opt.guifont = "FiraCode Nerd Font:h17" -- the font used in graphical neovim applications
 end
 
