@@ -108,6 +108,10 @@ local plugins = {
          require("plugins.configs.others").signature()
       end
    },
+   {
+    "simrat39/symbols-outline.nvim",
+    cmd="SymbolsOutline",
+   },
 
    -- load luasnips + cmp related in insert mode only
 
