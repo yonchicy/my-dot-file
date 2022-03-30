@@ -4,6 +4,10 @@ local g = vim.g
 opt.wrap = false
 opt.scrolloff=8
 opt.sidescrolloff=8
+-- vim.api.nvim_exec([[
+-- :autocmd CursorMoved,CursorMovedI * normal zz
+-- ]],false)
+
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul=true
