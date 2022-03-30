@@ -8,6 +8,7 @@ opt.sidescrolloff=8
 -- :autocmd CursorMoved,CursorMovedI * normal zz
 -- ]],false)
 
+
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul=true
@@ -57,7 +58,7 @@ opt.listchars:append("space:⋅")
 opt.listchars:append("eol:↴")
 
 g.rainbow_active = 1
-
+g.neovide_cursor_vfx_mode = "railgun"
 
 local disabled_built_ins = {
    "2html_plugin",
