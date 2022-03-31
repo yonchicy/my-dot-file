@@ -274,6 +274,18 @@ require( "plugins.configs.others").luasnip()
           require("core.mappings").hop()
       end,
   },
+  {
+    "rhysd/clever-f.vim",
+      event = "BufRead",
+  },
+  {
+    "unblevable/quick-scope",
+      event = "BufRead",
+  },
+  {
+    "ggandor/lightspeed.nvim",
+      event = "BufRead",
+  },
   -- Debugging
   {
     "mfussenegger/nvim-dap",
@@ -293,7 +305,6 @@ require( "plugins.configs.others").luasnip()
         })
     end,
   },
-
 }
 
 

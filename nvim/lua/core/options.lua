@@ -94,3 +94,10 @@ end)
 vim.api.nvim_exec([[
 au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 ]],false)
+
+
+-- plugin options
+g.clever_f_across_no_line=1
+-- vim.api.nvim_exec([[
+-- let g:qs_highlight_on_keys=['f','F','t','T']
+-- ]],false)
