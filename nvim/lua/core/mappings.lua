@@ -148,4 +148,13 @@ M.trouble = function ()
     )
 
 end
+M.symbols_outline = function ()
+    vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>SymbolsOutline<cr>",
+    {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("v", "<leader>tt", "<cmd>SymbolsOutline<cr>",
+    {silent = true, noremap = true}
+    )
+
+end
 return M

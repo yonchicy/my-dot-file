@@ -111,6 +111,9 @@ local plugins = {
    {
     "simrat39/symbols-outline.nvim",
     cmd="SymbolsOutline",
+      setup = function ()
+          require("core.mappings").symbols_outline()
+      end,
    },
 
    -- load luasnips + cmp related in insert mode only
