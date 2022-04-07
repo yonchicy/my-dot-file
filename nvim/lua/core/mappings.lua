@@ -30,7 +30,7 @@ vim.api.nvim_set_keymap('n', '<leader>3', '3<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>4', '4<c-w>w', options)
 
 -- buffer
-      vim.api.nvim_set_keymap('n', '<leader>bc', ":lua require('core.utils').close_buffer() <CR>", options)
+vim.api.nvim_set_keymap('n', '<leader>bc', ":lua require('core.utils').close_buffer() <CR>", options)
 vim.api.nvim_set_keymap('n', '<leader>bn', ':enew<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>q', ':wa!<CR>:q<CR>', options)
 
@@ -75,6 +75,15 @@ M.bufferline = function()
 
    vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext <CR>",options)
    vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>bp", ":BufferLinePick <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>b1", ":BufferLineGoToBuffer 1 <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>b2", ":BufferLineGoToBuffer 2 <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>b3", ":BufferLineGoToBuffer 3 <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>b4", ":BufferLineGoToBuffer 4 <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>b5", ":BufferLineGoToBuffer 5 <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>b6", ":BufferLineGoToBuffer 6 <CR>",options)
+   vim.api.nvim_set_keymap("n", "<leader>b7", ":BufferLineGoToBuffer 7 <CR>",options)
+
 end
 
 M.nvimtree = function()

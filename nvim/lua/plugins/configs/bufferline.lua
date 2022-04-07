@@ -13,6 +13,7 @@ default = {
       modified_icon = "",
       close_icon = "",
       show_close_icon = true,
+      -- indicator_icon = "",
       left_trunc_marker = "",
       right_trunc_marker = "",
       max_name_length = 14,
