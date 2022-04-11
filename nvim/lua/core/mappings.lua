@@ -171,7 +171,7 @@ M.harpoon = function ()
     vim.api.nvim_set_keymap("n", "mf", "<cmd>lua require('harpoon.mark').add_file()<cr>",
     {silent = true, noremap = true}
     )
-    vim.api.nvim_set_keymap("n", "<leader>mm", "<cmd>lua require('karpoon.ui').toggle_quick_menu()<cr>",
+    vim.api.nvim_set_keymap("n", "<leader>mm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
     {silent = true, noremap = true}
     )
     -- vim.api.nvim_set_keymap("v", "<leader>tt", "<cmd>SymbolsOutline<cr>",
