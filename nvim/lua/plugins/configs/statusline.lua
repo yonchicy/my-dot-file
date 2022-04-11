@@ -74,6 +74,7 @@ default.shortline = default.config.shortline == false and true
 -- Initialize the components table
 default.components = {
    active = {},
+   inactive={}
 }
 
 default.main_icon = {
@@ -107,6 +108,20 @@ default.file_name = {
    enabled = default.shortline or function(winid)
       return vim.api.nvim_win_get_width(tonumber(winid) or 0) > 70
    end,
+   hl = {
+      fg = default.colors.white,
+      bg = default.colors.lightbg,
+   },
+
+   right_sep = {
+      str = default.statusline_style.right,
+      hl = { fg = default.colors.lightbg, bg = default.colors.lightbg2 },
+   },
+}
+default.winnr = {
+    provider = function ()
+       return ' '..tostring(vim.fn.winnr())
+    end,
    hl = {
       fg = default.colors.white,
       bg = default.colors.lightbg,
@@ -401,17 +416,19 @@ local function add_table(a, b)
 end
 
 local M = {}
-M.setup = function(override_flag)
-   if override_flag then
-      default = require("core.utils").tbl_override_req("feline", default)
-   end
+M.setup = function()
    -- components are divided in 3 sections
    default.left = {}
    default.middle = {}
    default.right = {}
+   default.inactive_left = {}
 
+   add_table(default.inactive_left, default.main_icon)
+   add_table(default.inactive_left, default.winnr)
+   add_table(default.inactive_left, default.file_name)
    -- left
    add_table(default.left, default.main_icon)
+   add_table(default.left, default.winnr)
    add_table(default.left, default.file_name)
    add_table(default.left, default.dir_name)
    add_table(default.left, default.diff.add)
@@ -439,6 +456,8 @@ M.setup = function(override_flag)
    default.components.active[1] = default.left
    default.components.active[2] = default.middle
    default.components.active[3] = default.right
+
+   default.components.inactive[1] = default.inactive_left
 
    feline.setup {
       theme = {

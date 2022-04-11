@@ -21,13 +21,19 @@ local plugins = {
       end,
    },
 
-   {
-      "feline-nvim/feline.nvim",
+  --  {
+  --     "feline-nvim/feline.nvim",
+  --     after = "nvim-web-devicons",
+  --     config =function ()
+  --       require( "plugins.configs.statusline").setup()
+  --     end
+  -- },
+  {
+      "nvim-lualine/lualine.nvim",
       after = "nvim-web-devicons",
       config =function ()
         require( "plugins.configs.statusline").setup()
       end
-
   },
    {
       "akinsho/bufferline.nvim",
@@ -292,14 +298,20 @@ require( "plugins.configs.others").luasnip()
   {
     "ThePrimeagen/harpoon",
     module="harpoon",
-    requires ="nvim-lua/plenary.nvim" ,
+    -- requires ="nvim-lua/plenary.nvim" ,
     -- config = function ()
     --     require("harpoon").setup()
     -- end,
-    -- setup = function ()
-        -- require("core.mappings").harpoon()
-      -- end,
+    setup = function ()
+        require("core.mappings").harpoon()
+      end,
   },
+  -- {
+  --     "chentau/marks.nvim",
+  --     config = function ()
+  --         require("marks").setup()
+  --     end
+  -- },
   -- Debugging
   {
     "mfussenegger/nvim-dap",
