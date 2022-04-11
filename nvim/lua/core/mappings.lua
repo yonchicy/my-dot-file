@@ -66,6 +66,7 @@ vim.api.nvim_set_keymap("n", "<leader>sgs", ":Telescope git_status <CR>",options
 vim.api.nvim_set_keymap("n", "<leader>scs", ":Telescope lsp_document_symbols <CR>",options)
 vim.api.nvim_set_keymap("n", "<leader>ss", ":Telescope lsp_workspace_symbols <CR>",options)
 vim.api.nvim_set_keymap("n", "<leader>sw", ":Telescope live_grep <CR>",options)
+vim.api.nvim_set_keymap("n", "<leader>sm", ":Telescope harpoon marks <CR>",options)
 vim.api.nvim_set_keymap('n','<leader>S',':lua require("telescope.builtin").grep_string()<cr>',options)
 -- vim.api.nvim_set_keymap("n", m.oldfiles, ":Telescope oldfiles <CR>")
 vim.api.nvim_set_keymap("n", "<leader>sc", ":Telescope themes <CR>",options)
@@ -165,5 +166,16 @@ M.symbols_outline = function ()
     {silent = true, noremap = true}
     )
 
+end
+M.harpoon = function ()
+    vim.api.nvim_set_keymap("n", "mf", "<cmd>lua require('harpoon.mark').add_file()<cr>",
+    {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>tm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
+    {silent = true, noremap = true}
+    )
+    -- vim.api.nvim_set_keymap("v", "<leader>tt", "<cmd>SymbolsOutline<cr>",
+    -- {silent = true, noremap = true}
+    -- )
 end
 return M

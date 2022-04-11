@@ -289,6 +289,17 @@ require( "plugins.configs.others").luasnip()
     "ggandor/lightspeed.nvim",
       event = "BufRead",
   },
+  {
+    "ThePrimeagen/harpoon",
+    module="harpoon",
+    requires ="nvim-lua/plenary.nvim" ,
+    -- config = function ()
+    --     require("harpoon").setup()
+    -- end,
+    -- setup = function ()
+        -- require("core.mappings").harpoon()
+      -- end,
+  },
   -- Debugging
   {
     "mfussenegger/nvim-dap",
