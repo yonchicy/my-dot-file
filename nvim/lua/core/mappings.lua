@@ -7,9 +7,7 @@ M.core_mappings = function () vim.api.nvim_set_keymap('i', 'jk', '<esc>', option
 vim.api.nvim_set_keymap('n', '<leader>hl', ':nohl<CR>', options)
 
 vim.api.nvim_set_keymap('n', 'Y', 'yg$', options)
-
--- don't let 'x' or 's' pollute register
--- vim.api.nvim_set_keymap('n', 's', '"_s', options)
+-- don't let 'x' or 's' pollute register vim.api.nvim_set_keymap('n', 's', '"_s', options)
 -- vim.api.nvim_set_keymap('v', 's', '"_s', options)
 -- vim.api.nvim_set_keymap('n', 'x', '"_x', options)
 -- vim.api.nvim_set_keymap('v', 'x', '"_x', options)
@@ -33,7 +31,6 @@ vim.api.nvim_set_keymap('n', '<leader>6', '6<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>7', '7<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>8', '8<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>9', '9<c-w>w', options)
-vim.api.nvim_set_keymap('n', '<leader>10', '10<c-w>w', options)
 
 -- buffer
 vim.api.nvim_set_keymap('n', '<leader>bc', ":lua require('core.utils').close_buffer() <CR>", options)
@@ -47,6 +44,9 @@ vim.api.nvim_set_keymap("n", "<leader>th", ":execute 15 .. 'new +terminal' | let
 vim.api.nvim_set_keymap("n", "<leader>tv", ":execute 'vnew +terminal' | let b:term_type = 'vert' | startinsert <CR>jk<c-w>ri",options)
 vim.api.nvim_set_keymap("n", "<leader>tw", ":execute 'terminal' | let b:term_type = 'wind' | startinsert <CR>",options)
 
+-- windows
+vim.api.nvim_set_keymap("n", "<c-left>", "3<c-w><",options)
+vim.api.nvim_set_keymap("n", "<c-right>", "3<c-w>>",options)
 -- Add Packer commands because we are not loading it at startup
 cmd "silent! command PackerClean lua require 'plugins' require('packer').clean()"
 cmd "silent! command PackerCompile lua require 'plugins' require('packer').compile()"
@@ -111,10 +111,10 @@ end
     vim.api.nvim_set_keymap("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",options)
     vim.api.nvim_set_keymap("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>",options)
     vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>",options)
+    vim.api.nvim_set_keymap("n", "<leader>in", "<cmd>lua vim.lsp.buf.incoming_calls()<CR>",options)
     vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>",options)
-    vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>",options)
+    -- vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>",options)
     vim.api.nvim_set_keymap("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>",options)
-    -- vim.api.nvim_set_keymap('n', 'ge', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', options)
     vim.api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>",options)
     vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>",options)
     vim.api.nvim_set_keymap("n", "<leader>sl", "<cmd>lua vim.diagnostic.setloclist()<CR>",options)

@@ -13,6 +13,17 @@ local plugins = {
       event = "VimEnter",
    },
 -- UIs
+    {
+  "andymass/vim-matchup",
+  event = "CursorMoved",
+  config = function()
+    vim.g.matchup_matchparen_offscreen = { method = "popup" }
+  end,
+},
+{
+    "haringsrob/nvim_context_vt",
+    event = "CursorMoved",
+},
    {
       "NvChad/nvim-base16.lua",
       after = "packer.nvim",
@@ -20,6 +31,12 @@ local plugins = {
          require("colors").init()
       end,
    },
+   {
+    "rcarriga/nvim-notify",
+    config = function()
+        require( "plugins.configs.others").nvim_notify()
+    end,
+  },
 
    {
       "feline-nvim/feline.nvim",
@@ -60,6 +77,10 @@ local plugins = {
       end
    },
    {
+       "nvim-treesitter/nvim-treesitter-textobjects",
+       after = "nvim-treesitter",
+   },
+   {
        "justinmk/vim-syntax-extra",
        event = "BufRead"
    },
@@ -79,6 +100,14 @@ local plugins = {
          require("core.utils").packer_lazy_load "gitsigns.nvim"
       end,
    },
+   {
+
+  "kevinhwang91/nvim-bqf",
+  event = { "BufRead", "BufNew" },
+  config = function()
+      require("plugins.configs.others").bqf()
+  end,
+},
   -- lsp
   {
       'williamboman/nvim-lsp-installer',
@@ -246,9 +275,9 @@ require( "plugins.configs.others").luasnip()
    },
    {
     "folke/trouble.nvim",
-    cmd = "Trouble",
+    cmd = {"Trouble","TroubleToggle"},
     config = function ()
-        require("trouble").setup()
+        require("plugins.configs.trouble").setup()
     end,
     setup = function()
          require("core.mappings").trouble()
