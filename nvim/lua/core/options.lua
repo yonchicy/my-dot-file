@@ -10,6 +10,7 @@ opt.sidescrolloff=8
 
 
 opt.title = true
+opt.splitright=true
 opt.clipboard = "unnamedplus"
 opt.cul=true
 opt.swapfile=false

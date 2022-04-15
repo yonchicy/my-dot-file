@@ -28,6 +28,12 @@ vim.api.nvim_set_keymap('n', '<leader>1', '1<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>2', '2<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>3', '3<c-w>w', options)
 vim.api.nvim_set_keymap('n', '<leader>4', '4<c-w>w', options)
+vim.api.nvim_set_keymap('n', '<leader>5', '5<c-w>w', options)
+vim.api.nvim_set_keymap('n', '<leader>6', '6<c-w>w', options)
+vim.api.nvim_set_keymap('n', '<leader>7', '7<c-w>w', options)
+vim.api.nvim_set_keymap('n', '<leader>8', '8<c-w>w', options)
+vim.api.nvim_set_keymap('n', '<leader>9', '9<c-w>w', options)
+vim.api.nvim_set_keymap('n', '<leader>10', '10<c-w>w', options)
 
 -- buffer
 vim.api.nvim_set_keymap('n', '<leader>bc', ":lua require('core.utils').close_buffer() <CR>", options)
@@ -49,6 +55,7 @@ cmd "silent! command PackerStatus lua require 'plugins' require('packer').status
 cmd "silent! command PackerSync lua require 'plugins' require('packer').sync()"
 cmd "silent! command PackerUpdate lua require 'plugins' require('packer').update()"
 
+ cmd "silent! command DebugMode echo 'begin debug'"
 --motion
 vim.api.nvim_set_keymap("n", "H", "^",options)
 vim.api.nvim_set_keymap("v", "H", "^",options)
@@ -188,5 +195,64 @@ M.marks = function ()
     -- vim.api.nvim_set_keymap("v", "<leader>tt", "<cmd>SymbolsOutline<cr>",
     -- {silent = true, noremap = true}
     -- )
+end
+M.debug = function ()
+    vim.api.nvim_set_keymap("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>db", "<cmd>lua require'dap'.step_back()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dC", "<cmd>lua require'dap'.run_to_cursor()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>lua require'dap'.disconnect()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dg", "<cmd>lua require'dap'.session()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>du", "<cmd>lua require'dap'.step_out()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<f6>", "<cmd>lua require'dap'.step_into()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<f7>", "<cmd>lua require'dap'.step_over()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<f8>", "<cmd>lua require'dap'.step_out()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dp", "<cmd>lua require'dap'.pause.toggle()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>ds", "<cmd>lua require'dap'.continue()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dq", "<cmd>lua require'dap'.terminate()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>",
+        {silent = true, noremap = true}
+    )
+    vim.api.nvim_set_keymap("n", "<leader>dk", "<cmd>lua require'dapui'.eval()<cr>",
+        {silent = true, noremap = true}
+    )
 end
 return M

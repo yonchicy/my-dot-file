@@ -21,15 +21,8 @@ local plugins = {
       end,
    },
 
-  --  {
-  --     "feline-nvim/feline.nvim",
-  --     after = "nvim-web-devicons",
-  --     config =function ()
-  --       require( "plugins.configs.statusline").setup()
-  --     end
-  -- },
-  {
-      "nvim-lualine/lualine.nvim",
+   {
+      "feline-nvim/feline.nvim",
       after = "nvim-web-devicons",
       config =function ()
         require( "plugins.configs.statusline").setup()
@@ -315,21 +308,41 @@ require( "plugins.configs.others").luasnip()
   -- Debugging
   {
     "mfussenegger/nvim-dap",
-    module =  "dap" ,
+    cmd = "DebugMode",
+    module = "dap",
     config = function()
-        -- require( "plugins.configs.dap").setup()
+        require( "plugins.configs.dap.dap-config").setup()
+    end,
+    setup = function ()
+        require("core.mappings").debug()
+      end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    after = "nvim-dap",
+    module = "dapui",
+    config = function()
+        require( "plugins.configs.dap.dap-config").config_dapui()
     end,
   },
-
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    after = "nvim-dap",
+    config = function()
+        require( "nvim-dap-virtual-text").setup()
+    end,
+  },
   -- Debugger management
   {
     "Pocco81/DAPInstall.nvim",
-    cmd = "DIInstall",
+    cmd = {"DIInstall","DebugMode"},
+    after ="nvim-dap",
     config = function()
-        require( "dap-install").setup({
-            installation_path = vim.fn.stdpath("data").."/dapintall/",
-        })
+        require( "plugins.configs.dap.dap-config").setup()
     end,
+    setup = function ()
+        require("core.mappings").debug()
+      end,
   },
 }
 
