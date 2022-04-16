@@ -56,7 +56,7 @@ g.mapleader = " "
 
 opt.list = true
 opt.listchars:append("space:⋅")
-opt.listchars:append("eol:↴")
+-- opt.listchars:append("eol:")
 
 g.rainbow_active = 1
 g.neovide_cursor_vfx_mode = "railgun"
