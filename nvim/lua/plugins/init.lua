@@ -112,7 +112,10 @@ local plugins = {
   {
       'williamboman/nvim-lsp-installer',
       cmd = {"LspInstall","LspInstallInfo"},
-      config = require("plugins.configs.others").lsp_installer(),
+      module = "nvim-lsp-installer",
+      config = function()
+          require("plugins.configs.others").lsp_installer()
+      end,
   },
    {
        "neovim/nvim-lspconfig",
@@ -374,7 +377,6 @@ require( "plugins.configs.others").luasnip()
       end,
   },
 }
-
 
 return packer.startup(function (use)
   for _,v in pairs(plugins) do

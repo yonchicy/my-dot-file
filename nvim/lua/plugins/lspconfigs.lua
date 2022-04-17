@@ -1,11 +1,13 @@
 local M = {}
 
+M.servers = {"clangd","sumneko_lua","rust_analyzer","cmake","pyright"}
+
 local lspconfig = require("lspconfig")
-local lua_config = function (lsp,attach,capabilities)
+local lua_config = function (attach,capabilities)
     local runtime_path = vim.split(package.path, ';')
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
-  lspconfig[lsp].setup{
+  return {
   settings = {
     Lua = {
       runtime = {
@@ -37,21 +39,44 @@ local lua_config = function (lsp,attach,capabilities)
 end
 M.setup_lsp= function (attach,capabilities)
 
-  local servers = {"clangd","sumneko_lua","rust_analyzer","cmake","pyright"}
-
-  for _,lsp in ipairs(servers) do
-    if lsp ~= "sumneko_lua" then
-      lspconfig[lsp].setup{
-      on_attach = attach,
-      capabilities = capabilities,
-      flags = {
-        debounce_text_changes = 150,
-      }
-    }
-    else
-      lua_config(lsp,attach,capabilities)
+    local present, lsp_installer = pcall(require ,"nvim-lsp-installer")
+    if not present then
+        vim.notify("can't find lsp-install when loading lsp config")
+        return
     end
-  end
+
+    local enhance_server_opts = {
+        -- Provide settings that should only apply to the "eslint" server
+        ["sumneko_lua"] = lua_config(attach,capabilities),
+    }
+
+    lsp_installer.on_server_ready(function(server)
+        -- Specify the default options which we'll use to setup all servers
+        local opts = {
+            on_attach = attach,
+            capabilities = capabilities,
+            flags = {
+                debounce_text_changes = 150,
+            }
+        }
+
+        if enhance_server_opts[server.name] then
+            -- Enhance the default opts with the server-specific ones
+            server:setup(enhance_server_opts[server.name])
+        else
+            server:setup(opts)
+        end
+    end)
+
+
+    -- for _,lsp in ipairs(M.servers) do
+    --     if lsp ~= "sumneko_lua" then
+    --         lspconfig[lsp].setup{
+    --         }
+    --     else
+    --         lua_config(lsp,attach,capabilities)
+    --     end
+    -- end
 end
 
 return M
