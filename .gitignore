@@ -4,3 +4,4 @@ nvim/lua/~/.local/share/nvim/undo
 nvim/lua/~/.local/share/nvim/undo
 nvim/plugin
 nvim/.vscode
+config/lazygit/state.yml
