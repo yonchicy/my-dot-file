@@ -376,6 +376,16 @@ require( "plugins.configs.others").luasnip()
         require("core.mappings").debug()
       end,
   },
+  -- markdown 
+  {
+  "iamcco/markdown-preview.nvim",
+  run = "cd app && npm install",
+  ft = "markdown",
+  config = function()
+    vim.g.mkdp_auto_start = 1
+    -- vim.g.mkdp_browser = "microsoft-edge-stable"
+  end,
+},
 }
 
 return packer.startup(function (use)
