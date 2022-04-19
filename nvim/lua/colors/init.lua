@@ -3,9 +3,11 @@ local M = {}
 -- if theme given, load given theme if given, otherwise nvchad_theme
 --
 local get_random_theme = function ()
-    local all_themes = {
-        "aquarium",
+    local light_themes = {
         "blossom",
+    }
+    local all_dark_theme = {
+        "aquarium",
         "catppuccin",
         "chadracula",
         "chadtain",
@@ -40,7 +42,7 @@ local get_random_theme = function ()
         "wombat"
     }
     math.randomseed(os.time())
-    return  all_themes[math.random(#all_themes)]
+    return  all_dark_theme[math.random(#all_dark_theme)]
 end
 M.init = function(theme)
     if not theme then
