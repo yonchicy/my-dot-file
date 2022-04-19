@@ -59,7 +59,9 @@ opt.listchars:append("space:⋅")
 -- opt.listchars:append("eol:")
 
 g.rainbow_active = 1
+-- neovide
 g.neovide_cursor_vfx_mode = "railgun"
+g.neovide_transparency = 0.7
 
 local disabled_built_ins = {
    "2html_plugin",
@@ -95,7 +97,6 @@ end)
 vim.api.nvim_exec([[
 au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 ]],false)
-
 
 -- plugin options
 g.clever_f_across_no_line=1
