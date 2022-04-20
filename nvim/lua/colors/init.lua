@@ -5,6 +5,7 @@ local M = {}
 local get_random_theme = function ()
     local light_themes = {
         "blossom",
+        "one-light",
     }
     local all_dark_theme = {
         "aquarium",
@@ -30,7 +31,6 @@ local get_random_theme = function ()
         "onedark-deep" ,
         "onedark" ,
         "onejelly" ,
-        "one-light",
         "onenord" ,
         "palenight" ,
         "paradise" ,
