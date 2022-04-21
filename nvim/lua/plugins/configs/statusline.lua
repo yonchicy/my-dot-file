@@ -101,7 +101,6 @@ default.file_name = {
       local icon = require("nvim-web-devicons").get_icon(filename, extension)
       if icon == nil then
          icon = " "
-         return icon
       end
       return " " .. icon .. " " .. filename .. " "
    end,
