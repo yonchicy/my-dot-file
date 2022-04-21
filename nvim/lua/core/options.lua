@@ -103,3 +103,8 @@ g.clever_f_across_no_line=1
 -- vim.api.nvim_exec([[
 -- let g:qs_highlight_on_keys=['f','F','t','T']
 -- ]],false)
+--
+-- vim wiki config
+vim.api.nvim_exec([[
+let g:vimwiki_list = [{'path':'~/vimwiki/work/'},{'path':'~/vimwiki/personal/' }]
+]],false)

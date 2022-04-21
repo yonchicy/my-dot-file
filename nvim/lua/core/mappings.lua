@@ -42,11 +42,13 @@ M.core_mappings = function()
     vim.api.nvim_set_keymap('n', '<leader>q', ':wa!<CR>:q<CR>', options)
 
     --terminal
-    vim.api.nvim_set_keymap('t', 'jk', "<c-\\><c-n>", options)
+    vim.api.nvim_set_keymap('t', 'Jk', "<c-\\><c-n>", options)
     vim.api.nvim_set_keymap('t', 'JK', "<c-\\><c-n>:bd!<cr>", options)
     vim.api.nvim_set_keymap("n", "<leader>th", ":execute 15 .. 'new +terminal' | let b:term_type = 'hori' | startinsert <CR><c-\\><c-n><c-w>ri", options)
     vim.api.nvim_set_keymap("n", "<leader>tv", ":execute 'vnew +terminal' | let b:term_type = 'vert' | startinsert <CR>jk<c-w>ri", options)
     vim.api.nvim_set_keymap("n", "<leader>tw", ":execute 'terminal' | let b:term_type = 'wind' | startinsert <CR>", options)
+    vim.api.nvim_set_keymap("n", "<leader>tlg", ":execute 'terminal lazygit' | startinsert <CR>", options)
+    vim.api.nvim_set_keymap("n", "<leader>tra", ":execute 'terminal ranger'  | startinsert <CR>", options)
 
     -- windows
     vim.api.nvim_set_keymap("n", "<c-left>", "3<c-w><", options)
@@ -87,6 +89,8 @@ M.bufferline = function()
 
     vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext <CR>", options)
     vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev <CR>", options)
+    vim.api.nvim_set_keymap("n", "<c-k>", ":BufferLineCycleNext <CR>", options)
+    vim.api.nvim_set_keymap("n", "<c-j>", ":BufferLineCyclePrev <CR>", options)
     vim.api.nvim_set_keymap("n", "<leader>bp", ":BufferLinePick <CR>", options)
     vim.api.nvim_set_keymap("n", "<leader>b1", ":BufferLineGoToBuffer 1 <CR>", options)
     vim.api.nvim_set_keymap("n", "<leader>b2", ":BufferLineGoToBuffer 2 <CR>", options)
