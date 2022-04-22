@@ -1,6 +1,6 @@
 local M = {}
 
-M.servers = {"clangd","sumneko_lua","rust_analyzer","cmake","pyright","html"}
+M.servers = {"clangd","sumneko_lua","rust_analyzer","cmake","pyright","html","jdtls"}
 
 local lspconfig = require("lspconfig")
 local lua_config = function (attach,capabilities)
