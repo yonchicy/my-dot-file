@@ -1,0 +1,54 @@
+format="""
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$cmd_duration\
+$memory_usage\
+$time
+$character
+"""
+
+# right_format = """$time"""
+
+#Inserts a blank line between shell prompts
+add_newline = false
+
+
+
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[](bold green)" 
+vicmd_symbol = "[](bold green)"
+error_symbol = "[](bold red)" 
+[cmd_duration]
+min_time = 500
+format =  " took [$duration]($style)"
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[directory]
+format = "[  $path]($style)[$read_only]($read_only_style)"
+
+[fill]
+symbol = "-"
+style = "bold green"
+
+[git_status]
+
+[git_branch]
+format="[ $symbol$branch]($style)"
+
+[jobs]
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+format = '[[  $time ](bold yellow)]($style)'
+[memory_usage]
+disabled=false
+threshold= 0
+style = "bold dimmed green"
+format = " [$ram_pct]($style)"
