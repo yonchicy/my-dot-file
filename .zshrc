@@ -58,8 +58,8 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 FZF_COMPLETION_TRIGGER=';'
 
 
-alias r='ranger'
 
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias vs=code
 alias vi=nvim
 alias vim=nvim
@@ -77,10 +77,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-
-
-
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval $(starship init zsh)
