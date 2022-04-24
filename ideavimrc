@@ -4,6 +4,8 @@ set easymotion
 set surround
 set ideajoin
 
+set hlsearch
+
 map <Leader> <Plug>(easymotion-prefix)
 
 set argtextobj
@@ -28,3 +30,4 @@ nmap <leader>7 7<c-w>w
 nmap <tab> :bn<CR>
 nmap <S-tab> :bp<CR>
 nmap <leader>bc :bd<CR>
+nmap <leader>hl :nohl<CR>
