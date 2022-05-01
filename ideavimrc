@@ -3,8 +3,13 @@ let mapleader=" "
 set easymotion
 set surround
 set ideajoin
-
 set hlsearch
+set matchit
+set NERDTree
+nmap <leader>e :NERDTreeToggle<CR>
+
+set highlightedyank 
+let g:highlightedyank_highlight_duration="300"
 
 map <Leader> <Plug>(easymotion-prefix)
 
@@ -27,7 +32,7 @@ nmap <leader>5 5<c-w>w
 nmap <leader>6 6<c-w>w
 nmap <leader>7 7<c-w>w
 
-nmap <tab> :bn<CR>
-nmap <S-tab> :bp<CR>
-nmap <leader>bc :bd<CR>
+nmap <tab> :tabn<CR>
+nmap <S-tab> :tabp<CR>
+nmap <leader>bc :tabc<CR>
 nmap <leader>hl :nohl<CR>
