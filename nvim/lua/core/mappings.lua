@@ -4,6 +4,10 @@ local options = { noremap = true, silent = true }
 local M = {}
 
 M.core_mappings = function()
+vim.api.nvim_exec([[
+:let @t='@q@t'
+]],false)
+    
     vim.api.nvim_set_keymap('n', '<leader>cc', "<cmd>lua require('colors').set_random_theme()<CR>", { noremap = true, silent = true })
     vim.api.nvim_set_keymap('i', 'jk', '<esc>', options)
     vim.api.nvim_set_keymap('n', 'Q', '<nop>', options)
