@@ -19,7 +19,7 @@ local default = {
 
          -- truncate statusline on small screens
          shortline = true,
-         style = "default", -- default, round , slant , block , arrow
+         style = "block", -- default, round , slant , block , arrow
   },
 
 }
@@ -135,7 +135,7 @@ default.winnr = {
 default.dir_name = {
    provider = function()
       local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-      return "  " .. dir_name .. " "
+      return "  " .. dir_name .. " "
    end,
 
    enabled = default.shortline or function(winid)
