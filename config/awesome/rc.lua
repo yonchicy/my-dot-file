@@ -49,7 +49,7 @@ end
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 browser = "microsoft-edge-stable"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
@@ -65,11 +65,14 @@ altkey = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.fair,
+    awful.layout.suit.max,
     awful.layout.suit.floating,
+    awful.layout.suit.tile,
+    awful.layout.suit.fair.horizontal,
+    awful.layout.suit.tile.left,
+    awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.top,
+    awful.layout.suit.fair,
 }
 -- }}}
 
@@ -166,7 +169,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({"1", "2","3", "4", "5", "6", "7", "8", "9"} , s, awful.layout.layouts[1])
+    awful.tag({"", "","", "", "", "6", "7", "8", "9"} , s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -579,9 +582,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- AutoStart Application
-awful.spawn.with_shell("fcitx5 &")
-awful.spawn.with_shell("bash ~/scripts/wallpaper.sh &")
 -- awful.spawn.with_shell("nitrogen --restore &")
-awful.spawn.with_shell(" xrandr --output HDMI-1 --rotate left --mode 1920x1080")
+awful.spawn.with_shell("~/scripts/wp-autochange.sh")
+awful.spawn.with_shell("xmodmap ~/.xmodmap")
 awful.spawn.with_shell("picom --experimental-backends & ")
 -- awful.spawn.with_shell()
