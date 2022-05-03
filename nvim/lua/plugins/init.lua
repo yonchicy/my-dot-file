@@ -25,7 +25,7 @@ local plugins = {
         event = "CursorMoved",
     },
     {
-        "NvChad/nvim-base16.lua",
+        "yonchicy/nvim-base16.lua",
         after = "packer.nvim",
         config = function()
             require("colors").init()
