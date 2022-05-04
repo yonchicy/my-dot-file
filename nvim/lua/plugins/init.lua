@@ -25,7 +25,7 @@ local plugins = {
         event = "CursorMoved",
     },
     {
-        "NvChad/nvim-base16.lua",
+        "yonchicy/nvim-base16.lua",
         after = "packer.nvim",
         config = function()
             require("colors").init()
@@ -316,10 +316,10 @@ local plugins = {
         "unblevable/quick-scope",
         event = "BufRead",
     },
-    {
-        "ggandor/lightspeed.nvim",
-        event = "BufRead",
-    },
+    -- {
+    --     "ggandor/lightspeed.nvim",
+    --     event = "BufRead",
+    -- },
     {
         "ThePrimeagen/harpoon",
         module = "harpoon",

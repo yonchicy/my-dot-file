@@ -39,7 +39,6 @@ local get_random_theme = function ()
         "tokyodark" ,
         "tokyonight" ,
         "tomorrow-night" ,
-        "wombat"
     }
     math.randomseed(os.time())
     return  all_dark_theme[math.random(#all_dark_theme)]
