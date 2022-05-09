@@ -45,7 +45,8 @@ local get_random_theme = function ()
 end
 M.init = function(theme)
     if not theme then
-        theme = get_random_theme()
+        -- theme = get_random_theme()
+        theme = "gruvchad"
     end
 
     -- set the global theme, used at various places like theme switcher, highlights
