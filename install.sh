@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir -p ~/.config
-ln -s ~/my-dot-file/zshrc_double_system ~/.zshrc
+cp  ~/my-dot-file/zshrc_double_system ~/.zshrc
 ln -s ~/my-dot-file/nvim ~/.config/nvim
 mkdir -p ~/.zsh
 cp zsh-plug.sh ~/.zsh
