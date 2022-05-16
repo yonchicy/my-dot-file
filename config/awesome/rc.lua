@@ -169,7 +169,11 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({"", "","", "", "", "6", "7", "8", "9"} , s, awful.layout.layouts[1])
+    if s.geometry.width >=s.geometry.height then
+        awful.tag({"", "","", "", "", "6", "7", "8", "9"} , s, awful.layout.layouts[1])
+    else 
+        awful.tag({"", "","", "", "", "6", "7", "8", "9"} , s, awful.layout.layouts[7])
+    end
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -583,7 +587,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- AutoStart Application
 -- awful.spawn.with_shell("nitrogen --restore &")
-awful.spawn.with_shell("~/scripts/wp-autochange.sh")
-awful.spawn.with_shell("xmodmap ~/.xmodmap")
-awful.spawn.with_shell("picom --experimental-backends & ")
+-- awful.spawn.with_shell("~/scripts/wp-autochange.sh")
+-- awful.spawn.with_shell("picom --experimental-backends & ")
+-- awful.spawn.with_shell("~/scripts/rotate_screen.sh")
 -- awful.spawn.with_shell()
