@@ -12,10 +12,10 @@ set highlightedyank
 let g:highlightedyank_highlight_duration="300"
 
 map <Leader> <Plug>(easymotion-prefix)
+map s <Plug>(easymotion-f2)
+map S <Plug>(easymotion-F2)
 
 set argtextobj
-set number
-set relativenumber
 set visualbell
 set noerrorbells
 set scrolloff=5
