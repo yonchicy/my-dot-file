@@ -316,10 +316,10 @@ local plugins = {
         "unblevable/quick-scope",
         event = "BufRead",
     },
-    -- {
-    --     "ggandor/lightspeed.nvim",
-    --     event = "BufRead",
-    -- },
+    {
+        "ggandor/lightspeed.nvim",
+        event = "BufRead",
+    },
     {
         "ThePrimeagen/harpoon",
         module = "harpoon",
