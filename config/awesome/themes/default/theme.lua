@@ -10,7 +10,7 @@ local themes_path = os.getenv("HOME") .. "/.config/awesome/themes/"
 
 local theme = {}
 
-theme.font = "FiraCode Nerd Font 8"
+theme.font = "FiraCode Nerd Font 12"
 
 theme.useless_gap = 5
 theme.border_width = 5

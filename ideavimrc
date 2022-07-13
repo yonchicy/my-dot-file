@@ -1,9 +1,18 @@
 let mapleader=" "
 
+set clipboard+=unnamed
+set number
+set relativenumber
+set ignorecase
 set easymotion
 set surround
 set ideajoin
 set hlsearch
+set incsearch
+set argtextobj
+set visualbell
+set noerrorbells
+set scrolloff=5
 set matchit
 set NERDTree
 nmap <leader>e :NERDTreeToggle<CR>
@@ -12,13 +21,12 @@ set highlightedyank
 let g:highlightedyank_highlight_duration="300"
 
 map <Leader> <Plug>(easymotion-prefix)
+map s <Plug>(easymotion-f2)
+map S <Plug>(easymotion-F2)
 
-set argtextobj
-set number
-set relativenumber
-set visualbell
-set noerrorbells
-set scrolloff=5
+
+nmap [d <action>(GotoNextError)
+
 nmap H ^
 nmap L $
 vmap H ^
