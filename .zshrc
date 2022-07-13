@@ -80,3 +80,4 @@ setopt appendhistory
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval $(starship init zsh)
+eval "$(lua $HOME/.zsh/z.lua/z.lua --init zsh once enhanced)"
