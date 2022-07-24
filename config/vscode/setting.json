@@ -1,0 +1,209 @@
+{
+    "editor.fontSize": 18,
+    "editor.fontFamily": "CodeNewRoman Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+    "vim.useCtrlKeys": true,
+    "vim.replaceWithRegister": true,
+    "vim.surround": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-a>": true,
+        "<C-c>": false,
+        "<C-t>": false,
+        "<C-v>": true,
+        "<C-x>": true,
+    },
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "d",
+                "f"
+            ],
+            "after": [
+                "<c-o>",
+                "a"
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before" :[
+                "g",
+                "r"
+            ],
+            "commands":[
+                "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "1"
+            ],
+            "commands": [
+                "workbench.action.focusFirstEditorGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "2"
+            ],
+            "commands": [
+                "workbench.action.focusSecondEditorGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "3"
+            ],
+            "commands": [
+                "workbench.action.focusThirdEditorGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "4"
+            ],
+            "commands": [
+                "workbench.action.focusFourthEditorGroup"
+            ]
+        },
+        {
+            "before": [
+                "<tab>"
+            ],
+            "commands": [
+                ":tabn"
+            ]
+        },
+        {
+            "before": [
+                "<S-tab>"
+            ],
+            "commands": [
+                ":tabp"
+            ]
+        },
+        {
+            "before": [
+                "<leader>","h","l"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "security.workspace.trust.enabled": false,
+    "editor.unicodeHighlight.allowedCharacters": {
+        " ": true
+    },
+    "git.ignoreRebaseWarning": true,
+    "remote.SSH.remotePlatform": {
+        "47.100.255.80": "linux",
+        "192.168.1.102": "linux"
+    },
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "editor.wordWrap": "off",
+    "diffEditor.wordWrap": "off",
+    "editor.guides.indentation": true,
+    "editor.guides.bracketPairs": true,
+    "cmake.configureOnOpen": true,
+    "vim.highlightedyank.enable": true,
+    "files.restoreUndoStack": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.cursorBlinking": "phase",
+    "editor.quickSuggestionsDelay": 4,
+    "git.autofetch": true,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "git.confirmSync": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.quickSuggestions": {
+
+        "other": "on",
+        "comments": "off",
+        "strings": "on"
+    },
+    "background.enabled": false,
+    "editor.renderWhitespace": "all",
+    "editor.inlineSuggest.enabled": true,
+    "workbench.colorTheme": "Eva Dark",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.fontWeight": "550",
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "clangd.arguments": [
+        "--background-index",
+        "--compile-commands-dir=build",  //compile_command.json相对路径，cmake默认生成在build，自行配置
+        "-j=12",
+        "--all-scopes-completion",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu",
+        "--pch-storage=memory",
+        "--cross-file-rename",
+        "--enable-config",
+        "--fallback-style=WebKit",
+        "--pretty",
+        "--clang-tidy",
+        // 网上别人配置clang++，但我这边windows、linux实测不加这行也没啥问题，可能mac可能需要另外加
+    	"--query-driver=clang++",
+    ],
+    "clangd.onConfigChanged": "restart",
+
+}
