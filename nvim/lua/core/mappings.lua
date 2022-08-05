@@ -178,7 +178,7 @@ M.trouble = function()
     vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>",
         { silent = true, noremap = true }
     )
-    vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>",
+    vim.api.nvim_set_keymap("n", "gr", "<cmd>Trouble lsp_references<cr>",
         { silent = true, noremap = true }
     )
 
