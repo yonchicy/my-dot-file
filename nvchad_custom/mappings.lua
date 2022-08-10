@@ -27,6 +27,10 @@ M.general = {
 
   n = {
 
+    ["<c-right>"] = { '<c-w>>', "change window size" },
+    ["<c-left>"] = { '<c-w><', "change window size" },
+    ["<c-up>"] = { '<c-w>+', "change window size" },
+    ["<c-down>"] = { '<c-w>-', "change window size" },
     ["H"] = { '^', "move to head of line" },
     ["L"] = { '$', "move to end of line" },
     ["<ESC>"] = { "<cmd> noh <CR>", "  no highlight" },
