@@ -48,6 +48,11 @@ return {
  ["folke/trouble.nvim"] = {
    after = "nvim-lspconfig",
  },
+ ["Pocco81/AutoSave.nvim"] = {
+   config = function()
+     require("auto-save").setup()
+   end,
+ },
   ["tpope/vim-repeat"] ={
 
   },
