@@ -137,26 +137,25 @@ M.comment = {
   n = {
     ["<leader>/"] = {
       function()
-        require("Comment.api").toggle_current_linewise()
+        require("Comment.api").toggle.linewise.current()
       end,
-      "蘒  toggle comment",
+      "toggle comment",
     },
     ["<C-_>"] = {
       function()
-        require("Comment.api").toggle_current_linewise()
+        require("Comment.api").toggle.linewise.current()
       end,
-
-      "蘒  toggle comment",
+      "toggle comment",
     },
   },
 
   v = {
     ["<C-_>"] = {
-      "<ESC><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",
-      "蘒  toggle comment",
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      "toggle comment",
     },
     ["<leader>/"] = {
-      "<ESC><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "toggle comment",
     },
   },
