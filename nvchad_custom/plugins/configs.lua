@@ -34,4 +34,16 @@ M.mason = {
     },
 }
 
+M.nvimtree= {
+  view = {
+    mappings = {
+      list = {
+        { key = "h",action = "close_node"},
+        { key = "l",action = "edit",}
+        
+      }
+    }
+  }
+  
+} 
 return M

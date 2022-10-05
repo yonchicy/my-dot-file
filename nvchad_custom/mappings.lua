@@ -104,27 +104,12 @@ M.general = {
 
 M.tabufline = {
   n = {
-    -- cycle through buffers
-    ["<TAB>"] = {
-      function()
-        require("core.utils").tabuflineNext()
-      end,
-      "goto next buffer",
-    },
-
-    ["<S-Tab>"] = {
-      function()
-        require("core.utils").tabuflinePrev()
-      end,
-      "  goto prev buffer",
-    },
-
     -- close buffer + hide terminal buffer
     ["<leader>bc"] = {
       function()
-        require("core.utils").close_buffer()
+        require("nvchad_ui.tabufline").close_buffer()
       end,
-      "   close buffer",
+      "close buffer",
     },
 
     -- pick buffers via numbers
@@ -392,23 +377,6 @@ M.nvterm = {
   },
 }
 
-M.whichkey = {
-  n = {
-    ["<leader>wK"] = {
-      function()
-        vim.cmd "WhichKey"
-      end,
-      "which-key all keymaps",
-    },
-    ["<leader>wk"] = {
-      function()
-        local input = vim.fn.input "WhichKey: "
-        vim.cmd("WhichKey " .. input)
-      end,
-      "which-key query lookup",
-    },
-  },
-}
 
 M.blankline = {
   n = {
