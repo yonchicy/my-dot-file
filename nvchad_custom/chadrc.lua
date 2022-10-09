@@ -10,15 +10,7 @@ M.ui = {
 }
 
 
-local pluginConfig = require"custom.plugins.configs"
-M.plugins = {
-  user= require"custom.plugins",
-  override= {
-    ["nvim-treesitter/nvim-treesitter"] = pluginConfig.treesitter,
-    ["williamboman/mason.nvim"] = pluginConfig.mason,
-    ["kyazdani42/nvim-tree.lua"] = pluginConfig.nvimtree,
-  }
-}
+M.plugins =  require"custom.plugins"
 
 M.mappings = require"custom.mappings"
 return M

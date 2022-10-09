@@ -6,18 +6,16 @@ end
 M.disabled = {
   n = {
     --   ["<leader>h"] = "",
-      ["p"] = ""
   },
   v = {
     --   ["<leader>h"] = "",
-      ["p"] = ""
   }
 }
 
 M.general = {
   i = {
-    ["jk"] = { "<ESC>", "escape insert mode" },
-    ["df"] = { "<Right>", " move right" },
+    ["jk"] = { "<ESC>", "escape insert mode" ,opts = {nowait=true}},
+    ["df"] = { "<Right>", " move right" ,opts = {nowait=true}},
     ["<C-f>"] = { "<Right>", " move right" },
     ["<C-b>"] = { "<Left>", "  move left" },
     ["<C-n>"] = { "<Down>", " move down" },
