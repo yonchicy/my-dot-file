@@ -36,7 +36,9 @@ return {
   -- lsp enhance
   ["simrat39/symbols-outline.nvim"] = {
     after = "nvim-lspconfig",
-    -- config = function()
+    config = function ()
+      require("symbols-outline").setup()
+    end
   },
   ["folke/trouble.nvim"] = {
     after = "nvim-lspconfig",
