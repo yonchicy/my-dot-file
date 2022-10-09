@@ -4,12 +4,6 @@ local function termcodes(str)
 end
 
 M.disabled = {
-  n = {
-    --   ["<leader>h"] = "",
-  },
-  v = {
-    --   ["<leader>h"] = "",
-  }
 }
 
 M.general = {

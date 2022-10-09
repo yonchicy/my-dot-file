@@ -1,4 +1,4 @@
-local pluginConfig = require "custom.pluginConfig.configs"
+local overrides = require "custom.plugins.overrides"
 
 return {
   ["nvim-treesitter/nvim-treesitter-textobjects"] = {
@@ -53,13 +53,13 @@ return {
 
   },
   ["nvim-treesitter/nvim-treesitter"] = {
-    override_options = pluginConfig.treesitter
+    override_options = overrides.treesitter
   },
   ["williamboman/mason.nvim"] = {
-    override_options = pluginConfig.mason
+    override_options = overrides.mason
   },
   ["kyazdani42/nvim-tree.lua"] ={
-    override_options = pluginConfig.nvimtree,
+    override_options = overrides.nvimtree,
   }
 
 }
