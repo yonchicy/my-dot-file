@@ -1,4 +1,5 @@
 -- custom.plugins.lspconfig
+require("lua-dev").setup({})
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 

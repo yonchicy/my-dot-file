@@ -4,13 +4,7 @@ return {
   ["nvim-treesitter/nvim-treesitter-textobjects"] = {
     after = "nvim-treesitter"
   },
-  ["goolord/alpha-nvim"] = {
-    after = "base46",
-    disable = false,
-    config = function()
-      require "plugins.configs.alpha"
-    end,
-  },
+  ["goolord/alpha-nvim"] =false,
   ["ggandor/lightspeed.nvim"] = {
     event = "BufRead",
   },
@@ -51,7 +45,13 @@ return {
   ["tpope/vim-repeat"] = {
 
   },
-  ["tpope/vim-surround"] = {
+  ["kylechui/nvim-surround"] = {
+    tag = "*",
+    config = function ()
+      require("nvim-surround").setup()
+    end
+  },
+  ["p00f/nvim-ts-rainbow"] = {
 
   },
   ["nvim-treesitter/nvim-treesitter"] = {
@@ -62,6 +62,10 @@ return {
   },
   ["kyazdani42/nvim-tree.lua"] ={
     override_options = overrides.nvimtree,
-  }
+  },
+  -- dev
+  ["folke/lua-dev.nvim"] = {
+
+  },
 
 }

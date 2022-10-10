@@ -17,7 +17,13 @@ M.treesitter = {
                 -- ["ic"] = "@class.inner",
             },
         },
-    }
+    },
+    rainbow  = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  }
+
 }
 M.mason = {
     ensure_installed = {
