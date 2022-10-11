@@ -54,6 +54,11 @@ return {
   ["p00f/nvim-ts-rainbow"] = {
 
   },
+  -- dev
+  ["folke/lua-dev.nvim"] = {
+
+  },
+
   ["nvim-treesitter/nvim-treesitter"] = {
     override_options = overrides.treesitter
   },
@@ -63,9 +68,8 @@ return {
   ["kyazdani42/nvim-tree.lua"] ={
     override_options = overrides.nvimtree,
   },
-  -- dev
-  ["folke/lua-dev.nvim"] = {
-
+  ["lewis6991/gitsigns.nvim"] = {
+    override_options = overrides.gitsigns,
   },
 
 }
