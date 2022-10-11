@@ -70,13 +70,6 @@ M.general = {
     -- update nvchad
     -- ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "  update nvchad" },
 
-    ["<leader>tt"] = {
-      function()
-        require("base46").toggle_theme()
-      end,
-      "   toggle theme",
-    },
-
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
     -- empty mode is same as using <cmd> :map
@@ -123,12 +116,6 @@ M.tabufline = {
 M.comment = {
   -- toggle comment in both modes
   n = {
-    ["<leader>/"] = {
-      function()
-        require("Comment.api").toggle.linewise.current()
-      end,
-      "toggle comment",
-    },
     ["<C-_>"] = {
       function()
         require("Comment.api").toggle.linewise.current()
@@ -142,10 +129,6 @@ M.comment = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "toggle comment",
     },
-    ["<leader>/"] = {
-      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-      "toggle comment",
-    },
   },
 }
 
@@ -153,52 +136,11 @@ M.lspconfig = {
   -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
 
   n = {
-    ["gD"] = {
-      function()
-        vim.lsp.buf.declaration()
-      end,
-      "lsp declaration",
-    },
-
-    ["gd"] = {
-      function()
-        vim.lsp.buf.definition()
-      end,
-      "lsp definition",
-    },
-
-    ["K"] = {
-      function()
-        vim.lsp.buf.hover()
-      end,
-      "lsp hover",
-    },
-    ["gh"] = {
+   ["gh"] = {
       function()
         vim.lsp.buf.hover()
       end,
       "   lsp hover",
-    },
-
-    ["gi"] = {
-      function()
-        vim.lsp.buf.implementation()
-      end,
-      "lsp implementation",
-    },
-
-    ["<leader>ls"] = {
-      function()
-        vim.lsp.buf.signature_help()
-      end,
-      "lsp signature_help",
-    },
-
-    ["<leader>D"] = {
-      function()
-        vim.lsp.buf.type_definition()
-      end,
-      "lsp definition type",
     },
 
     ["<leader>rn"] = {
@@ -206,13 +148,6 @@ M.lspconfig = {
         require("nvchad_ui.renamer").open()
       end,
       "lsp rename",
-    },
-
-    ["<leader>ca"] = {
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      "lsp code_action",
     },
 
     -- ["gr"] = {
@@ -248,13 +183,6 @@ M.lspconfig = {
         vim.diagnostic.setloclist()
       end,
       "diagnostic setloclist",
-    },
-
-    ["<leader>fm"] = {
-      function()
-        vim.lsp.buf.formatting {}
-      end,
-      "lsp formatting",
     },
 
     ["<leader>wa"] = {
