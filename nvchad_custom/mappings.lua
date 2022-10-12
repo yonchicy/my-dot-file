@@ -16,6 +16,11 @@ M.disabled = {
     ["p" ] = "",
   }
 }
+M.build_system = {
+  n= {
+    ['<f5>'] = { ":set mp=" ,"set makeprg"},
+  }
+}
 
 M.general = {
   i = {
@@ -228,6 +233,7 @@ M.telescope = {
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "  find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "  help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "   find oldfiles" },
+    ["<leader>fc"] = { "<cmd> Telescope command_history <CR>", "   find command history" },
     ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "   show keys" },
 
     -- git
