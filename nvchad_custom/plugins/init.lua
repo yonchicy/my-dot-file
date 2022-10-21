@@ -58,6 +58,11 @@ return {
   ["folke/lua-dev.nvim"] = {
 
   },
+  ["rmagatti/goto-preview"] = {
+    config = function ()
+      require "custom.plugins.goto-preview"
+    end
+  },
 
   ["nvim-treesitter/nvim-treesitter"] = {
     override_options = overrides.treesitter
