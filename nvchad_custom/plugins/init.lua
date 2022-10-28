@@ -76,4 +76,25 @@ return {
 	["lewis6991/gitsigns.nvim"] = {
 		override_options = overrides.gitsigns,
 	},
+	--debug
+
+	["mfussenegger/nvim-dap"] = {
+		config = function()
+			require("custom.plugins.debug").setup()
+		end,
+	},
+
+	["rcarriga/nvim-dap-ui"] = {
+		after = "nvim-dap",
+		config = function()
+			require("custom.plugins.debug").setup_ui()
+		end,
+	},
+
+	-- ["theHamsta/nvim-dap-virtual-text"] = {
+	-- 	after = "nvim-dap",
+	-- 	config = function()
+	-- 		require("nvim-dap-virtual-text").setup()
+	-- 	end,
+	-- },
 }
