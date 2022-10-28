@@ -36,6 +36,9 @@ M.mason = {
 		-- shell
 		"shfmt",
 		"shellcheck",
+
+    -- "debug"
+    "codelldb",
 	},
 }
 
