@@ -57,7 +57,7 @@ return {
 	},
 	["p00f/nvim-ts-rainbow"] = {},
 	-- dev
-	["folke/lua-dev.nvim"] = {},
+	["folke/neodev.nvim"] = {},
 	["rmagatti/goto-preview"] = {
 		config = function()
 			require("custom.plugins.goto-preview")
