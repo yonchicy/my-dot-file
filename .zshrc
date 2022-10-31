@@ -99,5 +99,7 @@ setopt appendhistory
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+server=$(tail --lines=1 /etc/resolv.conf | cut -f 2 -d " ")
+export all_proxy="http://$server:7890"
 eval $(starship init zsh)
 eval "$(lua $HOME/.zsh/z.lua/z.lua --init zsh once enhanced)"
