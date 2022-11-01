@@ -17,3 +17,5 @@ Diagnostics:
     ]
     CheckOptions:
       readability-identifier-naming.VariableCase: camelCase
+Index:
+  Background: Build
