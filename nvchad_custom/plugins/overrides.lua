@@ -9,6 +9,7 @@ M.treesitter = {
 		select = {
 			enable = true,
 			lookahead = true,
+      set_jumps = true,
 			keymaps = {
 				["ia"] = "@parameter.inner",
 				["af"] = "@function.outer",
