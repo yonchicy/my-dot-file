@@ -5,8 +5,15 @@ return {
 		after = "nvim-treesitter",
 	},
 	["goolord/alpha-nvim"] = false,
-	["ggandor/lightspeed.nvim"] = {
+	-- ["ggandor/lightspeed.nvim"] = {
+	-- 	event = "BufRead",
+	-- },
+
+	["ggandor/leap.nvim"] = {
 		event = "BufRead",
+		config = function()
+			require("custom.plugins.leap-nvim")
+		end,
 	},
 	["neovim/nvim-lspconfig"] = {
 		config = function()
