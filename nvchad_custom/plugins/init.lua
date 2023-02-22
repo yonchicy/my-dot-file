@@ -77,7 +77,7 @@ return {
 	["williamboman/mason.nvim"] = {
 		override_options = overrides.mason,
 	},
-	["kyazdani42/nvim-tree.lua"] = {
+	["nvim-tree/nvim-tree.lua"] = {
 		override_options = overrides.nvimtree,
 	},
 	["lewis6991/gitsigns.nvim"] = {
