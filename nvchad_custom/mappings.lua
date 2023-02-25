@@ -1,4 +1,12 @@
+---@type MappingsTable
 local M = {}
+
+-- M.general = {
+--   n = {
+--     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+--   },
+-- }
+
 local function termcodes(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
@@ -397,3 +405,4 @@ M.trouble = {
   }
 }
 return M
+

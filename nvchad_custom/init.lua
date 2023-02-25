@@ -1,7 +1,3 @@
--- example file i.e lua/custom/init.lua
--- load your options globals, autocmds here or anything .__.
--- you can even override default options here (core/options.lua)
-
 
 local opt = vim.opt
 local g = vim.g
@@ -22,4 +18,5 @@ g.neovide_cursor_vfx_mode = "railgun"
 
 
 require("custom.scripts.asyncrun")
+
 
