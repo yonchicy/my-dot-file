@@ -3,100 +3,102 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Override plugin definition options
+	-- Override plugin definition options
 
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        event = {"BufReadPre", "BufNewFile"},
-        config = function()
-          require("custom.configs.null-ls")
-        end,
-      },
-	  {
-      "hrsh7th/nvim-cmp",
-		dependencies = "friendly-snippets",
-    opts = overrides.cmp,
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			-- format & linting
+			{
+				"jose-elias-alvarez/null-ls.nvim",
+				event = { "BufReadPre", "BufNewFile" },
+				config = function()
+					require("custom.configs.null-ls")
+				end,
+			},
+			{
+				"hrsh7th/nvim-cmp",
+				dependencies = "friendly-snippets",
+				opts = overrides.cmp,
+			},
+		},
+
+		config = function()
+			require("plugins.configs.lspconfig")
+			require("custom.configs.lspconfig")
+		end,
 	},
-    },
 
-    config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
-    end,
-  },
-
-  -- overrde plugin configs
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
-	 {
-    "nvim-treesitter/nvim-treesitter-textobjects",
+	-- overrde plugin configs
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = overrides.treesitter,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = "nvim-treesitter",
 	},
 
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
-  },
+	{
+		"williamboman/mason.nvim",
+		opts = overrides.mason,
+	},
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
+	{
+		"nvim-tree/nvim-tree.lua",
+		opts = overrides.nvimtree,
+	},
 
-  -- Install a plugin
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
+	-- Install a plugin
+	{
+		"max397574/better-escape.nvim",
+		event = "InsertEnter",
+		config = function()
+			require("better_escape").setup()
+		end,
+	},
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+	-- To make a plugin not be loaded
+	-- {
+	--   "NvChad/nvim-colorizer.lua",
+	--   enabled = false
+	-- },
 
-  -- Uncomment if you want to re-enable which-key
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    enabled = true,
-  },
-	  {
-    "lewis6991/gitsigns.nvim",
+	-- Uncomment if you want to re-enable which-key
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		enabled = true,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
 		opts = overrides.gitsigns,
 	},
-  
 
-  -- motion 
-  {
-	  
-      "ggandor/leap.nvim",
+	-- motion
+	{
+
+		"ggandor/leap.nvim",
 		event = "BufRead",
 		config = function()
 			require("custom.configs.leap-nvim")
 		end,
 	},
-	  {"tpope/vim-repeat",
-    event = "VeryLazy",
-  },
-    
-	  {
-    "karb94/neoscroll.nvim",
+	{ "tpope/vim-repeat", event = "VeryLazy" },
+
+	{
+		"karb94/neoscroll.nvim",
 		event = "WinScrolled",
 		config = function()
-      require("neoscroll" ) .setup()
+			require("neoscroll").setup()
 		end,
 	},
- 
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+		opts = require("custom.configs.alpha").opts,
+		config = require("custom.configs.alpha").setup,
+	},
 }
 
 return plugins
