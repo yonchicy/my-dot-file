@@ -33,11 +33,13 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = overrides.treesitter,
-	},
-	{
+    dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		dependencies = "nvim-treesitter",
+    }
 	},
+	-- {
+	-- 	dependencies = "nvim-treesitter",
+	-- },
 
 	{
 		"williamboman/mason.nvim",
@@ -98,6 +100,15 @@ local plugins = {
 		event = "VimEnter",
 		opts = require("custom.configs.alpha").opts,
 		config = require("custom.configs.alpha").setup,
+	},
+	{
+		"echasnovski/mini.surround",
+    keys = require("custom.configs.mini-surround").keys,
+    opts = require("custom.configs.mini-surround").opts,
+		config = function(_, opts)
+      
+			require("mini.surround").setup(opts)
+		end,
 	},
 }
 
