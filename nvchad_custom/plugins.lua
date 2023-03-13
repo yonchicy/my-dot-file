@@ -33,9 +33,9 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = overrides.treesitter,
-    dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-    }
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 	},
 	-- {
 	-- 	dependencies = "nvim-treesitter",
@@ -103,11 +103,27 @@ local plugins = {
 	},
 	{
 		"echasnovski/mini.surround",
-    keys = require("custom.configs.mini-surround").keys,
-    opts = require("custom.configs.mini-surround").opts,
+		keys = require("custom.configs.mini-surround").keys,
+		opts = require("custom.configs.mini-surround").opts,
 		config = function(_, opts)
-      
 			require("mini.surround").setup(opts)
+		end,
+	},
+	{
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+		config = function()
+			require("symbols-outline").setup()
+		end,
+	},
+	{
+    "folke/trouble.nvim",
+		dependencies = "nvim-lspconfig",
+	},
+	{
+    "Pocco81/AutoSave.nvim",
+		config = function()
+			require("auto-save").setup()
 		end,
 	},
 }
