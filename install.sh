@@ -8,6 +8,7 @@ ln -s $HOME/my-dot-file/LazyVim $HOME/.config/nvim
 mkdir -p $HOME/.zsh
 cp $HOME/my-dot-file/zsh-plug.sh $HOME/.zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # install starship
 curl -sS https://starship.rs/install.sh | sh
