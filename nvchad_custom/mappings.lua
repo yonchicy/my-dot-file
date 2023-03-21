@@ -59,6 +59,7 @@ M.general = {
     ["Q"] = { "<C-w>q", "close windows" },
     ["<leader>q"] = { "<cmd>wa!<CR><cmd>q!<CR>", "close windows" },
     ["<leader>wq"] = { "<cmd>wa!<CR><cmd>qa!<CR>", "save and exit vim" },
+    ["<leader>ww"] = { "<cmd>wa<CR>", "save all files" },
 
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
