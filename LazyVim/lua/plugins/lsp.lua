@@ -6,7 +6,7 @@ return {
       "lua-language-server",
       "stylua",
       --
-      "clangd",
+      -- "clangd",
       "clang-format",
       "rust-analyzer",
       -- shell

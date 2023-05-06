@@ -8,10 +8,22 @@ return {
     "lazyvim/lazyvim",
     opts = {
       colorscheme = "catppuccin",
+      -- colorscheme = "tokyonight-day",
       defaults = {
         keymaps = false,
       }
     },
+  {
+    "neovim/nvim-lspconfig",
+    ---@class pluginlspopts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        -- pyright will be automatically installed with mason and loaded with lspconfig
+        ccls = {},
+      },
+    },
+  },
   },
 }
 

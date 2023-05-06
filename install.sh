@@ -12,6 +12,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # install starship
 curl -sS https://starship.rs/install.sh | sh
-git clone https://github.com/neovim/neovim.git
+git clone https://github.com/neovim/neovim.git ~
 
 cd $HOME/.zsh && bash zsh-plug.sh
