@@ -7,8 +7,8 @@ return {
   {
     "lazyvim/lazyvim",
     opts = {
-      colorscheme = "catppuccin",
-      -- colorscheme = "tokyonight-day",
+      -- colorscheme = "catppuccin",
+      colorscheme = "tokyonight-day",
       defaults = {
         keymaps = false,
       }
@@ -59,7 +59,7 @@ return {
 --   {
 --     "simrat39/symbols-outline.nvim",
 --     cmd = "symbolsoutline",
---     keys = { { "<leader>cs", "<cmd>symbolsoutline<cr>", desc = "symbols outline" } },
+
 --     config = true,
 --   },
 --

@@ -22,4 +22,7 @@ return {
       -- add a keymap to browse plugin files
     },
   },
+  {
+    "echasnovski/mini.align",
+  },
 }
