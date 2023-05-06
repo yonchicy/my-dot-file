@@ -10,9 +10,14 @@ return {
       -- colorscheme = "catppuccin",
       colorscheme = "tokyonight-day",
       defaults = {
-        keymaps = false,
+        -- keymaps = false,
       }
     },
+{
+  "folke/tokyonight.nvim",
+  lazy = true,
+  opts = { style = "day" },
+},
   {
     "neovim/nvim-lspconfig",
     ---@class pluginlspopts
@@ -21,6 +26,8 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         ccls = {},
+        jsonls = {mason=false},
+        clangd={mason=false}
       },
     },
   },
