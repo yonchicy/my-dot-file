@@ -5,3 +5,4 @@ git clone https://github.com/BurntSushi/ripgrep.git $HOME/tools/ripgrep
 cargo install fd-find
 git clone --depth 1 git@github.com:lotabout/skim.git ~/.skim
 cargo install gitui
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash

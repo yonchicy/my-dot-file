@@ -14,5 +14,6 @@ fd      vs find
 zellij  vs tmux
 joshuto vs ranger
 skim    vs fzf
-
+cd vs zoxide
 starship.toml
+
