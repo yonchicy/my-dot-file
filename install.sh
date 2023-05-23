@@ -1,9 +1,9 @@
 #!/bin/bash
 mkdir -p ~/.config
-cp  ~/my-dot-file/.zshrc ~/.zshrc
-cp  ~/my-dot-file/.vimrc ~/.vimrc
-cp  $HOME/my-dot-file/config/* ~/.config/ -r
-rm -rf $HOME/.config/nvim 
+cp ~/my-dot-file/.zshrc ~/.zshrc
+cp ~/my-dot-file/.vimrc ~/.vimrc
+cp $HOME/my-dot-file/config/* ~/.config/ -r
+rm -rf $HOME/.config/nvim
 ln -s $HOME/my-dot-file/LazyVim $HOME/.config/nvim
 mkdir -p $HOME/.zsh
 cp $HOME/my-dot-file/zsh-plug.sh $HOME/.zsh
