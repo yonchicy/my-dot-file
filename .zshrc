@@ -81,8 +81,10 @@ FZF_COMPLETION_TRIGGER=';'
 
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias vs=code
-alias vi=nvim
+
 alias vim=nvim
+alias lm="NVIM_APPNAME=lazyvim nvim"
+alias nv="NVIM_APPNAME=nvchad nvim"
 alias lg=lazygit
 alias fd=fdfind
 export EDITOR="nvim"
