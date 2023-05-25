@@ -18,7 +18,7 @@ video_default	= [
 ]
 
 text_default	= [
-	{ command = "micro" },
+	{ command = "vim" },
 	{ command = "gedit", fork = true, silent = true },
 	{ command = "bat", args = [ "--paging=always" ] },
 ]
