@@ -11,6 +11,10 @@ keymap = [
 	{ keys = [ "ctrl+c" ],		command = "quit" },
 	{ keys = [ "Q" ],		command = "quit --output-current-directory" },
 
+	{ keys = [ "c","o","d","e" ],		command = "shell code ." },
+	{ keys = [ "n","v" ],		command = "shell nvim" },
+	{ keys = [ "g","i","t" ],		command = "shell gitui" },
+
 	{ keys = [ "R" ],		command = "reload_dirlist" },
 	{ keys = [ "z", "h" ],		command = "toggle_hidden" },
 	{ keys = [ "z","i" ],		command = "zi" },
