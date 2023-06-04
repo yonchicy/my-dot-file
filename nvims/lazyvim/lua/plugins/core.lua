@@ -29,6 +29,7 @@ return {
         jsonls = {mason=false},
         clangd={mason=false}
       },
+        autoformat=false,
     },
   },
   },
