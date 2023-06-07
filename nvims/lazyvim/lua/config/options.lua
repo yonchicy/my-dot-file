@@ -20,4 +20,5 @@ au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, o
 )
 
 g.neovide_cursor_vfx_mode = "railgun"
+opt.background = "light"
 -- g.neovide_transparency = 0.7

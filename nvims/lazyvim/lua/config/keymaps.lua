@@ -76,3 +76,13 @@ vim.keymap.set("n", "<leader>fT", function()
 end, { desc = "Terminal (cwd)" })
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 vim.keymap.set("t", "Jk", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+
+-- toggle
+vim.keymap.set("n", "<leader>d", function()
+  local mode = vim.api.nvim_get_option_value("background", {})
+  if mode == "dark" then
+    vim.api.nvim_set_option_value("background", "light", {})
+  elseif mode == "light" then
+    vim.api.nvim_set_option_value("background", "dark", {})
+  end
+end, { desc = "toggle theme to dark" })

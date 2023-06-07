@@ -16,7 +16,7 @@ return {
 {
   "folke/tokyonight.nvim",
   lazy = true,
-  opts = { style = "day" },
+
 },
   {
     "neovim/nvim-lspconfig",
