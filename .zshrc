@@ -19,9 +19,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='exa -alF'
+alias la='exa -A'
+alias l='exa -F'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -63,6 +63,31 @@ function jump-to-git-root {
 
 # Make short alias
 alias gr=jump-to-git-root
+function joshuto-a() { 
+	ID="$$" 
+	mkdir -p /tmp/$USER 
+	OUTPUT_FILE="/tmp/$USER/joshuto-cwd-$ID" 
+	env joshuto --output-file "$OUTPUT_FILE" $@ 
+	exit_code=$? 
+ 
+	case "$exit_code" in 
+		# regular exit 
+		0) 
+			;; 
+		# output contains current directory 
+		101) 
+			JOSHUTO_CWD=$(cat "$OUTPUT_FILE") 
+			cd "$JOSHUTO_CWD" 
+			;; 
+		# output selected files 
+		102) 
+			;; 
+		*) 
+			echo "Exit code: $exit_code" 
+			;; 
+	esac 
+}
+
 
 # -------------------------------------------------------------
 
@@ -78,19 +103,22 @@ ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 FZF_COMPLETION_TRIGGER=';'
 
 
-
-alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+export NVIM_APPNAME=lazyvim
+alias ls=exa
+alias ra='joshuto-a'
 alias vs=code
-
 alias vim=nvim
 alias lm="NVIM_APPNAME=lazyvim nvim"
 alias nv="NVIM_APPNAME=nvchad nvim"
-alias lg=lazygit
+alias make='make -j8'
+alias lg=gitui
 alias fd=fdfind
-export EDITOR="nvim"
 alias tmux="TERM=screen-256color-bce tmux"
+alias zj="zellij"
 
 
+
+export EDITOR="nvim"
 [[ -s /home/yonchicy/.autojump/etc/profile.d/autojump.sh ]] && source /home/yonchicy/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
@@ -100,8 +128,9 @@ SAVEHIST=10000
 setopt appendhistory
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-server=$(tail --lines=1 /etc/resolv.conf | cut -f 2 -d " ")
-export all_proxy="http://$server:7890"
+ 
 eval $(starship init zsh)
-eval "$(lua $HOME/.zsh/z.lua/z.lua --init zsh once enhanced)"
+eval "$(zoxide init zsh)"
+
+
+
