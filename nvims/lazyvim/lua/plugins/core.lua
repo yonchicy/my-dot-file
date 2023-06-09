@@ -25,9 +25,7 @@ return {
       ---@type lspconfig.options
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
-        ccls = {},
         jsonls = {mason=false},
-        clangd={mason=false}
       },
         autoformat=false,
     },
