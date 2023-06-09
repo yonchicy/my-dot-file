@@ -5,7 +5,8 @@ cp ~/my-dot-file/.vimrc ~/.vimrc
 cp $HOME/my-dot-file/config/* ~/.config/ -r
 rm -rf $HOME/.config/nvim
 ln -s $HOME/my-dot-file/nvims/LazyVim $HOME/.config/lazyvim
-ln -s $HOME/my-dot-file/nvims/nvchad $HOME/.config/nvchad
+git clone https://github.com/NvChad/NvChad ~/.config/nvchad --depth 1
+ln -s $HOME/my-dot-file/nvims/nvchad $HOME/.config/nvchad/lua/custom
 mkdir -p $HOME/.zsh
 cp $HOME/my-dot-file/zsh-plug.sh $HOME/.zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
