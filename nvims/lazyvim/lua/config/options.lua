@@ -9,6 +9,7 @@ opt.rnu = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
+opt.wildmode = {"longest","list:full"}
 -- opt.guifont = "CodeNewRoman Nerd Font:h15" -- the font used in graphical neovim applications
 
 -- hilight yank
