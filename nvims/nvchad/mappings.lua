@@ -55,7 +55,6 @@ M.general = {
     ["<c-down>"] = { '<c-w>-', "change window size" },
     ["H"] = { '^', "move to head of line" },
     ["L"] = { '$', "move to end of line" },
-    ["<ESC>"] = { "<cmd> noh <CR>", "  no highlight" },
     ["Q"] = { "<C-w>q", "close windows" },
     ["<leader>q"] = { "<cmd>wa!<CR><cmd>q!<CR>", "close windows" },
     ["<leader>wq"] = { "<cmd>wa!<CR><cmd>qa!<CR>", "save and exit vim" },
