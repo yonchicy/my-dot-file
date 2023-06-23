@@ -3,7 +3,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 
-local servers = { "clangd", "lua_ls", "rust_analyzer" }
+local servers = { "clangd", "lua_ls", "rust_analyzer" ,"pyright"}
 
 for _, lsp in ipairs(servers) do
 	if lsp == "clangd" then

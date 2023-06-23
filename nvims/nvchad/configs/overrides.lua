@@ -87,6 +87,9 @@ M.mason = {
 
     -- "debug"
     "codelldb",
+
+    -- python
+    pyright,
 	},
 }
 local function on_attach(bufnr)
