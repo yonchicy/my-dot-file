@@ -16,7 +16,9 @@ M.disabled = {
     ["j"] = "",
     ["k"] = "",
     ["Q"] = "",
+    ["<esc>"] = "",
     ["<c-s>"] = "",
+    ["<c-c>"] = "",
   },
   v = {
     ["j"] = "",
@@ -59,6 +61,7 @@ M.general = {
     ["<leader>q"] = { "<cmd>wa!<CR><cmd>q!<CR>", "close windows" },
     ["<leader>wq"] = { "<cmd>wa!<CR><cmd>qa!<CR>", "save and exit vim" },
     ["<leader>ww"] = { "<cmd>wa<CR>", "save all files" },
+    ["<leader>hl"] = { "<cmd>noh<CR>", "clear highlights" },
 
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
@@ -72,11 +75,6 @@ M.general = {
     ["<leader>4"] = { "4<C-w>w", "move to window 4" },
     ["<leader>5"] = { "5<C-w>w", "move to window 5" },
 
-    -- save
-    ["<C-s>"] = { "<cmd> w <CR>", "save file" },
-
-    -- Copy all
-    ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
 
     -- line numbers
     -- ["<leader>n"] = { "<cmd> set nu! <CR>", "   toggle line number" },
@@ -308,12 +306,12 @@ M.nvterm = {
 
     -- new
 
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").new "horizontal"
-      end,
-      "new horizontal term",
-    },
+    -- ["<leader>h"] = {
+    --   function()
+    --     require("nvterm.terminal").new "horizontal"
+    --   end,
+    --   "new horizontal term",
+    -- },
 
     ["<leader>v"] = {
       function()
