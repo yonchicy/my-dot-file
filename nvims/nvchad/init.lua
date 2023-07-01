@@ -6,6 +6,9 @@ opt.rnu=true
 opt.scrolloff=8
 opt.sidescrolloff=8
 opt.wrap=false
+opt.tabstop=4
+opt.shiftwidth=4
+opt.expandtab=true
 
 -- opt.guifont = "CodeNewRoman Nerd Font:h15" -- the font used in graphical neovim applications
 

@@ -16,16 +16,18 @@ M.disabled = {
     ["j"] = "",
     ["k"] = "",
     ["Q"] = "",
-    ["<esc>"] = "",
+    ["<ESC>"] = "",
     ["<c-s>"] = "",
     ["<c-c>"] = "",
   },
   v = {
     ["j"] = "",
     ["k"] = "",
+    ["<ESC>"] = "",
   },
   x = {
     ["p" ] = "",
+    ["<ESC>"] = "",
   }
 }
 M.build_system = {
@@ -37,7 +39,6 @@ M.build_system = {
 M.general = {
   i = {
     ["jk"] = { "<ESC>", "escape insert mode" ,opts = {nowait=true}},
-    ["df"] = { "<Right>", " move right" ,opts = {nowait=true}},
     ["<C-f>"] = { "<Right>", " move right" },
     ["<C-b>"] = { "<Left>", "  move left" },
     ["<C-n>"] = { "<Down>", " move down" },
@@ -241,6 +242,7 @@ M.telescope = {
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "  find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "  help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "   find oldfiles" },
+    ["<leader>ft"] = { "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>", "   find symbols" },
     ["<leader>fc"] = { "<cmd> Telescope command_history <CR>", "   find command history" },
     ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "   show keys" },
 
