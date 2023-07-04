@@ -123,7 +123,7 @@ M.tabufline = {
     },
 
     -- pick buffers via numbers
-    ["<leader>bp"] = { "<cmd> TbufPick <CR>", "Pick buffer" },
+    -- ["<leader>bp"] = { "<cmd> TbufPick <CR>", "Pick buffer" },
   },
 }
 
@@ -236,6 +236,7 @@ M.telescope = {
   n = {
     -- find
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "  find files" },
+    ["<leader>bp"] = { "<cmd> Telescope buffers<CR>", "Pick buffer" },
     ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "  find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "  find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "   live grep" },
