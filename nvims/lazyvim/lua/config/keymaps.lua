@@ -27,8 +27,8 @@ vim.keymap.set("n", "H", "^", { desc = "move to head of line" })
 vim.keymap.set("n", "L", "$", { desc = "move to end of line" })
 vim.keymap.set("n", "<ESC>", "<cmd> noh <CR>", { desc = "  no highlight" })
 vim.keymap.set("n", "Q", "<C-w>q", { desc = "close windows" })
-vim.keymap.set("n", "<leader>qq", "<cmd>wa!<CR><cmd>q!<CR>", { desc = "close windows" })
 vim.keymap.set("n", "WQ", "<cmd>wa!<CR><cmd>qa!<CR>", { desc = "save and exit vim" })
+vim.keymap.set("n", "<leader>wq", "<cmd>wa!<CR><cmd>qa!<CR>", { desc = "save and exit vim" })
 
 -- switch between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "window left" })
