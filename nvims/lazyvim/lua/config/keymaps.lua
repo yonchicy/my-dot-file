@@ -68,9 +68,9 @@ vim.keymap.set("n", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { 
 vim.keymap.set("n", "<S-tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
-vim.keymap.set("n", "<leader>ft", function()
-  Util.float_term(nil, { cwd = Util.get_root() })
-end, { desc = "Terminal (root dir)" })
+-- vim.keymap.set("n", "<leader>ft", function()
+--   Util.float_term(nil, { cwd = Util.get_root() })
+-- end, { desc = "Terminal (root dir)" })
 vim.keymap.set("n", "<leader>fT", function()
   Util.float_term()
 end, { desc = "Terminal (cwd)" })
