@@ -81,7 +81,9 @@ vim.keymap.set("n", "<leader>d", function()
   local mode = vim.api.nvim_get_option_value("background", {})
   if mode == "dark" then
     vim.api.nvim_set_option_value("background", "light", {})
+    os.execute('sed -i "29s/dark/light/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
   elseif mode == "light" then
     vim.api.nvim_set_option_value("background", "dark", {})
+    os.execute('sed -i "29s/light/dark/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
   end
 end, { desc = "toggle theme to dark" })
