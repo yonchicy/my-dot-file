@@ -19,7 +19,7 @@ return {
       -- change a keymap
       { "<c-p>", Util.telescope("files"), desc = "Find Files (root dir)" },
       { "<leader>fw", Util.telescope("live_grep"), desc = "Find words (root dir)" },
-      { "<leader>ft", Util.telescope("lsp_dynamic_workspace_symbols"), desc = "Find symbols" },
+      { "<leader>fs", Util.telescope("lsp_dynamic_workspace_symbols"), desc = "Find symbols" },
       -- add a keymap to browse plugin files
     },
   },
