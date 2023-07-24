@@ -7,8 +7,8 @@ return {
     {
         "lazyvim/lazyvim",
         opts = {
-            colorscheme = "gruvbox-material",
-            -- colorscheme = "tokyonight",
+
+            colorscheme = "kanagawa-wave",
             defaults = {
                 -- keymaps = false,
             }
