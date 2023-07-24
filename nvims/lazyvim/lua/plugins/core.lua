@@ -4,33 +4,28 @@
 
 
 return {
-  {
-    "lazyvim/lazyvim",
-    opts = {
-      -- colorscheme = "catppuccin",
-      colorscheme = "tokyonight",
-      defaults = {
-        -- keymaps = false,
-      }
+    {
+        "lazyvim/lazyvim",
+        opts = {
+            colorscheme = "gruvbox-material",
+            -- colorscheme = "tokyonight",
+            defaults = {
+                -- keymaps = false,
+            }
+        },
     },
-{
-  "folke/tokyonight.nvim",
-  lazy = true,
-
-},
-  {
-    "neovim/nvim-lspconfig",
-    ---@class pluginlspopts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        jsonls = {mason=false},
-      },
-        autoformat=false,
+    {
+        "neovim/nvim-lspconfig",
+        ---@class pluginlspopts
+        opts = {
+            ---@type lspconfig.options
+            servers = {
+                -- pyright will be automatically installed with mason and loaded with lspconfig
+                jsonls = {mason=false},
+            },
+            autoformat=false,
+        },
     },
-  },
-  },
 }
 
 -- every spec file under config.plugins will be loaded automatically by lazy.nvim
@@ -41,7 +36,6 @@ return {
 -- * override the configuration of LazyVim plugins
 -- return {
 --   -- add gruvbox
---   { "ellisonleao/gruvbox.nvim" },
 --
 --   -- configure lazyvim to load gruvbox
 --   {
