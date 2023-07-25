@@ -8,7 +8,7 @@ return {
         "lazyvim/lazyvim",
         opts = {
 
-            colorscheme = "kanagawa-wave",
+            colorscheme = "github_light",
             defaults = {
                 -- keymaps = false,
             }
