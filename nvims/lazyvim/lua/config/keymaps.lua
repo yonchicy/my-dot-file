@@ -76,7 +76,7 @@ vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 vim.keymap.set("t", "Jk", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 -- toggle
-vim.keymap.set("n", "<leader>d", function()
+vim.keymap.set("n", "<leader>ut", function()
   local mode = vim.api.nvim_get_option_value("background", {})
   if mode == "dark" then
     vim.api.nvim_set_option_value("background", "light", {})
@@ -85,4 +85,4 @@ vim.keymap.set("n", "<leader>d", function()
     vim.api.nvim_set_option_value("background", "dark", {})
     os.execute('sed -i "28s/light/dark/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
   end
-end, { desc = "toggle theme to dark" })
+end, { desc = "toggle theme between light and dark" })
