@@ -1,0 +1,28 @@
+theme = "onelight"
+
+
+[editor]
+true-color = true
+line-number="relative"
+bufferline="multiple"
+
+
+[keys.insert]
+j =  {k = "normal_mode"}
+
+
+[keys.normal]
+G="goto_last_line"
+H="goto_line_start"
+L="goto_line_end"
+"C-h"="jump_view_left"
+"C-l"="jump_view_right"
+"C-j"="jump_view_down"
+"C-k"="jump_view_up"
+"tab"=":bn"
+"S-tab"=":bp"
+V="select_mode"
+[keys.select]
+G="goto_last_line"
+H="goto_line_start"
+L="goto_line_end"
