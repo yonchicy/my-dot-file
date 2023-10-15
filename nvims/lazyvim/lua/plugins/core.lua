@@ -14,6 +14,7 @@ return {
             }
         },
     },
+    {"rcarriga/nvim-notify",enabled=false},
     {
         "neovim/nvim-lspconfig",
         ---@class pluginlspopts

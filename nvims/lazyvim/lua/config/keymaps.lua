@@ -13,7 +13,7 @@ vim.keymap.set("i", "<C-p>", "<Up>", { desc = " move up" })
 vim.keymap.set("i", "<C-a>", "<ESC>^i", { desc = "論 beginning of line" })
 vim.keymap.set("i", "<C-e>", "<End>", { desc = "壟 end of line" })
 
-vim.keymap.set("n", "<leader>1", "1<C-w>w", { desc = "move to window 1" })
+vim.keymap.set("n", "gw", "*N", { desc = "find word" })
 vim.keymap.set("n", "H", "^", { desc = "move to head of line" })
 vim.keymap.set("n", "L", "$", { desc = "move to end of line" })
 vim.keymap.set("v", "H", "^", { desc = "move to head of line" })

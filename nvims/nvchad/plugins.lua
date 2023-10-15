@@ -89,13 +89,6 @@ local plugins = {
 	{ "tpope/vim-repeat", event = "VeryLazy" },
 
 	{
-		"karb94/neoscroll.nvim",
-		event = "WinScrolled",
-		config = function()
-			require("neoscroll").setup()
-		end,
-	},
-	{
 		"goolord/alpha-nvim",
 		event = "VimEnter",
 		opts = require("custom.configs.alpha").opts,

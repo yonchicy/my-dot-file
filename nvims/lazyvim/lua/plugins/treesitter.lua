@@ -9,6 +9,7 @@ return {
         "lua",
         "cpp",
         "rust",
+        "c"
       },
       context_commentstring = {
         enable = true,
