@@ -23,8 +23,7 @@ return {
             servers = {
                 -- pyright will be automatically installed with mason and loaded with lspconfig
                 jsonls = {mason=false},
-            },
-            autoformat=false,
+            }
         },
         init = function()
             local keys = require("lazyvim.plugins.lsp.keymaps").get()
