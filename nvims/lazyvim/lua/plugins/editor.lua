@@ -46,5 +46,15 @@ return {
                 ignore_whitespace = true,
             },
         }
+    },
+    {
+        "folke/flash.nvim",
+        opts = {
+            modes = {
+                search = {
+                    enabled=false,
+                }
+            }
+        }
     }
 }
