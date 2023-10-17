@@ -1,4 +1,4 @@
-theme="onedark"
+theme="onelight"
 [editor]
 true-color = true
 line-number="relative"
@@ -6,7 +6,6 @@ bufferline="multiple"
 auto-save=true
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control","file-name"]
 right = ["diagnostics", "selections", "position", "file-encoding"]
 separator = "│"
 mode.normal = "NORMAL"
