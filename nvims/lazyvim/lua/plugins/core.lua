@@ -15,29 +15,6 @@ return {
         },
     },
     {"rcarriga/nvim-notify",enabled=false},
-    {
-        "neovim/nvim-lspconfig",
-        ---@class pluginlspopts
-        opts = {
-            ---@type lspconfig.options
-            servers = {
-                -- pyright will be automatically installed with mason and loaded with lspconfig
-                jsonls = {mason=false},
-            }
-        },
-        init = function()
-            local keys = require("lazyvim.plugins.lsp.keymaps").get()
-            -- change a keymap
-            keys[#keys + 1] = { "<leader>d", 
-                function()
-                    vim.cmd('only')
-                    vim.cmd('vsplit')
-                    require("telescope.builtin").lsp_definitions({ reuse_win = false }) 
-                end
-                ,desc = "go to definition in another window" }
-
-        end,
-    },
 }
 
 -- every spec file under config.plugins will be loaded automatically by lazy.nvim

@@ -12,7 +12,6 @@ opt.wrap = false
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
-
 opt.wildmode = { "longest", "list:full" }
 -- opt.guifont = "CodeNewRoman Nerd Font:h15" -- the font used in graphical neovim applications
 
@@ -26,5 +25,5 @@ au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, o
 
 g.neovide_cursor_vfx_mode = "railgun"
 g.autoformat = false
-opt.background = "light"
+opt.background = "dark"
 -- g.neovide_transparency = 0.7
