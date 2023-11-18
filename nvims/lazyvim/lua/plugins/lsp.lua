@@ -40,7 +40,7 @@ return {
       },
       setup = {
         clangd = function(_,opts)
-          opts.cmd = {"clangd", "--header-insertion=never"}
+          opts.cmd = {"clangd", "--header-insertion=never","-j=16"}
         end,
       },
     },
