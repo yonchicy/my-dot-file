@@ -1,11 +1,11 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+vim.opt.background = "dark"
 
 local opt = vim.opt
 local g = vim.g
 
-g.skip_ts_context_commentstring_module = true
 opt.rnu = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
@@ -26,5 +26,5 @@ au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, o
 
 g.neovide_cursor_vfx_mode = "railgun"
 g.autoformat = false
-opt.background = "light"
 -- g.neovide_transparency = 0.7
+g.skip_ts_context_commentstring_module = true
