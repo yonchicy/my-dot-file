@@ -5,6 +5,7 @@
 local opt = vim.opt
 local g = vim.g
 
+g.skip_ts_context_commentstring_module = true
 opt.rnu = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
