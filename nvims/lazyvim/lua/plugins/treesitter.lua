@@ -9,15 +9,17 @@ return {
         "lua",
         "cpp",
         "rust",
-        "c"
+        "c",
       },
-      context_commentstring = {
-        enable = true,
-        --enable_autocmd = false,
-        config = {
-          c = "//%s",
-          cpp = "//%s",
-        },
+    },
+  },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    opts = {
+      enable_autocmd = false,
+      languages = {
+        cpp = "// %s",
+        c = "// %s",
       },
     },
   },

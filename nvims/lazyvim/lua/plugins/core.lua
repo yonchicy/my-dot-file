@@ -15,6 +15,7 @@ return {
         },
     },
     {"rcarriga/nvim-notify",enabled=false},
+    {"RRethy/vim-illuminate",enabled=false},
 }
 
 -- every spec file under config.plugins will be loaded automatically by lazy.nvim
