@@ -32,7 +32,7 @@ format =  " took [$duration]($style)"
 disabled = true
 
 [directory]
-format = "[  $path]($style)[$read_only]($read_only_style)"
+format = "[ 󰉋 $path]($style)[$read_only]($read_only_style)"
 
 [fill]
 symbol = "-"
@@ -48,7 +48,8 @@ format="[ $symbol$branch]($style)"
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-format = '[[ $time ](bold yellow)]($style)'
+format = '[[ $time ](bold yellow)]($style)'
+
 [memory_usage]
 disabled=false
 threshold= 0
