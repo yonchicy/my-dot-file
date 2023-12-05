@@ -36,7 +36,7 @@ local plugins = {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
-    -- enabled =false,
+		-- enabled =false,
 	},
 	-- {
 	-- 	dependencies = "nvim-treesitter",
@@ -51,21 +51,6 @@ local plugins = {
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
 	},
-
-	-- Install a plugin
-	{
-		"max397574/better-escape.nvim",
-		event = "InsertEnter",
-		config = function()
-			require("better_escape").setup()
-		end,
-	},
-
-	-- To make a plugin not be loaded
-	-- {
-	--   "NvChad/nvim-colorizer.lua",
-	--   enabled = false
-	-- },
 
 	-- Uncomment if you want to re-enable which-key
 	{
@@ -104,27 +89,35 @@ local plugins = {
 		end,
 	},
 	{
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
+		"simrat39/symbols-outline.nvim",
+		cmd = "SymbolsOutline",
 		config = function()
 			require("symbols-outline").setup()
 		end,
 	},
 	{
-    "folke/trouble.nvim",
-    module="Trouble",
+		"folke/trouble.nvim",
+		module = "Trouble",
 		dependencies = "nvim-lspconfig",
 	},
 	{
-    "Pocco81/AutoSave.nvim",
+		"Pocco81/AutoSave.nvim",
 		config = function()
 			require("auto-save").setup()
 		end,
 	},
-  {
-    "NvChad/nvterm",
-    opts = overrides.nvterm;
-  }
+
+	{
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		config = function()
+			require("persistence").setup()
+		end,
+	},
+	{
+		"NvChad/nvterm",
+		opts = overrides.nvterm,
+	},
 }
 
 return plugins

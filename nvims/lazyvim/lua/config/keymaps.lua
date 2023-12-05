@@ -69,9 +69,10 @@ vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buff
 -- vim.keymap.set("n", "<leader>ft", function()
 --   Util.float_term(nil, { cwd = Util.get_root() })
 -- end, { desc = "Terminal (root dir)" })
-vim.keymap.set("n", "<leader>fT", function()
+vim.keymap.set("n", "<a-i>", function()
   Util.float_term()
 end, { desc = "Terminal (cwd)" })
+vim.keymap.set("t", "<a-i>", "<cmd>close<CR>", { desc = "Terminal (cwd)" })
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 vim.keymap.set("t", "Jk", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 

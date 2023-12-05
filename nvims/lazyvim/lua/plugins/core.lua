@@ -16,6 +16,7 @@ return {
   },
   {"rcarriga/nvim-notify",enabled=false},
   {"RRethy/vim-illuminate",enabled=false},
+  {"nvim-treesitter/nvim-treesitter-textobjects",enabled=false},
   {"lukas-reineke/indent-blankline.nvim" ,enabled=false,
   opts = {indent = {
       char = ">",

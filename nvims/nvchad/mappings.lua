@@ -39,6 +39,17 @@ M.build_system = {
 	},
 }
 
+M.ui = {
+  n = {
+    ["<leader>ut"]  = {
+      function ()
+        require("base46").toggle_theme()
+      end,
+      "toggle between themes"
+    }
+  }
+}
+
 M.general = {
 	i = {
 		["jk"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
