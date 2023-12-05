@@ -121,6 +121,10 @@ local plugins = {
 			require("auto-save").setup()
 		end,
 	},
+  {
+    "NvChad/nvterm",
+    opts = overrides.nvterm;
+  }
 }
 
 return plugins

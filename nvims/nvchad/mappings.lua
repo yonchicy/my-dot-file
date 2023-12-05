@@ -20,6 +20,7 @@ M.disabled = {
 		["<c-s>"] = "",
 		["<c-c>"] = "",
 		["<leader>x"] = "",
+		["<leader>h"] = "",
 	},
 	v = {
 		["j"] = "",
@@ -30,6 +31,7 @@ M.disabled = {
 		["p"] = "",
 		["<ESC>"] = "",
 	},
+  
 }
 M.build_system = {
 	n = {
@@ -304,14 +306,6 @@ M.nvterm = {
 			"toggle vertical term",
 		},
 
-		-- new
-
-		-- ["<leader>h"] = {
-		--   function()
-		--     require("nvterm.terminal").new "horizontal"
-		--   end,
-		--   "new horizontal term",
-		-- },
 
 		["<leader>v"] = {
 			function()
