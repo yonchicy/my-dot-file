@@ -36,6 +36,7 @@ local plugins = {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
+    -- enabled =false,
 	},
 	-- {
 	-- 	dependencies = "nvim-treesitter",
@@ -111,6 +112,7 @@ local plugins = {
 	},
 	{
     "folke/trouble.nvim",
+    module="Trouble",
 		dependencies = "nvim-lspconfig",
 	},
 	{

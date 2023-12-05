@@ -4,18 +4,28 @@
 
 
 return {
-    {
-        "lazyvim/lazyvim",
-        opts = {
+  {
+    "lazyvim/lazyvim",
+    opts = {
 
-            colorscheme = "tokyonight",
-            defaults = {
-                -- keymaps = false,
-            }
-        },
+      colorscheme = "tokyonight",
+      defaults = {
+        -- keymaps = false,
+      }
     },
-    {"rcarriga/nvim-notify",enabled=false},
-    {"RRethy/vim-illuminate",enabled=false},
+  },
+  {"rcarriga/nvim-notify",enabled=false},
+  {"RRethy/vim-illuminate",enabled=false},
+  {"lukas-reineke/indent-blankline.nvim" ,enabled=false,
+  opts = {indent = {
+      char = ">",
+      tab_char = ">",
+    },
+  }
+},
+  {"echasnovski/mini.indentscope" ,enabled =false},
+
+  {"windwp/nvim-ts-autotag",enabled=false}
 }
 
 -- every spec file under config.plugins will be loaded automatically by lazy.nvim

@@ -3,16 +3,35 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 
-local servers = { "clangd", "lua_ls", "rust_analyzer" ,"pyright"}
+local servers = { "clangd", "lua_ls", "rust_analyzer", "pyright" }
 
-for _, lsp in ipairs(servers) do
-	if lsp == "clangd" then
-		capabilities.offsetEncoding = "utf-16"
-	else
-		capabilities.offsetEncoding = "utf-8"
-	end
-	lspconfig[lsp].setup({
+local set_ups = {
+	clangd = {
 		on_attach = on_attach,
 		capabilities = capabilities,
-	})
+		cmd = { "clangd", "--header-insertion=never", "-j=8" },
+	},
+	lua_ls = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	},
+	rust_analyzer = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	},
+	pyright = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	},
+	ccls = {
+		init_options = {
+			index = {
+				threads = 2,
+			},
+		},
+	},
+}
+
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup(set_ups[lsp])
 end

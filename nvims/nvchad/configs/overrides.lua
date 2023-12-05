@@ -1,50 +1,4 @@
   local cmp = require("cmp")
--- local M = {}
---
--- M.treesitter = {
---   ensure_installed = {
---     "vim",
---     "lua",
---     "html",
---     "css",
---     "javascript",
---     "c",
---     "markdown",
---     "markdown_inline",
---   },
--- }
---
--- M.mason = {
---   ensure_installed = {
---     -- lua stuff
---     "lua-language-server",
---     "stylua",
---
---     -- web dev stuff
---     "css-lsp",
---     "html-lsp",
---     "typescript-language-server",
---     "deno",
---   },
--- }
---
--- -- git support in nvimtree
--- M.nvimtree = {
---   git = {
---     enable = true,
---   },
---
---   renderer = {
---     highlight_git = true,
---     icons = {
---       show = {
---         git = true,
---       },
---     },
---   },
--- }
---
--- return M
 local M = {}
 M.treesitter = {
 	ensure_installed = {
@@ -53,24 +7,8 @@ M.treesitter = {
 		"rust",
 	},
 	textobjects = {
-		select = {
-			enable = true,
-			lookahead = true,
-      set_jumps = true,
-			keymaps = {
-				["ia"] = "@parameter.inner",
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-				["ac"] = "@class.outer",
-				["ic"] = "@class.inner",
-			},
-		},
 	},
-	rainbow = {
-		enable = true,
-		extended_mode = true,
-		max_file_lines = nil,
-	},
+  indent = { enable = false },
 }
 M.mason = {
 	ensure_installed = {
@@ -117,14 +55,14 @@ M.nvimtree = {
       },
     },
   },
-	view = {
-		mappings = {
-			list = {
-				{ key = "h", action = "close_node" },
-				{ key = "l", action = "edit" },
-			},
-		},
-	},
+	-- view = {
+	-- 	mappings = {
+	-- 		list = {
+	-- 			{ key = "h", action = "close_node" },
+	-- 			{ key = "l", action = "edit" },
+	-- 		},
+	-- 	},
+	-- },
 }
 
 M.gitsigns = {
