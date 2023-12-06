@@ -29,12 +29,12 @@ return {
       require("mini.align").setup(opts)
     end,
   },
-  -- {
-  --   "Pocco81/auto-save.nvim",
-  --   config = function(_, opts)
-  --     require("auto-save").setup(opts)
-  --   end,
-  -- },
+  {
+    "Pocco81/auto-save.nvim",
+    config = function(_, opts)
+      require("auto-save").setup(opts)
+    end,
+  },
   {
     "lewis6991/gitsigns.nvim",
     opts = {

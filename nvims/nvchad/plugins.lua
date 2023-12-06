@@ -102,6 +102,7 @@ local plugins = {
 	},
 	{
 		"Pocco81/AutoSave.nvim",
+    event = "BufRead",
 		config = function()
 			require("auto-save").setup()
 		end,
