@@ -21,6 +21,7 @@ M.disabled = {
 		["<c-c>"] = "",
 		["<leader>x"] = "",
 		["<leader>h"] = "",
+		["<leader>b"] = "",
 	},
 	v = {
 		["j"] = "",
@@ -46,6 +47,12 @@ M.ui = {
         require("base46").toggle_theme()
       end,
       "toggle between themes"
+    },
+    ["<leader>tt"]  = {
+      function ()
+        require("base46").toggle_transparency()
+      end,
+      "toggle between transparency"
     }
   }
 }
@@ -228,6 +235,14 @@ M.lspconfig = {
 			end,
 			"incoming calls",
 		},
+		["<leader>d"] = {
+			function()
+        vim.cmd("only")
+        vim.cmd("vsplit")
+        require("telescope.builtin").lsp_definitions({ reuse_win = false })
+			end,
+        desc = "go to definition in another window",
+		},
 	},
 }
 
@@ -334,6 +349,12 @@ M.tabuf = {
 			end,
 			"close buffer",
 		},
+		["<leader>bd"] = {
+			function()
+				require("nvchad.tabufline").close_buffer()
+			end,
+			"close buffer",
+		},
 	},
 }
 
@@ -357,24 +378,24 @@ M.blankline = {
 	},
 }
 
-M.debug = {
-	n = {
-		["<leader>dt"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-		["<leader>db"] = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-		["<leader>dc"] = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-		["<leader>dC"] = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-		["<leader>dd"] = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-		["<leader>dg"] = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-		["<leader>di"] = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-		["<leader>do"] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-		["<leader>du"] = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-		["<leader>dp"] = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-		["<leader>dr"] = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-		["<leader>ds"] = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-		["<leader>dq"] = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-		["<leader>dU"] = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
-	},
-}
+-- M.debug = {
+-- 	n = {
+-- 		["<leader>dt"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+-- 		["<leader>db"] = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+-- 		["<leader>dc"] = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+-- 		["<leader>dC"] = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+-- 		["<leader>dd"] = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+-- 		["<leader>dg"] = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+-- 		["<leader>di"] = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+-- 		["<leader>do"] = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+-- 		["<leader>du"] = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+-- 		["<leader>dp"] = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+-- 		["<leader>dr"] = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+-- 		["<leader>ds"] = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+-- 		["<leader>dq"] = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+-- 		["<leader>dU"] = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
+-- 	},
+-- }
 M.gitsigns = {
 	n = {
 		["<leader>gp"] = { "<cmd>Gitsigns prev_hunk<CR>", "go to prev hunk" },

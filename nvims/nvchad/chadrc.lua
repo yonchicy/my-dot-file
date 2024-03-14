@@ -5,12 +5,12 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme_toggle = { "github_light", "gruvchad" },
-  theme = "gruvchad",
+  theme_toggle = { "ayu_light", "gruvchad" },
+  theme = "ayu_light",
   hl_override = highlights.override,
   hl_add = highlights.add,
 
-  transparency = false,
+  transparency = true,
 }
 
 M.plugins = "custom.plugins"
