@@ -1,23 +1,28 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+-- EXAMPLE 
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
-
+local lspconfig = require "lspconfig"
 local servers = { "clangd", "lua_ls", "rust_analyzer", "pyright" }
+
 local clangd_cap = capabilities
 clangd_cap.offsetEncoding='utf-16'
 local set_ups = {
 	clangd = {
 		on_attach = on_attach,
+    on_init = on_init,
 		capabilities = clangd_cap,
 		cmd = { "clangd", "--header-insertion=never", "-j=8" },
 	},
 	lua_ls = {
 		on_attach = on_attach,
+    on_init = on_init,
 		capabilities = capabilities,
 	},
 	rust_analyzer = {
 		on_attach = on_attach,
+    on_init = on_init,
 		capabilities = capabilities,
 		settings = {
 			["rust-analyzer"] = {
@@ -38,6 +43,7 @@ local set_ups = {
 	},
 	pyright = {
 		on_attach = on_attach,
+    on_init=on_init,
 		capabilities = capabilities,
 	},
 	ccls = {
@@ -48,8 +54,10 @@ local set_ups = {
 		},
 	},
 }
-
+-- lsps with default config
 for _, lsp in ipairs(servers) do
-
 	lspconfig[lsp].setup(set_ups[lsp])
+
 end
+
+
