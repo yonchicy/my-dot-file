@@ -37,7 +37,6 @@ map("n", "<c-down>", "<c-w>-", { desc = "change window size" })
 map("n", "H", "^", { desc = "move to head of line" })
 map("n", "L", "$", { desc = "move to end of line" })
 map("n", "Q", "<C-w>q", { desc = "close windows" })
-map("n", "<leader>q", "<cmd>wa!<CR><cmd>q!<CR>", { desc = "close windows" })
 map("n", "<leader>wq", "<cmd>wa!<CR><cmd>qa!<CR>", { desc = "save and exit vim" })
 map("n", "<leader>ww", "<cmd>wa<CR>", { desc = "save all files" })
 map("n", "<leader>hl", "<cmd>noh<CR>", { desc = "clear highlights" })
@@ -82,7 +81,7 @@ map("n", "<leader>ft",
   "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>"
   , { desc = "find symbols" })
 
-
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
 
 -- M.debug = {
 -- 	n = {

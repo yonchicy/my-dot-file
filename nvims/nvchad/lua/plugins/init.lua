@@ -97,11 +97,11 @@ return {
 			require("symbols-outline").setup()
 		end,
 	},
-	{
-		"folke/trouble.nvim",
-		module = "Trouble",
-		dependencies = "nvim-lspconfig",
-	},
+	-- {
+	-- 	"folke/trouble.nvim",
+	-- 	module = "Trouble",
+	-- 	dependencies = "nvim-lspconfig",
+	-- },
 	{
 		"Pocco81/AutoSave.nvim",
     event = "BufRead",
