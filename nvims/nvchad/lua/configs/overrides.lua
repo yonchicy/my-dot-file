@@ -5,6 +5,7 @@ M.treesitter = {
 		"lua",
 		"cpp",
 		"rust",
+    "markdown",
 	},
 	textobjects = {
 	},
