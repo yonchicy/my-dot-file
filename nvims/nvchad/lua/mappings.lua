@@ -47,14 +47,12 @@ map("t", "Jk", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
 map("v", "H", "^", { desc = "move to head of line" })
 map("v", "L", "$", { desc = "move to end of line" })
 
-map("n", "<C-_>", function()
-  require("Comment.api").toggle.linewise.current()
-end, { desc = "toggle comment" })
+map("n", "<C-_>", "gcc", { desc = "toggle comment" })
 
 map(
   "v",
   "<C-_>",
-  "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+  "gc",
   { desc = "toggle comment" }
 )
 map("n", "gh", function()
@@ -70,9 +68,9 @@ map("n", "<leader>d", function()
   require("telescope.builtin").lsp_definitions { reuse_win = false }
 end, { desc = "go to definition in another window" })
 
-map("n", "<C-p>", 
+map("n", "<C-p>",
   require("telescope.builtin").find_files
-, { desc = "go to definition in another window" })
+  , { desc = "go to definition in another window" })
 map("n", "<leader>fs",
   "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>"
   , { desc = "find symbols" })
