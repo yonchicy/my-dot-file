@@ -8,7 +8,7 @@ require "nvchad.options"
 local opt = vim.opt
 local g = vim.g
 
-opt.nu=true
+opt.nu=false
 opt.scrolloff=8
 opt.sidescrolloff=8
 opt.wrap=false
