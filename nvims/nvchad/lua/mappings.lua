@@ -40,6 +40,7 @@ map("n", "Q", "<C-w>q", { desc = "close windows" })
 map("n", "<leader>wq", "<cmd>wa!<CR><cmd>qa!<CR>", { desc = "save and exit vim" })
 map("n", "<leader>ww", "<cmd>wa<CR>", { desc = "save all files" })
 map("n", "<leader>hl", "<cmd>noh<CR>", { desc = "clear highlights" })
+map("n", "<leader>fn", "<cmd>echo @%<CR>", { desc = "clear highlights" })
 
 map("t", "<C-x>", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
 map("t", "Jk", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
