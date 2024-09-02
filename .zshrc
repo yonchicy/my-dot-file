@@ -89,6 +89,14 @@ function joshuto-a() {
 }
 
 
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 # -------------------------------------------------------------
 
 
@@ -107,14 +115,13 @@ export COLORTERM=truecolor
 export BAT_THEME=GitHub
 alias logbat='bat --wrap=never -l log'
 alias ls=exa
-alias ra='joshuto-a'
+alias ra='yy'
 alias vs=code
 #alias vim="NVIM_APPNAME=pagernvim nvim"
 #alias nv="NVIM_APPNAME=nvchad nvim"
 #alias lm="NVIM_APPNAME=lazyvim nvim"
 alias make='make -j8'
 alias lg=gitui
-alias fd=fdfind
 alias p='proxychains4 -q'
 # alias tmux="TERM=screen-256color-bce tmux"
 alias zj="zellij"

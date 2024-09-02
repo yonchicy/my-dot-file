@@ -18,3 +18,4 @@ git clone https://github.com/neovim/neovim.git ~
 
 cd $HOME/.zsh && bash zsh-plug.sh
 cargo install zoxide --locked
+cargo install --locked --git https://github.com/sxyazi/yazi.git yazi-fm yazi-cli
