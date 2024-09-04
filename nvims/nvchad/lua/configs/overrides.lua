@@ -132,5 +132,8 @@ M.nvterm = {
     }
   },
 }
+M.base64={
+  theme_toggle = { "ayu_dark", "ayu_light" },
+}
 return M
 
