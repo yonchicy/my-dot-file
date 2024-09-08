@@ -12,6 +12,7 @@ end
 nomap("n", "<c-s>")
 nomap("n", "<c-c>")
 nomap("n", "<leader>rn")
+nomap("n", "<leader>h")
 
 map("n", "<leader>ut", function()
   require("base46").toggle_theme()
@@ -56,6 +57,12 @@ map(
   "gc",
   { desc = "toggle comment" }
 )
+map("n", "gd", function()
+  require("telescope.builtin").lsp_definitions { reuse_win = false }
+end, { desc = "go to definition" })
+map("n", "<leader>ca", function()
+  vim.lsp.buf.code_action()
+end, { desc = "code action" })
 map("n", "gh", function()
   vim.lsp.buf.hover()
 end, { desc = "lsp hover" })
