@@ -46,6 +46,15 @@ map("n", "<leader>fn", "<cmd>echo @%<CR>", { desc = "clear highlights" })
 map("t", "<C-x>", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
 map("t", "Jk", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
 
+map({ "n", "t" }, "<A-i>", function()
+  require("nvchad.term").toggle { pos = "float", id = "floatTerm", float_opts = {
+    width = 0.8,
+    height = 0.8,
+    row = 0.1,
+    col = 0.1,
+  } }
+end, { desc = "Terminal Toggle Floating term" })
+
 map("v", "H", "^", { desc = "move to head of line" })
 map("v", "L", "$", { desc = "move to end of line" })
 
