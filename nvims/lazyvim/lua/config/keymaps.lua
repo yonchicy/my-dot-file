@@ -70,7 +70,7 @@ vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buff
 --   Util.float_term(nil, { cwd = Util.get_root() })
 -- end, { desc = "Terminal (root dir)" })
 vim.keymap.set("n", "<a-i>", function()
-  Util.float_term()
+  LazyVim.terminal.open()
 end, { desc = "Terminal (cwd)" })
 vim.keymap.set("t", "<a-i>", "<cmd>close<CR>", { desc = "Terminal (cwd)" })
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
@@ -81,10 +81,10 @@ vim.keymap.set("n", "<leader>ut", function()
   local mode = vim.api.nvim_get_option_value("background", {})
   if mode == "dark" then
     vim.api.nvim_set_option_value("background", "light", {})
-    os.execute('sed -i "4s/dark/light/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
+    os.execute('sed -i "7s/dark/light/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
   elseif mode == "light" then
     vim.api.nvim_set_option_value("background", "dark", {})
-    os.execute('sed -i "4s/light/dark/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
+    os.execute('sed -i "6k/light/dark/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
   end
 end, { desc = "toggle theme between light and dark" })
 
