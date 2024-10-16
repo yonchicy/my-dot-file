@@ -4,7 +4,7 @@
 local opt = vim.opt
 local g = vim.g
 
-g.background = 'light'
+vim.go.background = 'light'
 
 opt.nu = false
 opt.relativenumber = false
@@ -16,6 +16,24 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.wildmode = { "longest", "list:full" }
 -- opt.guifont = "CodeNewRoman Nerd Font:h15" -- the font used in graphical neovim applications
+
+local border = {
+  { "╭", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╮", "FloatBorder" },
+  { "│", "FloatBorder" },
+  { "╯", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╰", "FloatBorder" },
+  { "│", "FloatBorder" },
+}
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or border
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()

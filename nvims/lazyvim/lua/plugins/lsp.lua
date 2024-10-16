@@ -1,3 +1,18 @@
+local border = {
+  { "╭", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╮", "FloatBorder" },
+  { "│", "FloatBorder" },
+  { "╯", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╰", "FloatBorder" },
+  { "│", "FloatBorder" },
+}
+local handlers = {
+  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+}
+
 return {
 
   {
@@ -45,7 +60,9 @@ return {
           }
         }
       },
+      handlers = handlers,
       setup = {
+
         clangd = function(_, opts)
           opts.cmd = { "clangd", "--header-insertion=never", "-j=16" }
         end,
