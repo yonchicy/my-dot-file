@@ -69,6 +69,9 @@ map(
 map("n", "gd", function()
   require("telescope.builtin").lsp_definitions { reuse_win = false }
 end, { desc = "go to definition" })
+map("n", "gr", function()
+  require("telescope.builtin").lsp_references { reuse_win = false }
+end, { desc = "go to references" })
 map("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "code action" })

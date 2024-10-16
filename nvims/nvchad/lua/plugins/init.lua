@@ -1,4 +1,5 @@
 local overrides = require("configs.overrides")
+local lspconfig = require("configs.lspconfig")
 return {
   {
     "stevearc/conform.nvim",
@@ -116,8 +117,7 @@ return {
   {
     'mrcjkb/rustaceanvim',
     version = '^4', -- Recommended
-    event = "InsertEnter",
-    -- lazy = false,   -- This plugin is already lazy
+    lazy = false,   -- This plugin is already lazy
   }
 
 }

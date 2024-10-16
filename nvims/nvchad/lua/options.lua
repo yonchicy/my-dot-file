@@ -24,6 +24,7 @@ g.neovide_cursor_vfx_mode = "railgun"
 
 -- g.neovide_transparency = 0.7
 
+vim.lsp.inlay_hint.enable(true)
 
 
 
