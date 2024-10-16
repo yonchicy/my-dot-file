@@ -4,8 +4,7 @@
 local opt = vim.opt
 local g = vim.g
 
-vim.go.background = 'light'
-
+vim.o.background = "light"
 opt.nu = false
 opt.relativenumber = false
 opt.scrolloff = 8
@@ -28,12 +27,6 @@ local border = {
   { "│", "FloatBorder" },
 }
 
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = opts.border or border
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()

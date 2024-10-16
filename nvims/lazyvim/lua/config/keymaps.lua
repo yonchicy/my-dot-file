@@ -82,26 +82,10 @@ vim.keymap.set("n", "<leader>ut", function()
   if mode == "dark" then
     vim.api.nvim_set_option_value("background", "light", {})
     os.execute('sed -i "7s/dark/light/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
+    os.execute('sed -i "25s/mocha/latte/" $HOME/my-dot-file/nvims/lazyvim/lua/plugins/themes.lua')
   elseif mode == "light" then
     vim.api.nvim_set_option_value("background", "dark", {})
-    os.execute('sed -i "6k/light/dark/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
+    os.execute('sed -i "7s/light/dark/" $HOME/my-dot-file/nvims/lazyvim/lua/config/options.lua')
+    os.execute('sed -i "25s/latte/mocha/" $HOME/my-dot-file/nvims/lazyvim/lua/plugins/themes.lua')
   end
 end, { desc = "toggle theme between light and dark" })
-
-local goto_file = function ()
-    local line = vim.api.nvim_get_current_line();
-    local pattern = "^(.-):(%d+):(%d+)"
-    local file, line, column = string.match(line, pattern)
-    if file and line  and column then
-        vim.cmd("close")
-        vim.cmd("e ".. file)
-        vim.api.nvim_win_set_cursor(0, {tonumber(line),tonumber(column)})
-    end
-end
-vim.api.nvim_create_autocmd({"BufEnter","TermOpen"}, {
-    pattern= "term://*",
-    callback = function ()
-        vim.keymap.set("n","<leader>cd",goto_file,{silent=true,noremap=true,buffer=true,desc = "go to file"})
-    end
-}
-)

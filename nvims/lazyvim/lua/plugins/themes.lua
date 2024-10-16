@@ -19,8 +19,11 @@ return {
   },
   {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
     name = "catppuccin",
+    opts = {
+      flavour = "latte", -- latte, frappe, macchiato, mocha
+    },
     priority = 1000,
     -- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
   },
@@ -38,8 +41,8 @@ return {
     lazy = true,
   },
   {
-        -- github_dark_dimmed
-        --             github_light
+    -- github_dark_dimmed
+    --             github_light
     "projekt0n/github-nvim-theme",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
