@@ -1,7 +1,6 @@
 theme="onelight"
 [editor]
 true-color = true
-line-number="relative"
 bufferline="multiple"
 auto-save=true
 
@@ -46,3 +45,6 @@ nbsp = "⍽"
 tab = "→"
 newline = "⏎"
 tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+[editor.lsp]
+display-inlay-hints=true
+

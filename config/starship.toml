@@ -2,6 +2,7 @@ format="""
 $directory\
 $git_branch\
 $git_status\
+$rust\
 $fill\
 $cmd_duration\
 $memory_usage\
@@ -58,3 +59,5 @@ format = " [$ram_pct]($style) "
 
 [[battery.display]]
 threshold=100
+[rust]
+format = ' [$symbol($version )]($style)'
