@@ -21,7 +21,7 @@ map("n", "<leader>tt", function()
   require("base46").toggle_transparency()
 end, { desc = "toggle between transparency" })
 
-map("i", "jk", "<ESC>", { desc = "escape insert mode", nowait = true })
+-- map("i", "jk", "<ESC>", { desc = "escape insert mode", nowait = true })
 map("i", "<C-f>", "<Right>", { desc = "move right" })
 map("i", "<C-b>", "<Left>", { desc = "move left" })
 map("i", "<C-n>", "<Down>", { desc = "move down" })

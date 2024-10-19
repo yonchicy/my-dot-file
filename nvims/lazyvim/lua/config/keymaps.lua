@@ -5,7 +5,7 @@ local Util = require("lazyvim.util")
 --
 
 -- general
-vim.keymap.set("i", "jk", "<esc>", { desc = "escape from insert mode", nowait = true })
+-- vim.keymap.set("i", "jk", "<esc>", { desc = "escape from insert mode", nowait = true })
 vim.keymap.set("i", "<C-b>", "<Left>", { desc = "  move left" })
 vim.keymap.set("i", "<c-f>", "<right>", { desc = " move right" })
 vim.keymap.set("i", "<c-n>", "<down>", { desc = " move down" })
