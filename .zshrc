@@ -108,6 +108,7 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 FZF_COMPLETION_TRIGGER=';'
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
 export COLORTERM=truecolor
