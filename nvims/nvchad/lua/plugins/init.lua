@@ -18,19 +18,41 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
-    event="VeryLazy",
+    event = "VeryLazy",
     opts = overrides.cmp,
   },
 
   -- overrde plugin configs
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "BufRead",
     opts = overrides.treesitter,
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
+      "nvim-treesitter/nvim-treesitter-context",
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        opts = {
+          enable_autocmd = false,
+          languages = {
+            cpp = "// %s",
+            c = "// %s",
+          },
+        },
+      },
     },
     -- enabled =false,
   },
+  -- {
+    -- "https://github.com/ziontee113/syntax-tree-surfer",
+    -- event = "BufRead",
+    -- keys = {
+    --   {"<a-i>","<cmd>STSSelectChildNode<cr>",desc = "select child node(TS)"},
+    --   {"<a-o>","<cmd>STSSelectParentNode<cr>",desc = "select parent node(TS)"},
+    --   {"<a-n>","<cmd>STSSelectNextSiblingNode<cr>",desc = "select prev sibling node(TS)"},
+    --   {"<a-p>","<cmd>STSSelectPrevSiblingNode<cr>",desc = "select next sibling node(TS)"},
+    -- }
+  -- },
   -- {
   -- 	dependencies = "nvim-treesitter",
   -- },

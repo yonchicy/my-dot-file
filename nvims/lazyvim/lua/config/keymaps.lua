@@ -5,7 +5,7 @@ local Util = require("lazyvim.util")
 --
 
 -- general
--- vim.keymap.set("i", "jk", "<esc>", { desc = "escape from insert mode", nowait = true })
+vim.keymap.set("i", "jk", "<esc>", { desc = "escape from insert mode", nowait = true })
 vim.keymap.set("i", "<C-b>", "<Left>", { desc = "  move left" })
 vim.keymap.set("i", "<c-f>", "<right>", { desc = " move right" })
 vim.keymap.set("i", "<c-n>", "<down>", { desc = " move down" })
@@ -69,7 +69,7 @@ vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buff
 -- vim.keymap.set("n", "<leader>ft", function()
 --   Util.float_term(nil, { cwd = Util.get_root() })
 -- end, { desc = "Terminal (root dir)" })
-vim.keymap.set("n", "<a-i>", function()
+vim.keymap.set("n", "<a-t>", function()
   LazyVim.terminal.open()
 end, { desc = "Terminal (cwd)" })
 vim.keymap.set("t", "<a-i>", "<cmd>close<CR>", { desc = "Terminal (cwd)" })

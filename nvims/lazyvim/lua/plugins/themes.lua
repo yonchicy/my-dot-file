@@ -22,7 +22,7 @@ return {
     lazy = false,
     name = "catppuccin",
     opts = {
-      flavour = "latte", -- latte, frappe, macchiato, mocha
+      flavour = "latte", -- latte, frappe, macchiato, latte
     },
     priority = 1000,
     -- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha

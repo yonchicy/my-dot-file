@@ -1,35 +1,49 @@
-  local cmp = require("cmp")
+local cmp = require("cmp")
 local M = {}
 M.treesitter = {
-	ensure_installed = {
-		"lua",
-		"cpp",
-		"rust",
+  ensure_installed = {
+    "lua",
+    "cpp",
+    "rust",
     "markdown",
-	},
-	textobjects = {
-	},
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      keymaps = {
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+      },
+      -- selection_modes = {
+      --   ['@parameter.outer'] = 'o', -- charwise
+      --   ['@parameter.inner'] = 'o', -- charwise
+      -- },
+    },
+    move = {
+      enable = true,
+    }
+  },
   indent = { enable = false },
 }
 M.mason = {
-	ensure_installed = {
-		-- lua stuff
-		"lua-language-server",
-		"stylua",
-		--
-		"clangd",
-		"clang-format",
-		"rust-analyzer",
-		-- shell
-		"shfmt",
-		"shellcheck",
+  ensure_installed = {
+    -- lua stuff
+    "lua-language-server",
+    "stylua",
+    --
+    "clangd",
+    "clang-format",
+    "rust-analyzer",
+    -- shell
+    "shfmt",
+    "shellcheck",
 
     -- "debug"
     "codelldb",
 
     -- python
     pyright,
-	},
+  },
 }
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')
@@ -37,13 +51,12 @@ local function on_attach(bufnr)
   local function opts(desc)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
- api.config.mappings.default_on_attach(bufnr)
+  api.config.mappings.default_on_attach(bufnr)
   vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('close dir'))
   vim.keymap.set('n', 'l', api.node.open.edit, opts('open'))
-
 end
 M.nvimtree = {
-	on_attach=on_attach,
+  on_attach = on_attach,
   git = {
     enable = true,
   },
@@ -56,24 +69,24 @@ M.nvimtree = {
       },
     },
   },
-	-- view = {
-	-- 	mappings = {
-	-- 		list = {
-	-- 			{ key = "h", action = "close_node" },
-	-- 			{ key = "l", action = "edit" },
-	-- 		},
-	-- 	},
-	-- },
+  -- view = {
+  -- 	mappings = {
+  -- 		list = {
+  -- 			{ key = "h", action = "close_node" },
+  -- 			{ key = "l", action = "edit" },
+  -- 		},
+  -- 	},
+  -- },
 }
 
 M.gitsigns = {
-	current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
-	current_line_blame_opts = {
-		virt_text = true,
-		virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-		delay = 500,
-		ignore_whitespace = false,
-	},
+  current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+    delay = 500,
+    ignore_whitespace = false,
+  },
 }
 M.cmp = {
 
@@ -88,22 +101,22 @@ M.cmp = {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     },
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				local entry = cmp.get_selected_entry()
-				if not entry then
-					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-				end
-				cmp.confirm()
-			elseif require("luasnip").expand_or_jumpable() then
-				vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        local entry = cmp.get_selected_entry()
+        if not entry then
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+        end
+        cmp.confirm()
+      elseif require("luasnip").expand_or_jumpable() then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -132,8 +145,7 @@ M.nvterm = {
     }
   },
 }
-M.base64={
+M.base64 = {
   theme_toggle = { "ayu_dark", "ayu_light" },
 }
 return M
-

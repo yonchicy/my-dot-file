@@ -1,0 +1,69 @@
+ls
+cd
+ls
+pwd
+ls
+where nv
+nv
+nvim
+ls
+ls | echo 
+ls
+cd e
+ls
+ra
+yashi
+yazi
+ls
+ll
+ls -a
+ls -h
+ls -s
+ls 
+ls -h
+ls h
+ls -h
+ls -t
+ls -h
+ls -l
+ls
+ls | to json
+ls | to toml 
+ls | to text
+ls
+ll
+ls all
+all
+ls
+ls -a 1panel-v1.8.0-linux-amd64/
+ls
+eixt
+exit
+ls
+ls -h
+help ls
+ls -h
+ls
+ls -h
+ll
+ls
+ls a
+ls all
+ls -a
+ll
+ls
+ls -h
+ls -s
+ls
+ls -s
+ls
+cd
+cd .config/nushell/ls
+cd .config/nushell/
+ls
+hx env.nu
+ls
+s
+ls
+cd ..
+ls

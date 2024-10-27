@@ -7,11 +7,7 @@ return {
   {
     "lazyvim/lazyvim",
     opts = {
-
       colorscheme = "catppuccin",
-      defaults = {
-        -- keymaps = false,
-      }
     },
   },
   {"rcarriga/nvim-notify",enabled=false},

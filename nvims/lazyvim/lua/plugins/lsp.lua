@@ -21,6 +21,7 @@ return {
       ensure_installed = {
         "lua-language-server",
         "stylua",
+        "clangd",
         --
         "clang-format",
         "rust-analyzer",
@@ -52,19 +53,20 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         jsonls = { mason = false },
-        ccls = {
-          init_options = {
-            index = {
-              threads = 2,
-            }
-          }
-        }
+        -- ccls = {
+        --   init_options = {
+        --     index = {
+        --       threads = 2,
+        --     }
+        --   }
+        -- }
+
       },
       handlers = handlers,
       setup = {
 
         clangd = function(_, opts)
-          opts.cmd = { "clangd", "--header-insertion=never", "-j=16" }
+          opts.cmd = { "clangd", "--header-insertion=never", "-j=8" }
         end,
       },
     },

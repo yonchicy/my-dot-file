@@ -13,6 +13,8 @@ nomap("n", "<c-s>")
 nomap("n", "<c-c>")
 nomap("n", "<leader>rn")
 nomap("n", "<leader>h")
+nomap("n", "<a-i>")
+nomap("t", "<a-i>")
 
 map("n", "<leader>ut", function()
   require("base46").toggle_theme()
@@ -21,7 +23,7 @@ map("n", "<leader>tt", function()
   require("base46").toggle_transparency()
 end, { desc = "toggle between transparency" })
 
--- map("i", "jk", "<ESC>", { desc = "escape insert mode", nowait = true })
+map("i", "jk", "<ESC>", { desc = "escape insert mode", nowait = true })
 map("i", "<C-f>", "<Right>", { desc = "move right" })
 map("i", "<C-b>", "<Left>", { desc = "move left" })
 map("i", "<C-n>", "<Down>", { desc = "move down" })
@@ -46,7 +48,7 @@ map("n", "<leader>fn", "<cmd>echo @%<CR>", { desc = "clear highlights" })
 map("t", "<C-x>", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
 map("t", "Jk", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
 
-map({ "n", "t" }, "<A-i>", function()
+map({ "n", "t" }, "<a-t>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm", float_opts = {
     width = 0.8,
     height = 0.8,
@@ -82,7 +84,11 @@ map("n", "ge", function()
   vim.diagnostic.open_float()
 end, { desc = "floating diagnostic" })
 
-map("n", "<leader>d", function()
+map("n", "<leader>ds", function()
+  require("telescope.builtin").diagnostics()
+end, { desc = "go to definition in another window" })
+
+map("n", "<leader>gd", function()
   vim.cmd "only"
   vim.cmd "vsplit"
   require("telescope.builtin").lsp_definitions { reuse_win = false }
@@ -119,6 +125,8 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle windo
 -- 		["<leader>dU"] = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
 -- 	},
 -- }
+map('n', "]c", "<cmd>cn<CR>", { desc = "go to next quickfix item" })
+map('n', "[c", "<cmd>cp<CR>", { desc = "go to prev quickfix item" })
 map('n', "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>", { desc = "go to prev hunk" })
 map('n', "<leader>gn", "<cmd>Gitsigns next_hunk<CR>", { desc = "go to next hunk" })
 -- M.trouble = {

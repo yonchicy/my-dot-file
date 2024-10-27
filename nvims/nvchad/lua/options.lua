@@ -8,18 +8,19 @@ require "nvchad.options"
 local opt = vim.opt
 local g = vim.g
 
-opt.nu=false
-opt.scrolloff=8
-opt.sidescrolloff=8
-opt.wrap=false
-opt.tabstop=2
-opt.shiftwidth=2
-opt.expandtab=true
+opt.nu = false
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+opt.wrap = false
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
 opt.wildmode = { "longest", "list:full" }
 -- opt.guifont = "CodeNewRoman Nerd Font:h15" -- the font used in graphical neovim applications
 
 -- hilight yank
-vim.api.nvim_create_autocmd("TextYankPost", { callback = function() vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 150,on_visual=true }) end })
+vim.api.nvim_create_autocmd("TextYankPost",
+  { callback = function() vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 150, on_visual = true }) end })
 g.neovide_cursor_vfx_mode = "railgun"
 
 -- g.neovide_transparency = 0.7
@@ -28,10 +29,20 @@ vim.lsp.inlay_hint.enable(true)
 
 
 
-vim.api.nvim_create_autocmd({"BufEnter","TermOpen"}, {
-    pattern= "term://*",
-    callback = function ()
-        vim.keymap.set("n","<leader>cd","<c-w>F<cmd>only<CR>",{silent=true,noremap=true,buffer=true,desc = "go to file"})
-    end
+vim.api.nvim_create_autocmd({ "BufEnter", "TermOpen" }, {
+  pattern = "term://*",
+  callback = function()
+    vim.keymap.set("n", "<leader>cd", "<c-w>F<cmd>only<CR>", { silent = true, noremap = true, buffer = true, desc =
+    "go to file" })
+  end
 }
 )
+
+
+-- for comment string
+local get_option = vim.filetype.get_option
+vim.filetype.get_option = function(filetype, option)
+  return option == "commentstring"
+    and require("ts_context_commentstring.internal").calculate_commentstring()
+    or get_option(filetype, option)
+end

@@ -3,7 +3,7 @@ local M = {}
 
 M.base46 = {
   theme = "ayu_light",
-  theme_toggle = { "ayu_light", "onedark" },
+  theme_toggle = { "ayu_light", "github_dark" },
   transparency = false,
   hl_override = {
     LspInlayHint = {
