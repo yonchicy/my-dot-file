@@ -129,6 +129,11 @@ map('n', "]c", "<cmd>cn<CR>", { desc = "go to next quickfix item" })
 map('n', "[c", "<cmd>cp<CR>", { desc = "go to prev quickfix item" })
 map('n', "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>", { desc = "go to prev hunk" })
 map('n', "<leader>gn", "<cmd>Gitsigns next_hunk<CR>", { desc = "go to next hunk" })
+map('i', '<C-L>', '<Plug>(copilot-accept-word)', { desc = "accept copilot word" })
+-- map('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+--   expr = true,
+--   replace_keycodes = false
+-- }, { desc = "accept copilot word" })
 -- M.trouble = {
 --   n = {
 --     ["<leader>xx"] = {
