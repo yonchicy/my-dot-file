@@ -9,7 +9,7 @@ local opt = vim.opt
 local g = vim.g
 
 g.copilot_proxy = "http://localhost:7890"
--- g.copilot_no_tab_map = true
+g.copilot_no_tab_map = true
 
 opt.nu = false
 opt.scrolloff = 8
