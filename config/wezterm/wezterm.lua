@@ -19,13 +19,14 @@ local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
     return 'Github Dark (Gogh)'
   else
-    return 'Github Light (Gogh)'
+    return 'One Light (Gogh)'
   end
 end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
-
-config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
+config.font = wezterm.font_with_fallback {
+  { family = 'FiraCode Nerd Font', weight = 500 },
+}
 config.font_size = 14
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
