@@ -50,10 +50,10 @@ map("t", "Jk", termcodes "<C-\\><C-N>", { desc = "escape terminal mode" })
 
 map({ "n", "t" }, "<a-t>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm", float_opts = {
-    width = 0.8,
+    width = 0.9,
     height = 0.8,
-    row = 0.1,
-    col = 0.1,
+    row = 0.06,
+    col = 0.05,
   } }
 end, { desc = "Terminal Toggle Floating term" })
 
