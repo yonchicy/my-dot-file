@@ -1,0 +1,17 @@
+[font]
+size = 13
+hinting = "full"
+edging = "antialias"
+
+[[font.normal]]
+family = "FiraCode Nerd Font"
+style = "W500"
+
+
+# [[font.bold]]
+# family = "JetBrainsMono Nerd Font Propo"
+# style = "W600"
+
+# No need to specify fallback in every variant, if omitted or specified here
+# but not found, it will fallback to normal font with this weight which is bold
+# in this case.
