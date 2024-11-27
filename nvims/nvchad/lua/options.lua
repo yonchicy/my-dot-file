@@ -24,7 +24,6 @@ opt.guifont = "FiraCode Nerd Font:h14" -- the font used in graphical neovim appl
 -- hilight yank
 vim.api.nvim_create_autocmd("TextYankPost",
   { callback = function() vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 150, on_visual = true }) end })
-g.neovide_cursor_vfx_mode = "railgun"
 
 -- g.neovide_transparency = 0.7
 
@@ -53,4 +52,6 @@ vim.g.neovide_cursor_smooth_blink = true
 vim.g.neovide_input_macos_option_key_is_meta = 'both'
 -- vim.g.neovide_cursor_trail_size = 0.2
 -- vim.g.neovide_cursor_animation_length = 0.1
-vim.g.neovide_cursor_vfx_mode = "torpedo"
+-- vim.g.neovide_cursor_vfx_mode = "torpedo"
+vim.g.neovide_cursor_vfx_mode = "railgun"
+vim.g.neovide_refresh_rate = 60
