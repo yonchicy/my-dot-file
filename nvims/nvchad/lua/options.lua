@@ -19,8 +19,8 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.wildmode = { "longest", "list:full" }
--- opt.guifont = "CodeNewRoman Nerd Font:h15" -- the font used in graphical neovim applications
-
+opt.guifont = "FiraCode Nerd Font:h14" -- the font used in graphical neovim applications
+ 
 -- hilight yank
 vim.api.nvim_create_autocmd("TextYankPost",
   { callback = function() vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 150, on_visual = true }) end })
