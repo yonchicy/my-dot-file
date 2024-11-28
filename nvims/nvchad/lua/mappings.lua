@@ -87,9 +87,9 @@ map("n", "ge", function()
   vim.diagnostic.open_float()
 end, { desc = "floating diagnostic" })
 
-map("n", "<leader>ds", function()
+map("n", "<leader>fd", function()
   require("telescope.builtin").diagnostics()
-end, { desc = "go to definition in another window" })
+end, { desc = "find diagnostics in workspace" })
 
 map("n", "<leader>gd", function()
   vim.cmd "only"
