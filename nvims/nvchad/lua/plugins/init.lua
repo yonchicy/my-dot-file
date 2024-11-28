@@ -147,10 +147,20 @@ return {
     event = "InsertEnter",
   },
   {
-    "rcarriga/nvim-dap-ui",
+    "mfussenegger/nvim-dap",
+    -- stylua: ignore
+    keys = require("configs.dap").keys,
+    config = require("configs.dap").config,
     dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio"
+      {
+        "rcarriga/nvim-dap-ui",
+        opts = require("configs.dap").dap_ui_opts,
+      },
+      "nvim-neotest/nvim-nio",
+      {
+        'theHamsta/nvim-dap-virtual-text',
+        opts = {},
+      }
     }
   }
 
