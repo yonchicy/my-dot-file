@@ -52,25 +52,34 @@ M.keys = {
   { "<leader>d",  "",                                                                                   desc = "+debug",                 mode = { "n", "v" } },
   { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
   { "<leader>db", function() require("dap").toggle_breakpoint() end,                                    desc = "Toggle Breakpoint" },
-  { "<f9>",       function() require("dap").toggle_breakpoint() end,                                    desc = "Toggle Breakpoint" },
   { "<leader>dc", function() require("dap").continue() end,                                             desc = "Run/Continue" },
-  { "<f5>",       function() require("dap").continue() end,                                             desc = "Run/Continue" },
   { "<leader>da", function() require("dap").continue({ before = get_args }) end,                        desc = "Run with Args" },
   { "<leader>dC", function() require("dap").run_to_cursor() end,                                        desc = "Run to Cursor" },
   { "<leader>dg", function() require("dap").goto_() end,                                                desc = "Go to Line (No Execute)" },
   { "<leader>di", function() require("dap").step_into() end,                                            desc = "Step Into" },
-  { "<f11>",      function() require("dap").step_into() end,                                            desc = "Step Into" },
   { "<leader>dj", function() require("dap").down() end,                                                 desc = "Down" },
   { "<leader>dk", function() require("dap").up() end,                                                   desc = "Up" },
   { "<leader>dl", function() require("dap").run_last() end,                                             desc = "Run Last" },
   { "<leader>dO", function() require("dap").step_out() end,                                             desc = "finish" },
-  { "<f12>",      function() require("dap").step_out() end,                                             desc = "finish" },
   { "<leader>do", function() require("dap").step_over() end,                                            desc = "next line" },
-  { "<f10>",      function() require("dap").step_over() end,                                            desc = "next line" },
   { "<leader>dp", function() require("dap").pause() end,                                                desc = "Pause" },
   { "<leader>dr", function() require("dap").repl.toggle() end,                                          desc = "Toggle REPL" },
   { "<leader>ds", function() require("dap").session() end,                                              desc = "Session" },
   { "<leader>dh", function() require("dap.ui.widgets").hover() end,                                     desc = "Widgets" },
+  {
+    "<leader>dt",
+    function()
+      require("dap").terminate()
+      require("dapui").close()
+    end,
+    desc = "Terminate"
+  },
+
+  { "<f12>", function() require("dap").step_out() end,          desc = "finish" },
+  { "<f10>", function() require("dap").step_over() end,         desc = "next line" },
+  { "<f11>", function() require("dap").step_into() end,         desc = "Step Into" },
+  { "<f9>",  function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+  { "<f5>",  function() require("dap").continue() end,          desc = "Run/Continue" },
   {
     "<f4>",
     function()
@@ -79,12 +88,18 @@ M.keys = {
     end,
     desc = "Terminate"
   },
+  { "<f12>", function() require("dap").step_out() end,          mode = "i",           desc = "finish" },
+  { "<f10>", function() require("dap").step_over() end,         mode = "i",           desc = "next line" },
+  { "<f11>", function() require("dap").step_into() end,         mode = "i",           desc = "Step Into" },
+  { "<f9>",  function() require("dap").toggle_breakpoint() end, mode = "i",           desc = "Toggle Breakpoint" },
+  { "<f5>",  function() require("dap").continue() end,          mode = "i",           desc = "Run/Continue" },
   {
-    "<leader>dt",
+    "<f4>",
     function()
       require("dap").terminate()
       require("dapui").close()
     end,
+    mode = "i",
     desc = "Terminate"
   },
 }
