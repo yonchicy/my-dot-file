@@ -33,6 +33,18 @@ local config_languages = function()
     type = 'executable',
     command = vim.fn.stdpath "data" .. "/mason/bin/OpenDebugAD7",
   }
+  dap.adapters.lldb = {
+    type = 'server',
+    port = "${port}",
+    executable = {
+      -- CHANGE THIS to your path!
+      command = vim.fn.stdpath "data" .. "/mason/bin/codelldb",
+      args = { "--port", "${port}" },
+
+      -- On windows you may have to uncomment this:
+      -- detached = false,
+    }
+  }
   dap.adapters.codelldb = {
     type = 'server',
     port = "${port}",
