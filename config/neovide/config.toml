@@ -1,7 +1,9 @@
 vsync=false
+srgb=true
 title-hidden=true
+maximized=true
 [font]
-size = 13
+size = 14
 hinting = "full"
 edging = "antialias"
 [font.features]
@@ -10,8 +12,9 @@ edging = "antialias"
 
 
 [[font.normal]]
-family = "Maple Mono SC NF"
-style = "W600"
+# family = "Maple Mono SC NF"
+family = "Victor Mono"
+style = "W650"
 
 
 
