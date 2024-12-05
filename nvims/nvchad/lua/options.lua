@@ -52,8 +52,9 @@ end
 vim.g.neovide_cursor_smooth_blink = true
 vim.g.neovide_input_macos_option_key_is_meta = 'both'
 -- vim.g.neovide_cursor_trail_size = 0.2
--- vim.g.neovide_cursor_animation_length = 0.1
 -- vim.g.neovide_cursor_vfx_mode = "torpedo"
 vim.g.neovide_cursor_vfx_mode = "railgun"
 vim.g.neovide_refresh_rate = 60
-vim.g.neovide_scroll_animation_length = 0.15
+vim.g.neovide_scroll_animation_length = 0.05
+vim.g.neovide_position_animation_length = 0.05
+vim.g.neovide_cursor_animation_length = 0.05

@@ -100,11 +100,11 @@ M.keys = {
     end,
     desc = "Terminate"
   },
-  { "<f12>", function() require("dap").step_out() end,          mode = "i",           desc = "finish" },
-  { "<f10>", function() require("dap").step_over() end,         mode = "i",           desc = "next line" },
-  { "<f11>", function() require("dap").step_into() end,         mode = "i",           desc = "Step Into" },
-  { "<f9>",  function() require("dap").toggle_breakpoint() end, mode = "i",           desc = "Toggle Breakpoint" },
-  { "<f5>",  function() require("dap").continue() end,          mode = "i",           desc = "Run/Continue" },
+  { "<f12>", function() require("dap").step_out() end,          mode = "i", desc = "finish" },
+  { "<f10>", function() require("dap").step_over() end,         mode = "i", desc = "next line" },
+  { "<f11>", function() require("dap").step_into() end,         mode = "i", desc = "Step Into" },
+  { "<f9>",  function() require("dap").toggle_breakpoint() end, mode = "i", desc = "Toggle Breakpoint" },
+  { "<f5>",  function() require("dap").continue() end,          mode = "i", desc = "Run/Continue" },
   {
     "<f4>",
     function()
@@ -120,6 +120,7 @@ M.keys = {
 M.config = function()
   -- load mason-nvim-dap here, after all adapters have been setup
 
+  dofile(vim.g.base46_cache .. "dap")
   vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
   configure_vscode()
   configure_exts()
