@@ -25,7 +25,7 @@ end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
 config.font = wezterm.font_with_fallback {
-  { family = 'Victor Mono', weight = 650 },
+  { family = 'VictorMono Nerd Font', weight = 650 },
 }
 config.font_size = 14
 config.enable_tab_bar = true

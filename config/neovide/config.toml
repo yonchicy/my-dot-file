@@ -13,7 +13,7 @@ edging = "antialias"
 
 [[font.normal]]
 # family = "Maple Mono SC NF"
-family = "Victor Mono"
+family = "VictorMono Nerd Font"
 style = "W650"
 
 
