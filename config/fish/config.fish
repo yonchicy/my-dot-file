@@ -38,6 +38,22 @@ function yy
     rm -f $tmp
 end
 
+if test "$ALACRITTY" = "true"
+    function theme
+        ln -sf $HOME/.config/alacritty/themes/themes/{$argv[1]}.toml $HOME/.config/alacritty/active.toml
+    end
+
+
+    function toggle_theme
+      set -l ALACRITTY_THEME (defaults read -g AppleInterfaceStyle 2>/dev/null; or echo "Light")
+      if test "$ALACRITTY_THEME" = "Dark"
+        theme "gruvbox_dark"
+      else
+        theme "gruvbox_material_hard_light"
+      end
+    end
+end
+
 alias ll 'eza -al'
 
 alias la 'eza -A'
