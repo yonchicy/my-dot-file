@@ -1,32 +1,13 @@
-[colors.bright]
-black = "#727072"
-blue = "#FC9867"
-cyan = "#78DCE8"
-green = "#A9DC76"
-magenta = "#AB9DF2"
-red = "#FF6188"
-white = "#FCFCFA"
-yellow = "#FFD866"
 
-[colors.normal]
-black = "#403E41"
-blue = "#FC9867"
-cyan = "#78DCE8"
-green = "#A9DC76"
-magenta = "#AB9DF2"
-red = "#FF6188"
-white = "#FCFCFA"
-yellow = "#FFD866"
-
-[colors.primary]
-background = "#2D2A2E"
-foreground = "#FCFCFA"
+[general]
+import = ["~/.config/alacritty/active.toml"]
 
 [font]
 size = 13.0
 
 [font.normal]
-family = "ComicShannsMono Nerd Font"
+family = "VictorMono Nerd Font"
+style = "SemiBold"
 
 [scrolling]
 history = 10000
@@ -35,8 +16,8 @@ multiplier = 3
 [window]
 decorations = "full"
 dynamic_padding = false
-opacity = 0.5
-startup_mode = "Windowed"
+startup_mode = "FullScreen"
+option_as_alt="OnlyLeft"
 
 [window.dimensions]
 columns = 0
@@ -45,3 +26,9 @@ lines = 0
 [window.padding]
 x = 0
 y = 0
+[cursor.style]
+blinking = "Always"
+
+[env]
+ALACRITTY = "true"
+
