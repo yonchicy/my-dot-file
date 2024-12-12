@@ -162,7 +162,21 @@ keybinds clear-defaults=true {
         bind "8" { GoToTab 8;SwitchToMode "locked";}
         bind "9" { GoToTab 9;SwitchToMode "locked";}
         bind "c" { NewTab; SwitchToMode "locked"; }
-        bind "x" { CloseTab; SwitchToMode "locked"; }
+        bind "x" { CloseFocus; SwitchToMode "locked"; }
+        bind "d" { Detach; }
+        bind "%" {NewPane "Right";SwitchToMode "locked";}
+        bind "," {SwitchToMode "renametab";}
+    }
+    shared_except "locked"{
+      bind "?" {
+        LaunchOrFocusPlugin "file:~/.zellij_plugins/zellij_forgot.wasm" {
+            "LOAD_ZELLIJ_BINDINGS" "false"
+            "buy eggs" "5x"
+            "learn rust" "5h"
+            "clean up code" "tomorrow"
+            floating true
+        }
+    }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl q" { Quit; }
@@ -258,12 +272,12 @@ load_plugins {
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "gruvbox-light"
+//theme "nightfox"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -282,12 +296,12 @@ default_mode "locked"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-// default_layout "compact"
+//default_layout "zjstatus.kdl"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 // 
-// layout_dir "/tmp"
+layout_dir "~/.config/zellij/layouts"
  
 // The folder in which Zellij will look for themes
 // (Requires restart)
@@ -308,7 +322,7 @@ default_mode "locked"
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+ //pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
@@ -371,13 +385,13 @@ default_mode "locked"
 // otherwise this will error if such a session exists.
 // Default: <RANDOM>
 // 
-// session_name "My singleton session"
+session_name "work"
  
 // When `session_name` is provided, attaches to that session
 // if it is already running or creates it otherwise.
 // Default: false
 // 
-// attach_to_session true
+attach_to_session true
  
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -432,6 +446,25 @@ default_mode "locked"
  ui {
     pane_frames {
         hide_session_name true
+        rounded_corners true
     }
 }
+// Nightfox Theme:
+// https://github.com/edeneast/nightfox.nvim
 
+themes {
+  default {
+    bg "#192330"
+    fg "#5c9291"
+    red "#c94f6d"
+    green "#ad7d4c"
+    blue "#719cd6"
+    yellow "#dbc074"
+    magenta "#9d79d6"
+    orange "#f4a261"
+    cyan "#63cdcf"
+    black "#006e54"
+    white "#5c9291"
+  }
+
+}
