@@ -19,9 +19,10 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.wildmode = { "longest", "list:full" }
+opt.jumpoptions = "stack"
 -- opt.guifont = "FiraCode Nerd Font:h12" -- the font used in graphical neovim applications
 -- opt.guifont = "Maple Mono SC NF:h12" -- the font used in graphical neovim applications
- 
+
 -- hilight yank
 vim.api.nvim_create_autocmd("TextYankPost",
   { callback = function() vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 150, on_visual = true }) end })
@@ -35,8 +36,13 @@ vim.lsp.inlay_hint.enable(true)
 vim.api.nvim_create_autocmd({ "BufEnter", "TermOpen" }, {
   pattern = "term://*",
   callback = function()
-    vim.keymap.set("n", "<leader>cd", "<c-w>F<cmd>only<CR>", { silent = true, noremap = true, buffer = true, desc =
-    "go to file" })
+    vim.keymap.set("n", "<leader>cd", "<c-w>F<cmd>only<CR>", {
+      silent = true,
+      noremap = true,
+      buffer = true,
+      desc =
+      "go to file"
+    })
   end
 }
 )
@@ -45,8 +51,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "TermOpen" }, {
 local get_option = vim.filetype.get_option
 vim.filetype.get_option = function(filetype, option)
   return option == "commentstring"
-    and require("ts_context_commentstring.internal").calculate_commentstring()
-    or get_option(filetype, option)
+      and require("ts_context_commentstring.internal").calculate_commentstring()
+      or get_option(filetype, option)
 end
 
 vim.g.neovide_cursor_smooth_blink = true
