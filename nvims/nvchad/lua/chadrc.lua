@@ -2,14 +2,17 @@ local M = {}
 
 
 M.base46 = {
-  theme = "flexoki-light",
-  theme_toggle = { "flexoki-light", "github_dark" },
+  theme = "everforest_light",
+  theme_toggle = { "everforest_light", "gruvchad" },
   transparency = false,
   integrations = { "dap" },
   hl_override = {
     LspInlayHint = {
       bg = "one_bg2",
-    }
+    },
+    Comment = {
+      italic = true,
+    },
   }
 }
 

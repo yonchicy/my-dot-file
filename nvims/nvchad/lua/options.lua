@@ -20,6 +20,8 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.wildmode = { "longest", "list:full" }
 opt.jumpoptions = "stack"
+
+opt.termguicolors=true
 -- opt.guifont = "FiraCode Nerd Font:h12" -- the font used in graphical neovim applications
 -- opt.guifont = "Maple Mono SC NF:h12" -- the font used in graphical neovim applications
 
