@@ -137,6 +137,15 @@ map('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false
 }, { desc = "accept copilot word" })
+
+
+map("n", "<leader>X", function()
+  require("nvchad.tabufline").closeAllBufs(false)
+end, { desc = "close all buffers excludes current buf" })
+
+
+
+
 -- M.trouble = {
 --   n = {
 --     ["<leader>xx"] = {
