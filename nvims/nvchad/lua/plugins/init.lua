@@ -113,14 +113,14 @@ return {
   -- 	dependencies = "nvim-lspconfig",
   -- },
   --
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "InsertEnter",
-    opts = {
-      hint_enable = false
-    },
-    config = function(_, opts) require 'lsp_signature'.setup(opts) end
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "InsertEnter",
+  --   opts = {
+  --     hint_enable = false
+  --   },
+  --   config = function(_, opts) require 'lsp_signature'.setup(opts) end
+  -- },
   {
     "Pocco81/AutoSave.nvim",
     event = "BufRead",

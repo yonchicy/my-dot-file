@@ -13,6 +13,9 @@ M.base46 = {
     Comment = {
       italic = true,
     },
+    SepicalComment = {
+      italic = true,
+    },
   }
 }
 
@@ -30,4 +33,7 @@ M.ui = {
   telescope = { style = "bordered" }, -- borderless / bordered
 }
 
+ M.lsp = {
+   signature = true,
+ }
 return M
