@@ -1,0 +1,25 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="file:~/.zellij_plugins/zjstatus.wasm" {
+            format_left  "#[bg=#5c9291,fg=#192330][{session}]{mode} {tabs}"
+            format_right "#[bg=#5c9291,fg=#192330]{datetime}"
+            format_space "#[bg=#5c9291]"
+
+            hide_frame_for_single_pane "true"
+
+            tab_normal   "{index}:{name}  "
+            tab_active   "{index}:{name}󰎇 "
+
+            datetime          " {format} "
+            datetime_format   "%H:%M"
+            datetime_timezone "Asia/Shanghai"
+        }
+    }
+    pane split_direction="vertical" {
+        pane
+    }
+    pane size=1 borderless=true {
+      plugin location="status-bar"
+    }
+
+}
