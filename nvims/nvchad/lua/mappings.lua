@@ -141,7 +141,11 @@ map('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
 
 map("n", "<leader>X", function()
   require("nvchad.tabufline").closeAllBufs(false)
-end, { desc = "close all buffers excludes current buf" })
+end, { desc = "close all buffers excludes current buffer" })
+
+map("n", "<leader>a", function()
+  require("CopilotChat").toggle()
+end, { desc = "Toggle CopilotChat" })
 
 
 
