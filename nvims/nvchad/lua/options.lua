@@ -25,6 +25,10 @@ opt.termguicolors=true
 -- opt.guifont = "FiraCode Nerd Font:h12" -- the font used in graphical neovim applications
 -- opt.guifont = "Maple Mono SC NF:h12" -- the font used in graphical neovim applications
 
+opt.completeopt = { "menuone", "noselect" }
+
+
+
 -- hilight yank
 vim.api.nvim_create_autocmd("TextYankPost",
   { callback = function() vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 150, on_visual = true }) end })

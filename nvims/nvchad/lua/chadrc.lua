@@ -24,12 +24,37 @@ M.base46 = {
 
 M.nvdash = {
   load_on_startup = true,
-  -- buttons = {
-  --   { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
-  --   { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
-  -- { txt = "  Recent Files", keys = "Spc q s",  cmd = "lua require('persistence').load() " },
-  -- more... check nvconfig.lua file for full list of buttons
-  -- },
+  buttons = {
+--   
+--   
+--   
+--   
+--   
+
+    { txt = "   Find File", keys = "ff", cmd = "Telescope find_files" },
+    { txt = "   Recent projects", keys = "fp", cmd = "Telescope workspaces" },
+    { txt = "󰈭   Find Word", keys = "fw", cmd = "Telescope live_grep" },
+    { txt = "󱥚   Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
+    { txt = "   Mappings", keys = "ch", cmd = "NvCheatsheet" },
+    -- { keys = "s", cmd = ":lua require('persistence').load()", txt = "Restore Session" },
+    -- { keys = "S", cmd = ":lua require('persistence').select()", txt = "Select Session" },
+    -- { keys = "l", cmd = ":lua require('persistence').load({ last = true })", txt = "Restore Last Session" },
+    -- { keys = "d", cmd = ":lua require('persistence').stop()", txt = "Don't Save Current Session" },
+
+    { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
+
+    {
+      txt = function()
+        local stats = require("lazy").stats()
+        local ms = math.floor(stats.startuptime) .. " ms"
+        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+      end,
+      hl = "NvDashFooter",
+      no_gap = true,
+    },
+
+    { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
+  },
 }
 M.ui = {
 

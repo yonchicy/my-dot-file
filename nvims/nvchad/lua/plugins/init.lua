@@ -26,6 +26,19 @@ return {
 
 
   },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   opts = {
+  --     extensions = {
+  --       workspaces = {
+  --         -- keep insert mode after selection in the picker, default is false
+  --         keep_insert = true,
+  --         -- Highlight group used for the path in the picker, default is "String"
+  --         path_hl = "String"
+  --       }
+  --     }
+  --   }
+  -- },
 
   -- overrde plugin configs
   {
@@ -84,12 +97,17 @@ return {
 
   -- motion
   {
-
-    "ggandor/leap.nvim",
-    event = "BufRead",
-    config = function()
-      require("configs.leap-nvim")
-    end,
+    "folke/flash.nvim",
+    event = "BufReadPre",
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "S",     mode = { "n", "o", "x" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+    },
   },
   { "tpope/vim-repeat", event = "InsertEnter" },
   {
@@ -130,8 +148,13 @@ return {
   },
 
   {
-    "folke/persistence.nvim",
-    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    "natecraddock/workspaces.nvim",
+    opts = {},
+    event = "BufRead",
+    config = function(_, opts)
+      require("workspaces").setup(opts)
+      require("telescope").load_extension("workspaces")
+    end
   },
   {
     "NvChad/nvterm",
@@ -146,7 +169,7 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     event = "InsertEnter",
 
-  	module = "CopilotChat",
+    module = "CopilotChat",
     dependencies = {
       { "github/copilot.vim" },                       -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions

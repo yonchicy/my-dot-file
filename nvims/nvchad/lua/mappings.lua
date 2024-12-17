@@ -90,6 +90,7 @@ end, { desc = "floating diagnostic" })
 map("n", "<leader>fd", function()
   require("telescope.builtin").diagnostics()
 end, { desc = "find diagnostics in workspace" })
+map("n", "<leader>fp", "<cmd>Telescope workspaces<CR>", { desc = "find workspaces" })
 
 map("n", "<leader>gd", function()
   vim.cmd "only"
@@ -144,6 +145,7 @@ map("n", "<leader>X", function()
 end, { desc = "close all buffers excludes current buffer" })
 
 map("n", "<leader>a", function()
+  vim.cmd "only"
   require("CopilotChat").toggle()
 end, { desc = "Toggle CopilotChat" })
 
