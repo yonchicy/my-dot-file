@@ -2,6 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --
+local map = vim.keymap.set
+local nomap = vim.keymap.del
 
 -- map jk as <ESC>
 local function termcodes(str)
@@ -11,3 +13,39 @@ end
 -- vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })
 vim.keymap.set("t", "<C-x>", termcodes("<C-\\><C-N>"), { desc = "escape terminal mode" })
 vim.keymap.set("t", "Jk", termcodes("<C-\\><C-N>"), { desc = "escape terminal mode" })
+
+--map("i", "jk", "<ESC>", { desc = "escape insert mode", nowait = true })
+map("i", "<C-f>", "<Right>", { desc = "move right" })
+map("i", "<C-b>", "<Left>", { desc = "move left" })
+map("i", "<C-n>", "<Down>", { desc = "move down" })
+map("i", "<C-p>", "<Up>", { desc = "move up" })
+
+-- go to  beginning and end
+map("i", "<C-a>", "<ESC>^i", { desc = "beginning of line" })
+map("i", "<C-e>", "<End>", { desc = "end of line" })
+
+map("n", "<c-right>", "<c-w>>", { desc = "change window size" })
+map("n", "<c-left>", "<c-w><", { desc = "change window size" })
+map("n", "<c-up>", "<c-w>+", { desc = "change window size" })
+map("n", "<c-down>", "<c-w>-", { desc = "change window size" })
+map("n", "H", "^", { desc = "move to head of line" })
+map("n", "L", "$", { desc = "move to end of line" })
+map("n", "Q", "<C-w>q", { desc = "close windows" })
+
+map("n", "<a-t>", function()
+  Snacks.terminal.toggle(nil, {
+    cwd = LazyVim.root(),
+    win = {
+      position = "float",
+      backdrop = 60,
+      height = 0.9,
+      width = 0.9,
+      zindex = 50,
+      border = "rounded",
+    },
+  })
+end, { desc = "Float Terminal (Root Dir)" })
+
+map("t", "<a-t>", "<cmd>close<CR>", { desc = "close terminal" })
+map("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
+map("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "next buffer" })
