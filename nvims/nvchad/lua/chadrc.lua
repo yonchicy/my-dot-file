@@ -2,8 +2,8 @@ local M = {}
 
 
 M.base46 = {
-  theme = "everforest_light",
-  theme_toggle = { "everforest_light", "gruvchad" },
+  theme = "onenord",
+  theme_toggle = { "everforest_light", "onenord" },
   transparency = false,
   integrations = { "dap" },
   hl_override = {

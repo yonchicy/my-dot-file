@@ -74,11 +74,15 @@ end, { desc = "go to definition" })
 map("n", "gr", function()
   require("telescope.builtin").lsp_references { reuse_win = false }
 end, { desc = "go to references" })
+map("n", "<leader>cf", function()
+  vim.lsp.buf.format()
+end, { desc = "code format" })
 map("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "code action" })
 map("n", "<leader>cr", function()
-  require "nvchad.lsp.renamer" ()
+  -- require "nvchad.lsp.renamer" ()
+  vim.lsp.buf.rename()
 end, { desc = "rename symbol" })
 map("n", "gh", function()
   vim.lsp.buf.hover()
@@ -106,8 +110,8 @@ map("n", "<leader>fs",
   , { desc = "find symbols" })
 
 map("n", "<leader>ft",
-  "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>"
-  , { desc = "find symbols" })
+  "<cmd> Telescope lsp_document_symbols <CR>"
+  , { desc = "find buffer symbols" })
 
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
 
@@ -148,6 +152,11 @@ map("n", "<leader>a", function()
   vim.cmd "only"
   require("CopilotChat").toggle()
 end, { desc = "Toggle CopilotChat" })
+
+map("n", "<leader>o", function()
+  vim.cmd"SymbolsOutline"
+end, { desc = "toogle symbols outline" })
+
 
 
 
