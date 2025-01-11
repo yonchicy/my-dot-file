@@ -4,4 +4,5 @@ return {
     scroll = { enabled = false },
   },
   { "ellisonleao/gruvbox.nvim" },
+  { "sainnhe/everforest" },
 }
