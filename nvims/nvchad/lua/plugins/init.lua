@@ -14,18 +14,18 @@ return {
     end,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    -- opts = function()
-    --   require("configs.cmp_overrides")
-    -- end,
-    config = function(_, opts)
-      local myopts = vim.tbl_deep_extend("force", opts, require "configs.cmp_overrides")
-      require("cmp").setup(myopts)
-    end
-
-
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   opts = function()
+  --     require("configs.cmp_overrides")
+  --   end,
+  --   config = function(_, opts)
+  --     local myopts = vim.tbl_deep_extend("force", opts, require "configs.cmp_overrides")
+  --     require("cmp").setup(myopts)
+  --   end
+  --
+  --
+  -- },
   -- {
   --   "nvim-telescope/telescope.nvim",
   --   opts = {
