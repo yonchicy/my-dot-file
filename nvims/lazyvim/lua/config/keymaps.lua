@@ -49,3 +49,11 @@ end, { desc = "Float Terminal (Root Dir)" })
 map("t", "<a-t>", "<cmd>close<CR>", { desc = "close terminal" })
 map("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
 map("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "next buffer" })
+map("n", "<leader>ut", function()
+  local mode = vim.api.nvim_get_option_value("background", { scope = "global" })
+  if mode == "light" then
+    vim.api.nvim_set_option_value("background", "dark", { scope = "global" })
+  else
+    vim.api.nvim_set_option_value("background", "light", { scope = "global" })
+  end
+end, { desc = "toggle between light and dark" })
