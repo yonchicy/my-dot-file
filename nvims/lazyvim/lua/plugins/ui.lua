@@ -3,4 +3,5 @@ return {
   opts = {
     scroll = { enabled = false },
   },
+  { "ellisonleao/gruvbox.nvim" },
 }
