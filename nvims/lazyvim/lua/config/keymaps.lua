@@ -53,7 +53,13 @@ map("n", "<leader>ut", function()
   local mode = vim.api.nvim_get_option_value("background", { scope = "global" })
   if mode == "light" then
     vim.api.nvim_set_option_value("background", "dark", { scope = "global" })
+    os.execute(
+      'sed -i \'s/background = "light"/background = "dark"/g\' ~/my-dot-file/nvims/lazyvim/lua/config/options.lua'
+    )
   else
     vim.api.nvim_set_option_value("background", "light", { scope = "global" })
+    os.execute(
+      'sed -i \'s/background = "dark"/background = "light"/g\' ~/my-dot-file/nvims/lazyvim/lua/config/options.lua'
+    )
   end
 end, { desc = "toggle between light and dark" })
