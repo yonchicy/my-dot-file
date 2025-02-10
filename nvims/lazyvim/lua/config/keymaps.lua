@@ -33,6 +33,7 @@ map("n", "L", "$", { desc = "move to end of line" })
 map("n", "Q", "<C-w>q", { desc = "close windows" })
 
 map("n", "<a-t>", function()
+  vim.cmd("wa")
   Snacks.terminal.toggle(nil, {
     cwd = LazyVim.root(),
     win = {
@@ -45,6 +46,19 @@ map("n", "<a-t>", function()
     },
   })
 end, { desc = "Float Terminal (Root Dir)" })
+map("n", "<c-W>gd", function()
+  vim.cmd("only")
+  vim.cmd("vsplit")
+  vim.lsp.buf.definition({ reuse_win = false })
+end, { desc = "go to definition in another window" })
+map("n", "<leader>gd", function()
+  vim.cmd("only")
+  vim.cmd("vsplit")
+  vim.lsp.buf.definition({ reuse_win = false })
+end, { desc = "go to definition in another window" })
+map("n", "gd", function()
+  vim.lsp.buf.definition({ reuse_win = false })
+end, { desc = "go to definition" })
 
 map("t", "<a-t>", "<cmd>close<CR>", { desc = "close terminal" })
 map("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
