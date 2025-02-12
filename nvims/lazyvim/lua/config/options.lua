@@ -3,7 +3,7 @@
 -- Add any additional options here
 --
 vim.opt.background = "light"
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
 vim.g.copilot_proxy = "http://localhost:7890"
