@@ -14,4 +14,15 @@ return {
       },
     },
   },
+  {
+    "ibhagwan/fzf-lua",
+    opts = {
+      winopts = {
+        width = 0.95,
+        preview = {
+          horizontal = "right:60%",
+        },
+      },
+    },
+  },
 }
