@@ -3,7 +3,7 @@
 -- Add any additional options here
 --
 vim.opt.background = "light"
--- vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = ""
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
 vim.g.copilot_proxy = "http://localhost:7890"
@@ -34,3 +34,23 @@ vim.g.neovide_position_animation_length = 0.01
 vim.g.neovide_cursor_animation_length = 0.01
 vim.g.gruvbox_material_foreground = "material"
 vim.g.gruvbox_material_background = "hard"
+vim.o.clipboard = "unnamedplus"
+
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = paste,
+    ["*"] = paste,
+  },
+}
