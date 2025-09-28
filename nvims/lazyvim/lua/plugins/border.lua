@@ -9,14 +9,14 @@ return {
       }
     end,
   },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ui = {
-        border = "rounded",
-      },
-    },
-  },
+  -- {
+  --   "mason_org/mason.nvim",
+  --   opts = {
+  --     ui = {
+  --       border = "rounded",
+  --     },
+  --   },
+  -- },
   {
     "folke/noice.nvim",
     opts = {

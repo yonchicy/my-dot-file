@@ -7,6 +7,7 @@ vim.opt.background = "light"
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
 vim.g.copilot_proxy = "http://localhost:7890"
+vim.opt.nu = false
 vim.opt.rnu = false
 
 vim.opt.termguicolors = true
