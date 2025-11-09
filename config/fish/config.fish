@@ -89,3 +89,17 @@ function fish_user_key_bindings
     fish_vi_key_bindings --no-erase insert
 bind -M insert ctrl-n down-or-search
 end
+if set -q ALACRITTY && test "$ALACRITTY" = true
+    function theme
+        ln -sf $HOME/.config/alacritty/themes/themes/$argv[1].toml $HOME/.config/alacritty/active.toml
+    end
+
+    # 获取 macOS 系统外观模式（Dark / Light）
+    set alacritty_theme (defaults read -g AppleInterfaceStyle 2>/dev/null; or echo "Light")
+
+    if test "$alacritty_theme" = Dark
+        theme github_dark
+    else
+        theme github_light
+    end
+end
