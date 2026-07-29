@@ -1,8 +1,7 @@
 format="""
+$os\
 $directory\
 $git_branch\
-$git_status\
-$rust\
 $fill\
 $cmd_duration\
 $memory_usage\
@@ -17,7 +16,40 @@ $character
 add_newline = false
 command_timeout = 1000
 
+[custom.devbox]
+command = "printf devbox"
+when = true
+style = "bold green"
+format = "[$output]($style)"
 
+
+[os]
+disabled = false
+style = "bold green"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
 
 
 # Replace the "❯" symbol in the prompt with "➜"
@@ -37,7 +69,7 @@ format = "[ 󰉋 $path]($style)[$read_only]($read_only_style)"
 
 [fill]
 symbol = "-"
-style = "bold green"
+style = "bold fg:green"
 
 [git_status]
 
