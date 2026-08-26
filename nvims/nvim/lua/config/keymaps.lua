@@ -11,10 +11,42 @@ local function pick(method)
   end
 end
 
+local function mini_files()
+  local ok, files = pcall(require, "mini.files")
+  if not ok then
+    vim.notify("mini.files is not available", vim.log.levels.WARN)
+    return nil
+  end
+  return files
+end
+
+local function current_file_or_cwd()
+  local path = vim.api.nvim_buf_get_name(0)
+  -- Do not pass special buffers such as `term://` to mini.files as paths.
+  if vim.bo.buftype == "" and path ~= "" and vim.uv.fs_stat(path) then
+    return path
+  end
+  return vim.fn.getcwd()
+end
+
 -- Search
 map("n", "<leader>ff", pick("files"), { desc = "Find files" })
 map("n", "<leader>fg", pick("grep_live"), { desc = "Find text" })
 map("n", "<leader>fb", pick("buffers"), { desc = "Find buffers" })
+
+-- File explorer
+map("n", "<leader>e", function()
+  local files = mini_files()
+  if files and files.close() == nil then
+    files.open(current_file_or_cwd(), false)
+  end
+end, { desc = "Toggle file explorer" })
+map("n", "<leader>E", function()
+  local files = mini_files()
+  if files then
+    files.open(vim.fn.getcwd(), false)
+  end
+end, { desc = "Browse working directory" })
 
 -- Terminal workbench
 map("n", "<leader>tn", function()

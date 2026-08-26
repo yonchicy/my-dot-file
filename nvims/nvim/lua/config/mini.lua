@@ -21,6 +21,16 @@ function M.setup()
     lsp_progress = { enable = false },
     window = { winblend = 0 },
   })
+  setup_module("mini.files", {
+    options = {
+      -- Keep accidental line deletions recoverable from mini.files' trash.
+      permanent_delete = false,
+    },
+    windows = {
+      preview = true,
+      width_preview = 50,
+    },
+  })
   setup_module("mini.pick", {})
   setup_module("mini.tabline", {
     show_icons = true,

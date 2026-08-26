@@ -21,10 +21,17 @@ automatically. Use `:packupdate` to review and apply updates.
 | `<leader>ff` | Find files |
 | `<leader>fg` | Live full-text search |
 | `<leader>fb` | Find open buffers |
+| `<leader>e` | Toggle the file explorer at the current file |
+| `<leader>E` | Browse the current working directory |
 
 `mini.tabline` shows normal buffers and named terminal sessions in the top tab
 line. Terminal badges mean: `●` running, `!` needs attention, `✓` completed,
 `×` failed, and `+N` unread activity.
+
+The file explorer uses `mini.files`: `h`/`l` navigate, `q` closes it, and a
+preview is shown for the item under the cursor. Create, rename, move, or delete
+entries by editing their lines, then press `=` to review and apply the changes.
+Deletes go to mini.files' trash instead of being permanent.
 
 ## Terminal workbench
 
