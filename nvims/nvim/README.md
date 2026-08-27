@@ -1,32 +1,67 @@
 # Neovim terminal workbench
 
 This is a small Neovim 0.12 configuration for editing, searching, and managing
-long-running CLI agents. It uses native `vim.pack` and only installs
-`nvim-mini/mini.nvim` (stable branch).
+long-running CLI agents. It uses native `vim.pack` and installs
+`nvim-mini/mini.nvim` (stable branch) plus `nvim-treesitter/nvim-treesitter`
+(main branch).
 
 ## Requirements
 
 - Neovim 0.12+
 - `git` for the first plugin install
 - `rg` for file and text search
+- `curl`, `tar`, a C compiler, and `tree-sitter-cli` 0.26.1+ to install or
+  update Tree-sitter parsers
 - `codex` is optional, but enables the Codex convenience command
 
-The first startup downloads `mini.nvim`; later starts do not update plugins
+The first startup downloads managed plugins; later starts do not update them
 automatically. Use `:packupdate` to review and apply updates.
+
+## Syntax highlighting
+
+Tree-sitter highlighting is enabled without LSP whenever Neovim can load a
+matching parser and `highlights.scm` query. Filetypes without an available
+parser keep their built-in syntax highlighting. Use `:Inspect` to see applied
+highlight groups and `:InspectTree` to inspect the parsed syntax tree.
+
+Lua uses Neovim's bundled parser. Java, C++, and Bash parsers are managed by
+`nvim-treesitter`; Bash is also used for the `sh` filetype. Their generated
+artifacts live in `.treesitter/`, which is intentionally ignored by Git. On a
+new machine, run `:TSInstall bash cpp java`; after updating `nvim-treesitter`,
+run `:TSUpdate` to keep parsers and queries compatible. Use
+`:checkhealth nvim-treesitter` to diagnose parser installation problems.
+
+## Core editing
+
+The leader key is Space.
+
+| Mapping | Action |
+| --- | --- |
+| `<leader>hl` | Clear search highlighting |
+| `H` / `L` (Normal, Visual) | Move to the first non-blank character / end of line |
+| `<leader>1` ... `<leader>9` | Focus a window by number |
+| `<C-Left>` / `<C-Right>` | Narrow / widen the current window by 3 columns |
+| `<Tab>` | Switch to the next buffer |
+| `<S-Tab>` | Switch to the previous buffer |
+| `<leader>bc` | Close the current buffer |
+| `<leader>bn` | Create a new empty buffer |
+| `<leader>q` | Save all buffers and quit the current window |
 
 ## Search and buffers
 
 | Mapping | Action |
 | --- | --- |
 | `<leader>ff` | Find files |
-| `<leader>fg` | Live full-text search |
+| `<leader>fw` | Live full-text search |
 | `<leader>fb` | Find open buffers |
 | `<leader>e` | Toggle the file explorer at the current file |
 | `<leader>E` | Browse the current working directory |
 
 `mini.tabline` shows normal buffers and named terminal sessions in the top tab
 line. Terminal badges mean: `●` running, `!` needs attention, `✓` completed,
-`×` failed, and `+N` unread activity.
+`×` failed, and `+N` unread activity. File buffers use filetype icons; each
+entry is separated by `│`, while the focused buffer has a `▌` marker and a
+reversed, bold highlight. Terminal sessions use a terminal icon as well.
 
 The file explorer uses `mini.files`: `h`/`l` navigate, `q` closes it, and a
 preview is shown for the item under the cursor. Create, rename, move, or delete
@@ -37,6 +72,7 @@ Deletes go to mini.files' trash instead of being permanent.
 
 | Mapping | Action |
 | --- | --- |
+| `Jk` (Terminal) | Return to Normal mode |
 | `<leader>tn` | Create a named terminal interactively |
 | `<leader>tc` | Create a named Codex terminal |
 | `<leader>tl` | Fuzzy-select a terminal session |
@@ -47,10 +83,13 @@ Deletes go to mini.files' trash instead of being permanent.
 | `<leader>to` | Open it in its own tabpage |
 | `<leader>tx` | Stop the selected/current session |
 
-In Terminal mode, use Neovim's built-in `<C-\\><C-n>` to return to Normal
-mode before using the mappings. This configuration intentionally does not
-override Esc, Ctrl-C, Enter, Tab, or common terminal-control keys, so Codex and
-other TUIs keep their normal behavior.
+New terminals open in their own tabpage by default. Use the explicit split,
+float, or tab mappings above when reopening a session with a different layout.
+
+In Terminal mode, use `Jk` or Neovim's built-in `<C-\\><C-n>` to return to
+Normal mode before using the mappings. This configuration
+intentionally does not override Esc, Ctrl-C, Enter, Tab, or common
+terminal-control keys, so Codex and other TUIs keep their normal behavior.
 
 ### Commands
 
@@ -104,4 +143,5 @@ that is intentionally a future backend rather than a fake native restore.
 
 Edit `lua/config/local.lua` to change the default layout, float/split sizes,
 Codex command, or attention matchers. Set `icon_style = "glyph"` only if your
-terminal uses a Nerd Font; otherwise the ASCII default is intentional.
+terminal uses a Nerd Font; this configuration uses mini.icons' Nerd Font 3
+Material glyphs. Set it to `"ascii"` if the terminal cannot render them.

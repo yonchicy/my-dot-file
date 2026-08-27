@@ -1,0 +1,2 @@
+.treesitter/
+!nvim-pack-lock.json
