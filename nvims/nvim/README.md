@@ -24,11 +24,14 @@ matching parser and `highlights.scm` query. Filetypes without an available
 parser keep their built-in syntax highlighting. Use `:Inspect` to see applied
 highlight groups and `:InspectTree` to inspect the parsed syntax tree.
 
-Lua uses Neovim's bundled parser. Java, C++, and Bash parsers are managed by
-`nvim-treesitter`; Bash is also used for the `sh` filetype. Their generated
-artifacts live in `.treesitter/`, which is intentionally ignored by Git. On a
-new machine, run `:TSInstall bash cpp java`; after updating `nvim-treesitter`,
-run `:TSUpdate` to keep parsers and queries compatible. Use
+Lua uses Neovim's bundled parser. The Java, C++, and Bash parsers are ensured
+automatically on startup (`ensure_languages` in `lua/config/treesitter.lua`) and
+installed in the background when missing; Bash is also used for the `sh`
+filetype. Their generated artifacts live in `.treesitter/`, which is
+intentionally ignored by Git. Installing parsers requires the `tree-sitter`
+CLI on `$PATH` (or in `~/tools/bin`, which is appended automatically), e.g.
+`cargo install tree-sitter-cli`. After updating `nvim-treesitter`, run
+`:TSUpdate` to keep parsers and queries compatible. Use
 `:checkhealth nvim-treesitter` to diagnose parser installation problems.
 
 ## Core editing
