@@ -7,3 +7,7 @@ nvim/.vscode
 config/lazygit/state.yml
 config/lazygit/state.yml
 *.json
+
+# AI CLI（Claude Code / Codex / TraeX）配置经 sync.sh 白名单脱敏后入库
+!ai-cli/**/
+!ai-cli/**/*.json

@@ -1,0 +1,23 @@
+default_permissions = ":workspace"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+
+[features]
+fullscreen = true
+
+[tui]
+resume_cwd = "session"
+
+[tui.fullscreen]
+output_verbose = "minimal"
+live_output_max_rows = 3
+thought_auto_expand_threshold_ms = 60000
+show_hooks = false
+diff_sidebar_enabled = false
+edited_files_default_expanded = false
+
+[tui.keymap.composer]
+submit = "cmd-enter"
+
+[plugins."herdr-traex@local"]
+enabled = true

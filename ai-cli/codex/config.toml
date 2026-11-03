@@ -1,0 +1,120 @@
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."google-calendar@openai-curated"]
+enabled = true
+
+[plugins."slack@openai-curated"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-history@openai-bundled"]
+enabled = true
+
+[features]
+context_management.experimental_mode = true
+js_repl = false
+memories = true
+chronicle = true
+
+hooks = true
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = false
+appearanceLightCodeThemeId = "everforest"
+keepRemoteControlAwakeWhilePluggedIn = true
+show-ultra-in-model-picker-slider = false
+preventSleepWhileRunning = true
+defaultTerminalLocation = "bottom"
+show-context-window-usage = true
+followUpQueueMode = "queue"
+mac-menu-bar-enabled = false
+composerEnterBehavior = "cmdAlways"
+appearanceTheme = "system"
+sansFontSize = 14
+codeFontSize = 13
+appearanceDiffMarkerStyle = "color"
+notifications-permissions-enabled = true
+toys-confetti-enabled = false
+external-agent-import-sync-enabled = false
+pagesFullWidth = false
+pagesFontSize = 15
+
+[desktop.appearanceLightChromeTheme]
+accent = "#93b259"
+accentSource = "custom"
+contrast = 45
+ink = "#5c6a72"
+opaqueWindows = false
+surface = "#fdf6e3"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = '"ZedMono Nerd Font Mono"'
+content = '"ZedMono Nerd Font Mono"'
+ui = '"ZedMono Nerd Font"'
+
+[desktop.appearanceLightChromeTheme.fonts.uiFace]
+family = "ZedMono Nerd Font"
+fullName = "ZedMono NF Bold"
+postscriptName = "ZedMonoNF-Bold"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#8da101"
+diffRemoved = "#f85552"
+skill = "#df69ba"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#811dd9"
+contrast = 60
+ink = "#ffffff"
+opaqueWindows = false
+surface = "#181818"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+ui = '"ZedMono Nerd Font Mono"'
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#40c977"
+diffRemoved = "#fa423e"
+skill = "#ad7bf9"
+
+[desktop.open-in-target-preferences]
+global = "zed"
+
+[memories]
+generate_memories = true
+use_memories = true
+
+[tui]
+alternate_screen = "always"
+screen_reader_detection_done = true
+status_line = ["model-with-reasoning", "current-dir", "thread-name", "git-branch", "task-progress"]
+status_line_use_colors = true
+agents_overview_grouping = "project"

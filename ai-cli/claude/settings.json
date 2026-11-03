@@ -1,0 +1,21 @@
+{
+  "enableWorkflows": true,
+  "env": {
+    "API_TIMEOUT_MS": "600000",
+    "CLAUDE_CODE_AUTO_MODE_SERVER": "false",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "language": "chinese",
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "mcp__agent-recall__*"
+    ]
+  },
+  "statusLine": {
+    "command": "~/.claude/statusline.sh",
+    "type": "command"
+  },
+  "theme": "auto",
+  "tui": "fullscreen"
+}
