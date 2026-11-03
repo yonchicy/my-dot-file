@@ -22,8 +22,8 @@ bash ai-cli/sync.sh
 | `claude/keybindings.json` | `~/.claude/keybindings.json` | 快捷键（完整复制） |
 | `claude/statusline.sh` | `~/.claude/statusline.sh` | 状态栏脚本（完整复制） |
 | `claude/settings.json` | `~/.claude/settings.json` | 仅保留 env 白名单键、language、permissions、statusLine、theme、tui |
-| `codex/keybindings.json` | `~/.codex/keybindings.json` | 快捷键（完整复制） |
-| `codex/config.toml` | `~/.codex/config.toml` | 仅保留 features、desktop 外观、memories、tui（含状态栏）、plugins 开关 |
+| `codex/keybindings.json` | `~/.codex/keybindings.json` | 桌面端快捷键（完整复制） |
+| `codex/config.toml` | `~/.codex/config.toml` | 仅保留 features、desktop 外观、memories、tui（含状态栏与 `tui.keymap` 终端快捷键）、plugins 开关 |
 | `trae/traecli.toml` | `~/.trae/traecli.toml` | 仅保留权限策略、features、tui（含 `tui.keymap` 快捷键）、plugins 开关 |
 
 ## 明确不备份的内容

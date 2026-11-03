@@ -102,6 +102,8 @@ def codex_allowed(sec, is_array):
         return False  # 模型可用性记录
     if sec in ("features", "memories", "tui"):
         return True
+    if sec == "tui.keymap" or sec.startswith("tui.keymap."):
+        return True   # 终端快捷键
     if sec == "desktop" or sec.startswith("desktop."):
         return True   # 桌面端外观/交互（已在上面排除 perPath）
     if sec == "plugins" or sec.startswith("plugins."):

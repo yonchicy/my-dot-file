@@ -118,3 +118,9 @@ screen_reader_detection_done = true
 status_line = ["model-with-reasoning", "current-dir", "thread-name", "git-branch", "task-progress"]
 status_line_use_colors = true
 agents_overview_grouping = "project"
+
+[tui.keymap.composer]
+submit = "super-enter"
+
+[tui.keymap.editor]
+insert_newline = "enter"
