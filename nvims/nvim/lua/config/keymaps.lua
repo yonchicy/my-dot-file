@@ -1,5 +1,26 @@
 local map = vim.keymap.set
 
+-- Core editing
+map("n", "<leader>hl", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+map({ "n", "x" }, "H", "^", { desc = "Go to first non-blank character" })
+map({ "n", "x" }, "L", "$", { desc = "Go to end of line" })
+
+
+-- Windows
+for index = 1, 9 do
+  map("n", "<leader>" .. index, index .. "<C-w>w", { desc = "Focus window " .. index })
+end
+map("n", "<C-Left>", "3<C-w><", { desc = "Narrow window" })
+map("n", "<C-Right>", "3<C-w>>", { desc = "Widen window" })
+
+-- Buffers and quitting
+map("n", "<leader>bc", "<cmd>bdelete<CR>", { desc = "Close buffer" })
+map("n", "<tab>", "<cmd>bn<CR>", { desc = "Close buffer" })
+map("n", "<S-tab>", "<cmd>bp<CR>", { desc = "Close buffer" })
+map("n", "<leader>bc", "<cmd>bdelete<CR>", { desc = "Close buffer" })
+map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer" })
+map("n", "<leader>q", "<cmd>wall<CR><cmd>quit<CR>", { desc = "Save all and quit" })
+
 local function pick(method)
   return function()
     local ok, mini_pick = pcall(require, "mini.pick")
@@ -31,7 +52,7 @@ end
 
 -- Search
 map("n", "<leader>ff", pick("files"), { desc = "Find files" })
-map("n", "<leader>fg", pick("grep_live"), { desc = "Find text" })
+map("n", "<leader>fw", pick("grep_live"), { desc = "Find text" })
 map("n", "<leader>fb", pick("buffers"), { desc = "Find buffers" })
 
 -- File explorer
@@ -47,6 +68,9 @@ map("n", "<leader>E", function()
     files.open(vim.fn.getcwd(), false)
   end
 end, { desc = "Browse working directory" })
+
+-- Terminal mode
+map("t", "Jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- Terminal workbench
 map("n", "<leader>tn", function()

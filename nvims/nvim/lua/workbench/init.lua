@@ -632,6 +632,7 @@ function M.select_session(callback)
           if target and vim.api.nvim_win_is_valid(target) then
             vim.api.nvim_win_call(target, function()
               choose(selected)
+              mini_pick.set_picker_target_window(vim.api.nvim_get_current_win())
             end)
           else
             choose(selected)
@@ -660,7 +661,8 @@ function M.format_tab(buffer, label)
   if not session then
     return label
   end
-  return " " .. M.session_label(session) .. " "
+  local icon = vim.g.workbench_icon_style == "glyph" and "󰆍" or ">"
+  return " " .. icon .. " " .. M.session_label(session) .. " "
 end
 
 function M.list()
