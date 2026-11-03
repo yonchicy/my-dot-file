@@ -14,6 +14,7 @@
 │   │   ├── local.lua             # 唯一的默认个人化入口
 │   │   ├── options.lua
 │   │   ├── packages.lua
+│   │   ├── treesitter.lua
 │   │   ├── mini.lua
 │   │   └── keymaps.lua
 │   └── workbench/
@@ -32,6 +33,7 @@
 | `config/local.lua` | 用户偏好、布局、Codex 路径、matcher、图标风格 | 业务逻辑、插件 bootstrap、映射实现 |
 | `config/options.lua` | 通用 option 与安全默认值 | plugin 配置、terminal job 生命周期 |
 | `config/packages.lua` | `vim.pack` 规格和加载错误处理 | 任意 plugin 的具体 `setup()` |
+| `config/treesitter.lua` | 配置本地 parser 目录、`sh -> bash` 映射，并在有可用 parser 时启用原生高亮 | parser 下载、LSP 或语义 token |
 | `config/mini.lua` | 启用所选 mini 模块及它们之间的集成 | 工作台状态存储或命令实现 |
 | `config/keymaps.lua` | 用户可发现的 Normal mode 入口 | Terminal mode 劫持、复杂业务逻辑 |
 | `workbench/config.lua` | 可合并的默认配置和 profile | 状态可变数据 |
@@ -40,7 +42,8 @@
 
 ## 依赖策略
 
-本配置刻意只有一个第三方仓库：`nvim-mini/mini.nvim`。
+本配置刻意只维护两个第三方仓库：`nvim-mini/mini.nvim` 与
+`nvim-treesitter/nvim-treesitter`。
 
 启用的模块如下：
 
@@ -51,6 +54,10 @@
 | `mini.pick` | files、grep_live、buffers 与 session picker | 自定义 session item 使用 `text` 和 `session_id`；选择后须在 picker 的 target window 打开 |
 | `mini.tabline` | listed buffer 标签栏 | `format` 高频调用，只能做 O(1) 的 `buffer -> session` 查询 |
 
+`nvim-treesitter` 只管理 parser 与 query 的安装/更新；语法高亮仍由
+Neovim 原生 `vim.treesitter.start()` 提供，不依赖 LSP。parser 产物安装到
+配置目录的 `.treesitter/`，它是被 Git 忽略的本地生成状态。
+
 不使用 `toggleterm.nvim`、`vim-floaterm`、`telescope.nvim`、`fzf-lua`、`bufferline.nvim` 或 `nvim-web-devicons`，不是遗漏：它们要么与本地 terminal 生命周期模型重叠，要么重复 mini 的能力，要么会增加不必要依赖。
 
 ## 插件管理
@@ -59,6 +66,8 @@
 
 - 目标为 `https://github.com/nvim-mini/mini.nvim`；
 - 使用 `stable` 分支；
+- 目标为 `https://github.com/nvim-treesitter/nvim-treesitter`；
+- 使用 `main` 分支，且不可 lazy-load；
 - 首装允许加载，后续启动不会自动更新；
 - `nvim-pack-lock.json` 固定已解析 revision。
 

@@ -28,8 +28,8 @@
 
 - Neovim：0.12+。
 - 插件管理：Neovim 原生 `vim.pack`。
-- 唯一第三方来源：`nvim-mini/mini.nvim` 的 `stable` 分支。
-- 外部命令：`git` 用于首装/更新，`rg` 用于 files/grep；`codex` 仅在用户使用 Codex 快捷方式时需要；`tmux` 已安装但尚未接入后端。
+- 第三方来源：`nvim-mini/mini.nvim` 的 `stable` 分支，以及 `nvim-treesitter/nvim-treesitter` 的 `main` 分支。
+- 外部命令：`git` 用于首装/更新，`rg` 用于 files/grep；`curl`、`tar`、C 编译器与 `tree-sitter-cli >= 0.26.1` 仅用于安装/更新 Tree-sitter parser；`codex` 仅在用户使用 Codex 快捷方式时需要；`tmux` 已安装但尚未接入后端。
 - 图标默认 ASCII，以免没有 Nerd Font 的终端出现乱码；用户可在 `lua/config/local.lua` 改为 glyph。
 
 ## 加载路线
@@ -38,7 +38,8 @@
 init.lua
   ├─ config.local       用户覆盖项与图标风格
   ├─ config.options     基础 Neovim 选项与 session 安全项
-  ├─ config.packages    vim.pack 安装/加载 mini.nvim
+  ├─ config.packages    vim.pack 安装/加载 mini.nvim 与 nvim-treesitter
+  ├─ config.treesitter  原生 Tree-sitter 高亮与本地 parser 目录
   ├─ workbench.setup    注册 terminal 状态、自动命令和 :AgentTerm* 命令
   ├─ config.mini        icons / notify / pick / tabline
   └─ config.keymaps     Normal mode 映射

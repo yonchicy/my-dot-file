@@ -11,6 +11,10 @@ function M.setup()
       src = "https://github.com/nvim-mini/mini.nvim",
       version = "stable",
     },
+    {
+      src = "https://github.com/nvim-treesitter/nvim-treesitter",
+      version = "main",
+    },
   }, {
     confirm = false,
     load = true,
@@ -18,7 +22,7 @@ function M.setup()
 
   if not ok then
     vim.schedule(function()
-      vim.notify("Could not load mini.nvim: " .. tostring(err), vim.log.levels.ERROR)
+      vim.notify("Could not load configured plugins: " .. tostring(err), vim.log.levels.ERROR)
     end)
     return false
   end

@@ -153,8 +153,9 @@ WORKBENCH_SMOKE_OK
 1. 先获得用户同意联网/更新。
 2. 用 `:packupdate` 获取候选变更；阅读确认 buffer 和上游 changelog。
 3. 审查 `nvim-pack-lock.json` 的 revision 是否符合预期。
-4. 跑 smoke test 和受影响的手工测试。
-5. 更新 README、`.agents/architecture.md` 与依赖说明。
+4. 若更新 `nvim-treesitter`，在确认插件更新后显式运行 `:TSUpdate`，使已安装 parser 与 query 保持兼容。
+5. 跑 smoke test 和受影响的手工测试。
+6. 更新 README、`.agents/architecture.md` 与依赖说明。
 
 禁止：
 

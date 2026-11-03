@@ -6,12 +6,20 @@
 
 ## 日常入口
 
-leader 是空格，下面的映射全部只在 Normal mode 生效。
+leader 是空格。下面列出的编辑、窗口、搜索和工作台入口均在 Normal mode 生效。
 
 | 按键 | 动作 | 说明 |
 | --- | --- | --- |
+| `<leader>hl` | 清除搜索高亮 | 执行 `:nohlsearch`。 |
+| `H` / `L` | 跳至首个非空白字符 / 行尾 | 在 Normal 和 Visual mode 生效。 |
+| `<leader>1` ... `<leader>9` | 聚焦第 1 至第 9 个窗口 | 使用 `:wincmd w` 的 count。 |
+| `<C-Left>` / `<C-Right>` | 缩窄 / 加宽当前窗口 | 每次调整 3 列。 |
+| `<Tab>` / `<S-Tab>` | 下一个 / 上一个 buffer | 分别执行 `:bnext` / `:bprevious`。 |
+| `<leader>bc` | 关闭当前 buffer | 执行 `:bdelete`。 |
+| `<leader>bn` | 新建空 buffer | 执行 `:enew`。 |
+| `<leader>q` | 保存全部并关闭当前窗口 | 先执行 `:wall`，再执行 `:quit`；不会停止隐藏的 terminal job。 |
 | `<leader>ff` | 查找文件 | `mini.pick` 的 `files`；需要 `rg` 才有完整体验。 |
-| `<leader>fg` | 全文模糊搜索 | `mini.pick` 的 `grep_live`；需要 `rg`。 |
+| `<leader>fw` | 全文模糊搜索 | `mini.pick` 的 `grep_live`；需要 `rg`。 |
 | `<leader>fb` | 查找已打开 buffer | 包括 listed 的 terminal buffer。 |
 | `<leader>tn` | 交互式新建 terminal | 依次询问名称和可选 command；空 command 启动 shell。 |
 | `<leader>tc` | 交互式新建 Codex terminal | 使用 `profiles.codex`。 |
@@ -117,6 +125,7 @@ return {
 | `init.lua` | 仅调整经审查后的加载编排与 0.12 version gate。 |
 | `lua/config/options.lua` | 编辑器 option；必须保留 `sessionoptions:remove("terminal")`。 |
 | `lua/config/packages.lua` | `vim.pack` 的仓库规范与加载故障处理。 |
+| `lua/config/treesitter.lua` | 配置 `.treesitter/` parser 目录、将 `sh` 映射到 `bash`，并在有可用 parser 时启用原生高亮；不依赖 LSP。 |
 | `lua/config/mini.lua` | mini 模块的 setup 和 workbench-tabline 集成。 |
 | `lua/config/keymaps.lua` | Normal mode 的入口映射。 |
 | `lua/workbench/config.lua` | 通用工作台默认值与 profile schema。 |
@@ -130,8 +139,10 @@ return {
 | --- | --- | --- |
 | Neovim 0.12+ | 原生 `vim.pack` 与全部配置 API | 启动时输出错误，不继续加载。 |
 | `nvim-mini/mini.nvim` stable | picker、tabline、notify、icons | `config.mini` 会警告；部分 Ex 命令仍可用，picker 可退回 `vim.ui.select`。 |
-| `git` | mini.nvim 的首次取得/更新 | 首装或更新失败。 |
+| `nvim-treesitter/nvim-treesitter` main | 安装和更新 Java、C++、Bash 等 parser 与 queries | 原生高亮仍可用，但缺少对应 parser 时会回退到普通 syntax；不可 lazy-load。 |
+| `git` | 受管 plugin 的首次取得/更新 | 首装或更新失败。 |
 | `rg` | files 和 grep_live | 搜索体验不可用或受限。 |
+| `curl`、`tar`、C 编译器、`tree-sitter-cli >= 0.26.1` | `:TSInstall` / `:TSUpdate` | 已安装 parser 仍可高亮；不能安装或更新 parser。 |
 | `codex` | Codex convenience session | 仅 `AgentTermCodex` 可能立即退出；普通 terminal 不受影响。 |
 | `tmux` | 当前未使用 | 已安装不等于已接入；不要把它当运行时后端。 |
 
